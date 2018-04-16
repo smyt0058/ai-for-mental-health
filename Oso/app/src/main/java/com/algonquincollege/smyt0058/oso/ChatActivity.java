@@ -125,10 +125,10 @@ public class ChatActivity extends AppCompatActivity {
         //sets adapter
         mMessageRecyclerview.setAdapter(chatAdapter);
 
-//        Date currentTime = Calendar.getInstance().getTime();
-//        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-//        ChatMessage onBoarding1 = new ChatMessage(getResources().getString(R.string.oso_onboarding_1), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-//        chatAdapter.addMessage(onBoarding1);
+        Date currentTime = Calendar.getInstance().getTime();
+        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
+        ChatMessage onBoarding1 = new ChatMessage(getResources().getString(R.string.oso_onboarding_1), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
+        chatAdapter.addMessage(onBoarding1);
 
         //onBoarding();
 
@@ -239,8 +239,6 @@ public class ChatActivity extends AppCompatActivity {
 
     public void msgPost(String content) {
 
-        //Toast.makeText(ChatActivity.this, "msgPost called, passing : " + content, Toast.LENGTH_LONG).show();
-
         Call<ResponseBody> call = mApiService.msgPost(authkey, content);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -250,6 +248,7 @@ public class ChatActivity extends AppCompatActivity {
                     try {
                         JSONObject jsonRESULTS = new JSONObject(response.body().string());
                         if (jsonRESULTS.getString("errorMessage").equals("success") && !jsonRESULTS.getString("message").equals("")){
+
                             // If the login is successful then the name data in the response API
                             // will be parsed to the next activity.
                             Log.i("Object: ", jsonRESULTS.toString());
@@ -260,8 +259,6 @@ public class ChatActivity extends AppCompatActivity {
 
                             ChatMessage message = new ChatMessage(content, ChatMessage.MSG_TYPE_RECEIVED, currentTime);
 
-                            //Toast.makeText(ChatActivity.this, "Response: " + message.getMessageContent(), Toast.LENGTH_SHORT).show();
-
                             chatAdapter.addMessage(message);
 
                             scrollToBottom();
@@ -270,9 +267,8 @@ public class ChatActivity extends AppCompatActivity {
 
                         }
                         else {
-                            // Jika login gagal
+
                             String error_message = jsonRESULTS.getString("errorMessage");
-                            //Toast.makeText(ChatActivity.this, error_message, Toast.LENGTH_SHORT).show();
                             serverErrorOso();
 
                         }

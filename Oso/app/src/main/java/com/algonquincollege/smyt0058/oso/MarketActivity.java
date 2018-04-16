@@ -65,6 +65,7 @@ public class MarketActivity extends AppCompatActivity {
         mTabAdapter.AddFragment(new EyeWearStoreTab());
         mTabAdapter.AddFragment(new NeckWearStoreTab());
         mTabAdapter.AddFragment(new WristWearStoreTab());
+
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.store_view_pager);
         mViewPager.setOffscreenPageLimit(4);
@@ -79,23 +80,18 @@ public class MarketActivity extends AppCompatActivity {
 
                 case 0:
                     tabLayout.getTabAt(i).setIcon(R.drawable.ic_tab_shirt_vector);
-                    //Toast.makeText(this, "I is " + i, Toast.LENGTH_SHORT).show();
                     break;
                 case 1:
                     tabLayout.getTabAt(i).setIcon(R.drawable.ic_tab_hat_vector);
-                    //Toast.makeText(this, "I is " + i, Toast.LENGTH_SHORT).show();
                     break;
                 case 2:
                     tabLayout.getTabAt(i).setIcon(R.drawable.ic_tab_monocle_vector);
-                    //Toast.makeText(this, "I is " + i, Toast.LENGTH_SHORT).show();
                     break;
                 case 3:
                     tabLayout.getTabAt(i).setIcon(R.drawable.ic_tab_bowtie_vector);
-                    //Toast.makeText(this, "I is " + i, Toast.LENGTH_SHORT).show();
                     break;
                 case 4:
                     tabLayout.getTabAt(i).setIcon(R.drawable.ic_tab_watch_vector);
-                    //Toast.makeText(this, "I is " + i, Toast.LENGTH_SHORT).show();
                     break;
             }
 
@@ -107,14 +103,12 @@ public class MarketActivity extends AppCompatActivity {
                     public void onTabSelected(TabLayout.Tab tab) {
                         super.onTabSelected(tab);
                         tab.getIcon().setColorFilter(Color.parseColor("#FF4081"), PorterDuff.Mode.SRC_IN);
-                        //tab.getCustomView().setBackgroundColor(Color.parseColor("#FFFFFF"));
                     }
 
                     @Override
                     public void onTabUnselected(TabLayout.Tab tab) {
                         super.onTabUnselected(tab);
                         tab.getIcon().setColorFilter(Color.parseColor("#FFFFFF"), PorterDuff.Mode.SRC_IN);
-                        //tab.getCustomView().setBackgroundColor(Color.parseColor("#303F9F"));
                     }
 
                     @Override
@@ -130,16 +124,6 @@ public class MarketActivity extends AppCompatActivity {
 
     }
 
-
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-
-        //SharedPrefUtils.putMarketState(getApplicationContext(), pawPoints, isPurchasedMp3, isPurchasedHeadbow, isPurchasedPinkBowtie);
-
-    }
-
     public void tabMarketHeadbowClick(View view) {
 
         if (pawPoints < 25){
@@ -152,8 +136,6 @@ public class MarketActivity extends AppCompatActivity {
             findViewById(R.id.headbow_sold).setVisibility(View.VISIBLE);
             findViewById(R.id.market_headbow).setClickable(false);
 
-            //TextView pawPointWorth = findViewById(R.id.paw_points_amount_headbow);
-            //int pawPointsDeduction = Integer.getInteger(pawPointWorth.getText().toString());
             SharedPrefUtils.putPawPointState(getApplicationContext(), pawPoints);
             TextView pawPointNumber = findViewById(R.id.paw_points_amount);
             pawPointNumber.setText(String.valueOf(pawPoints));
@@ -177,10 +159,6 @@ public class MarketActivity extends AppCompatActivity {
             findViewById(R.id.pink_bowtie_sold).setVisibility(View.VISIBLE);
             findViewById(R.id.market_pink_bowtie).setClickable(false);
             SharedPrefUtils.putPawPointState(getApplicationContext(), pawPoints);
-            //TextView pawPointWorth = findViewById(R.id.paw_points_amount_pink_bowtie);
-            //int pawPointsDeduction = Integer.getInteger(pawPointWorth.getText().toString());
-
-
 
             TextView pawPointNumber = findViewById(R.id.paw_points_amount);
             pawPointNumber.setText(String.valueOf(pawPoints));
@@ -203,8 +181,6 @@ public class MarketActivity extends AppCompatActivity {
             findViewById(R.id.mp3_sold).setVisibility(View.VISIBLE);
             findViewById(R.id.market_mp3).setClickable(false);
             SharedPrefUtils.putPawPointState(getApplicationContext(), pawPoints);
-            //TextView pawPointWorth = findViewById(R.id.paw_points_amount_mp3);
-            //int pawPointsDeduction = Integer.getInteger(pawPointWorth.getText().toString());
 
             TextView pawPointNumber = findViewById(R.id.paw_points_amount);
             pawPointNumber.setText(String.valueOf(pawPoints));

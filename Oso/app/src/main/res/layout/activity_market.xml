@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_weight="1"
-            android:background="@color/colorAccent"
+            android:background="@color/theme1_colorAccent"
             android:theme="@style/CustomToolbarStyle"
             app:layout_scrollFlags="scroll|enterAlways"
             app:title="@string/app_name">
@@ -26,7 +26,7 @@
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorAccent">
+                android:background="@color/theme1_colorAccent">
 
                 <ImageView
                     android:background="#00000000"

@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:id="@+id/relativeLayout"
-        android:background="@color/colorPrimary">
+        android:background="@color/theme1_colorPrimary">
 
 
 
