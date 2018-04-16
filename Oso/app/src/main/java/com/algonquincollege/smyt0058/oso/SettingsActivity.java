@@ -19,6 +19,10 @@ public class SettingsActivity extends AppCompatActivity {
 
     private Context                 mContext;
 
+    private final String                  THEME_1 = "theme_1";
+    private final String                  THEME_2 = "theme_2";
+    private final String                  THEME_3 = "theme_3";
+
     private int                     pawPoints = 0;
 
 
@@ -58,11 +62,29 @@ public class SettingsActivity extends AppCompatActivity {
                 false,
                 false,
                 true,
-                "theme1");
+                "theme_1");
 
         startActivity(new Intent(mContext, MainActivity.class)
                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
         finish();
+
+    }
+
+    public void theme1Click(View view) {
+
+        SharedPrefUtils.putThemeState(getApplicationContext(), THEME_1);
+
+    }
+
+    public void theme2Click(View view) {
+
+        SharedPrefUtils.putThemeState(getApplicationContext(), THEME_2);
+
+    }
+
+    public void theme3Click(View view) {
+
+        SharedPrefUtils.putThemeState(getApplicationContext(), THEME_3);
 
     }
 

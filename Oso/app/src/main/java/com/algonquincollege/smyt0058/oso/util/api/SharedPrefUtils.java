@@ -85,6 +85,11 @@ public class SharedPrefUtils {
 
     }
 
+    public static void putThemeState(Context ctx, String theme){
+        SharedPreferences prefs = ctx.getSharedPreferences(ctx.getString(R.string.preference_file_key), ctx.MODE_PRIVATE);
+        prefs.edit().putString(THEME, theme).apply();
+    }
+
     public static void putSettingsState(Context ctx, boolean isNotificationOn, String theme){
         SharedPreferences prefs = ctx.getSharedPreferences(ctx.getString(R.string.preference_file_key), ctx.MODE_PRIVATE);
         prefs.edit().putBoolean(NOTIFICATION_BOOL, isNotificationOn).putString(THEME, theme).apply();

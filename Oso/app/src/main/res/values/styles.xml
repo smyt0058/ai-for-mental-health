@@ -5,10 +5,48 @@
     </style>
         <!-- Customize your theme here. -->
     <style name="CustomToolbarStyle" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:background">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/theme1_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/theme1_colorPrimaryDark</item>
+        <item name="colorAccent">@color/theme1_colorAccent</item>
+        <item name="android:background">@color/theme1_colorPrimary</item>
+    </style>
+
+    <style name="Theme1" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/theme1_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/theme1_colorPrimaryDark</item>
+        <item name="colorAccent">@color/theme1_colorAccent</item>
+    </style>
+
+    <style name="Theme2" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/theme2_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/theme2_colorSecondary</item>
+        <item name="colorAccent">@color/theme1_colorAccent</item>
+    </style>
+
+    <style name="Theme3" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/theme3_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/theme3_colorPrimaryDark</item>
+        <item name="colorAccent">@color/theme3_colorAccent</item>
+    </style>
+
+    <style name="ChatActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+    <style name="MarketActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+    <style name="ClosetActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+    <style name="SettingsActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+    <style name="DialogActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
     </style>
 
     <style name="AppTabLayout" parent="Widget.Design.TabLayout">
