@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#89cff0</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="tab_background_selected">#FFFFFF</color>
+    <color name="tab_background_unselected">#FF4081</color>
+
+    <color name="light_blue">#EAFAFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="chat_text_color_received">#444444</color>
+    <color name="chat_text_color_sent">#FFFFFF</color>
+
+    <color name="theme2_green">#24EDB7</color>
+    <color name="theme2_lightGreen">#EDFFFB</color>
+    <color name="notification_yellow">#FFF043</color>
+
+    <color name="theme3_blue">#19395D</color>
+    <color name="theme3_darkBlue">#0B1827</color>
+    <color name="notification_lightBlue">#459CFF</color>
+
+</resources>

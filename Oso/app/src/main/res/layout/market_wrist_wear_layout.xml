@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/tab_layout_padding">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/market_watch_layout">
+
+        <ImageView
+            android:id="@+id/market_watch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_black_market_watch_icon" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_oso_sold" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/market_watch"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:id="@+id/paw_points_layout_1">
+
+            <ImageView
+                android:id="@+id/paw_icon_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_oso_paw_pink" />
+
+            <TextView
+                android:id="@+id/paw_points_amount_watch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_toEndOf="@id/paw_icon_1"
+                android:text="25"
+                android:textColor="@color/colorAccent"
+                android:textSize="15dp" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/market_mp3_layout"
+        android:layout_toEndOf="@id/market_watch_layout">
+
+        <ImageView
+            android:id="@+id/market_mp3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_market_mp3"
+            android:onClick="tabMarketMp3Click"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:id="@+id/mp3_sold"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_oso_sold" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/market_mp3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:id="@+id/paw_points_layout_2">
+
+            <ImageView
+                android:id="@+id/paw_icon_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_oso_paw_pink" />
+
+            <TextView
+                android:id="@+id/paw_points_amount_mp3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_toEndOf="@id/paw_icon_2"
+                android:text="25"
+                android:textColor="@color/colorAccent"
+                android:textSize="15dp" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

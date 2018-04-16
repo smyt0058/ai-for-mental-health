@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "104889590872",
+    "firebase_url": "https://osofirebaseapplication.firebaseio.com",
+    "project_id": "osofirebaseapplication",
+    "storage_bucket": "osofirebaseapplication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104889590872:android:98f8646706a7e001",
+        "android_client_info": {
+          "package_name": "com.algonquincollege.smyt0058.oso"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104889590872-orl293gk2qfa92m6ju27ob215bc177bb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.algonquincollege.smyt0058.oso",
+            "certificate_hash": "15edf742807fb19373cedae8ef13154b23ebb951"
+          }
+        },
+        {
+          "client_id": "104889590872-q189lmims4o5sbn0ds2d5qvef5nmkgot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbF5G1bYtMmvMd7fAUWBz_OXk5ae1OK5Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104889590872-q189lmims4o5sbn0ds2d5qvef5nmkgot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
