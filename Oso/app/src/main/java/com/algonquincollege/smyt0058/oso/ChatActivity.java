@@ -211,6 +211,8 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
+
+
             }
         });
 
