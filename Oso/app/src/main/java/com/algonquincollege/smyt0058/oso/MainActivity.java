@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.algonquincollege.smyt0058.oso.database.User;
+import com.algonquincollege.smyt0058.oso.database.UserChat;
 import com.algonquincollege.smyt0058.oso.util.api.BaseApiService;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 import com.algonquincollege.smyt0058.oso.util.api.UtilsApi;
@@ -164,7 +164,7 @@ public class MainActivity extends Activity {
 
     private void userDBSetup() {
 
-        User user = new User(0,
+        UserChat user = new UserChat(0,
                 false,
                 false,
                 false,

@@ -9,7 +9,7 @@ import android.arch.persistence.room.PrimaryKey;
  */
 
 @Entity
-public class User {
+public class UserChat {
 
     @PrimaryKey(autoGenerate = true)
     private int                     id;
@@ -51,23 +51,23 @@ public class User {
 //    private ArrayList<ChatMessage>  chatHistory;
 
 
-    public User() {
+    public UserChat() {
     }
 
-    public User(int pawPoints,
-                boolean isWearingShirt,
-                boolean isWearingHat,
-                boolean isWearingHeadbow,
-                boolean isWearingMonocole,
-                boolean isWearingBowtie,
-                boolean isWearingPinkBowtie,
-                boolean isWearingWatch,
-                boolean isWearingMp3,
-                boolean isHeadbowPurchased,
-                boolean isPinkBowtiePurchased,
-                boolean isMp3Purchased,
-                String chosenAppColorTheme,
-                boolean isNotificationOn) {
+    public UserChat(int pawPoints,
+                    boolean isWearingShirt,
+                    boolean isWearingHat,
+                    boolean isWearingHeadbow,
+                    boolean isWearingMonocole,
+                    boolean isWearingBowtie,
+                    boolean isWearingPinkBowtie,
+                    boolean isWearingWatch,
+                    boolean isWearingMp3,
+                    boolean isHeadbowPurchased,
+                    boolean isPinkBowtiePurchased,
+                    boolean isMp3Purchased,
+                    String chosenAppColorTheme,
+                    boolean isNotificationOn) {
         this.id = id;
         this.pawPoints = pawPoints;
         this.isWearingShirt = isWearingShirt;
