@@ -1,9 +1,10 @@
-package com.algonquincollege.smyt0058.oso.closetTabFragments;
+package com.algonquincollege.smyt0058.oso.fragments;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,13 +17,14 @@ import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
  * Created by Jason on 2018-03-27.
  */
 
-public class WristWearClosetTab extends Fragment {
+public class WristWearStoreTab extends Fragment {
 
-    private boolean isWearingWatch;
-    private boolean isWearingMp3;
     private boolean isPurchasedMp3;
 
     private View view;
+
+    public WristWearStoreTab() {
+    }
 
     @Nullable
     @Override
@@ -30,8 +32,7 @@ public class WristWearClosetTab extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
 
         //TODO when fragment is created, check against preferences and change state of ImageViews
-
-        view = inflater.inflate(R.layout.closet_wrist_wear_layout, container, false);
+        view = inflater.inflate(R.layout.market_wrist_wear_layout, container, false);
 
         setState(view);
 
@@ -50,27 +51,20 @@ public class WristWearClosetTab extends Fragment {
 
         SharedPreferences prefs = SharedPrefUtils.getAppState(getActivity());
 
-        isWearingWatch = prefs.getBoolean(SharedPrefUtils.WATCH_WEAR_BOOL, false);
-        isWearingMp3 = prefs.getBoolean(SharedPrefUtils.MP3_WEAR_BOOL, false);
         isPurchasedMp3 = prefs.getBoolean(SharedPrefUtils.MP3_BUY_BOOL, false);
+        Log.i("Is Mp3 Purchased", String.valueOf(isPurchasedMp3));
 
-        if(isPurchasedMp3){
-            ImageView pMp3 = view.findViewById(R.id.closet_mp3);
-            pMp3.setClickable(true);
-            pMp3.setVisibility(View.VISIBLE);
-        }
-
-        if (isWearingWatch) {
-            view.findViewById(R.id.closet_watch).setAlpha(0.5f);
+        if (isPurchasedMp3) {
+            ImageView bow = view.findViewById(R.id.market_mp3);
+            ImageView sold = view.findViewById(R.id.mp3_sold);
+            bow.setClickable(false);
+            sold.setVisibility(View.VISIBLE);
         } else {
-            view.findViewById(R.id.closet_watch).setAlpha(1);
-        }
-        if (isWearingMp3) {
-            view.findViewById(R.id.closet_mp3).setAlpha(0.5f);
-        } else {
-            view.findViewById(R.id.closet_mp3).setAlpha(1);
+            ImageView bow = view.findViewById(R.id.market_mp3);
+            ImageView sold = view.findViewById(R.id.mp3_sold);
+            bow.setClickable(true);
+            sold.setVisibility(View.INVISIBLE);
         }
 
     }
-
 }

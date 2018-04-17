@@ -1,9 +1,10 @@
-package com.algonquincollege.smyt0058.oso.closetTabFragments;
+package com.algonquincollege.smyt0058.oso.fragments;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,25 +17,26 @@ import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
  * Created by Jason on 2018-03-27.
  */
 
-public class HatsClosetTab extends Fragment {
+public class HatsStoreTab extends Fragment {
 
-    private boolean isWearingHat;
-    private boolean isWearingHeadbow;
     private boolean isPurchasedHeadbow;
 
     private View view;
+
+    public HatsStoreTab() {
+    }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
+        //TODO when fragment is created, check against preferences and change state of ImageViews
 
-        view = inflater.inflate(R.layout.closet_hats_layout, container, false);
+        view = inflater.inflate(R.layout.market_hats_layout, container, false);
 
         setState(view);
 
         return view;
-
     }
 
     @Override
@@ -49,27 +51,22 @@ public class HatsClosetTab extends Fragment {
 
         SharedPreferences prefs = SharedPrefUtils.getAppState(getActivity());
 
-        isWearingHat = prefs.getBoolean(SharedPrefUtils.HAT_WEAR_BOOL, false);
         isPurchasedHeadbow = prefs.getBoolean(SharedPrefUtils.HEADBOW_BUY_BOOL, false);
-        isWearingHeadbow = prefs.getBoolean(SharedPrefUtils.HEADBOW_WEAR_BOOL, false);
 
-        if (isWearingHat) {
-            view.findViewById(R.id.closet_hat).setAlpha(0.5f);
-        } else {
-            view.findViewById(R.id.closet_hat).setAlpha(1);
-        }
+        Log.i("Is Headbow Purchased", String.valueOf(isPurchasedHeadbow));
 
         if (isPurchasedHeadbow) {
-            ImageView bow = view.findViewById(R.id.closet_headbow);
-            bow.setClickable(true);
-            bow.setVisibility(View.VISIBLE);
-        }
-
-        if(isWearingHeadbow){
-            view.findViewById(R.id.closet_headbow).setAlpha(0.5f);
+            ImageView bow = view.findViewById(R.id.market_headbow);
+            ImageView sold = view.findViewById(R.id.headbow_sold);
+            bow.setClickable(false);
+            sold.setVisibility(View.VISIBLE);
         } else {
-            view.findViewById(R.id.closet_headbow).setAlpha(1);
+            ImageView bow = view.findViewById(R.id.market_headbow);
+            ImageView sold = view.findViewById(R.id.headbow_sold);
+            bow.setClickable(true);
+            sold.setVisibility(View.INVISIBLE);
         }
 
     }
+
 }

@@ -1,4 +1,4 @@
-package com.algonquincollege.smyt0058.oso.storeTabFragments;
+package com.algonquincollege.smyt0058.oso.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,28 +13,18 @@ import com.algonquincollege.smyt0058.oso.R;
  * Created by Jason on 2018-03-27.
  */
 
-public class EyeWearStoreTab extends Fragment {
+public class ShirtsStoreTab extends Fragment {
 
-    private boolean isPurchased;
-
-    private View view;
-
-    public EyeWearStoreTab() {
+    public ShirtsStoreTab() {
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
 
         //TODO when fragment is created, check against preferences and change state of ImageViews
 
-        view = inflater.inflate(R.layout.market_eye_wear_layout, container, false);
-
-
-        return view;
+        return inflater.inflate(R.layout.market_shirts_layout, container, false);
     }
-
-
 
 }

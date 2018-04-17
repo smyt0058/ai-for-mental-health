@@ -1,4 +1,4 @@
-package com.algonquincollege.smyt0058.oso.feedingFragments;
+package com.algonquincollege.smyt0058.oso.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

@@ -1,4 +1,4 @@
-package com.algonquincollege.smyt0058.oso.closetTabFragments;
+package com.algonquincollege.smyt0058.oso.fragments;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;

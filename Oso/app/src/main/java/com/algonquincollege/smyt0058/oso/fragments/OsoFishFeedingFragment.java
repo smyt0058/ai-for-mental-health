@@ -1,4 +1,4 @@
-package com.algonquincollege.smyt0058.oso.feedingFragments;
+package com.algonquincollege.smyt0058.oso.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -12,7 +12,7 @@ import com.algonquincollege.smyt0058.oso.R;
  * Created by Jason on 2018-04-10.
  */
 
-public class OsoAppleFeedingFragment extends android.app.DialogFragment {
+public class OsoFishFeedingFragment extends android.app.DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {

@@ -12,11 +12,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import com.algonquincollege.smyt0058.oso.storeTabFragments.EyeWearStoreTab;
-import com.algonquincollege.smyt0058.oso.storeTabFragments.HatsStoreTab;
-import com.algonquincollege.smyt0058.oso.storeTabFragments.NeckWearStoreTab;
-import com.algonquincollege.smyt0058.oso.storeTabFragments.ShirtsStoreTab;
-import com.algonquincollege.smyt0058.oso.storeTabFragments.WristWearStoreTab;
+import com.algonquincollege.smyt0058.oso.fragments.EyeWearStoreTab;
+import com.algonquincollege.smyt0058.oso.fragments.HatsStoreTab;
+import com.algonquincollege.smyt0058.oso.fragments.NeckWearStoreTab;
+import com.algonquincollege.smyt0058.oso.fragments.ShirtsStoreTab;
+import com.algonquincollege.smyt0058.oso.fragments.WristWearStoreTab;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 
 /**
