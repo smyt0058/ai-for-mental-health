@@ -1,11 +1,9 @@
-package com.algonquincollege.smyt0058.oso;
+package com.algonquincollege.smyt0058.oso.database;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
-
-import com.algonquincollege.smyt0058.oso.models.User;
 
 /**
  * Created by Jason on 2018-04-10.

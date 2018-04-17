@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.algonquincollege.smyt0058.oso.feedingFragments.OsoDonutFeedingFragment;
+import com.algonquincollege.smyt0058.oso.fragments.OsoDonutFeedingFragment;
 
 /**
  * Created by Jason on 2018-03-21.

@@ -1,4 +1,4 @@
-package com.algonquincollege.smyt0058.oso.models;
+package com.algonquincollege.smyt0058.oso.database;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
