@@ -165,6 +165,8 @@ public class ChatActivity extends AppCompatActivity {
 
 
                     msgPost(messageContent);
+                    
+                    //pawPoints = pawPointToast(25);
                     //gordyMessageSend(messageContent);
                     scrollToBottom();
 
@@ -290,64 +292,6 @@ public class ChatActivity extends AppCompatActivity {
                 serverErrorOso();
 
             }
-        });
-    }
-
-    public void questionGet(int id, String event) {
-
-        Call<ResponseBody> call = mApiService.questionGet(id, event);
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-
-                if (response.isSuccessful()){
-
-                    try {
-                        JSONObject jsonRESULTS = new JSONObject(response.body().string());
-                        if (jsonRESULTS.getInt("code") == 1){
-                            // If the login is successful then the name data in the response API
-                            // will be parsed to the next activity.
-                            Log.i("Object: ", jsonRESULTS.toString());
-                            String content = jsonRESULTS.getString("message");
-                            Log.i("content: ", content);
-
-                            Date currentTime = Calendar.getInstance().getTime();
-
-                            ChatMessage message = new ChatMessage(content, ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-
-                            Toast.makeText(ChatActivity.this, "Response: " + message.getMessageContent(), Toast.LENGTH_SHORT).show();
-
-                            chatAdapter.addMessage(message);
-
-                            scrollToBottom();
-
-
-
-                        }
-                        else {
-                            // Jika login gagal
-                            String error_message = jsonRESULTS.getString("code");
-                            Toast.makeText(ChatActivity.this, error_message, Toast.LENGTH_SHORT).show();
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } else {
-
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-
-                Log.e("tag", "Retrofit Error: " + t.getLocalizedMessage());
-                Toast.makeText(ChatActivity.this, "Retrofit Error", Toast.LENGTH_LONG).show();
-
-            }
-
         });
     }
 
