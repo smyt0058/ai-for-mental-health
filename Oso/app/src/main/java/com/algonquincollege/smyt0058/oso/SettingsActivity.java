@@ -70,6 +70,14 @@ public class SettingsActivity extends AppCompatActivity {
 
     }
 
+    public void notificationSwitchClick(View view) {
+
+    }
+
+    public void changePasswordClick(View view) {
+
+    }
+
     public void theme1Click(View view) {
 
         SharedPrefUtils.putThemeState(getApplicationContext(), THEME_1);
