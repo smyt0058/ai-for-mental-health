@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 
 @Entity
-public class User {
+public class UserChat {
 
     @PrimaryKey(autoGenerate = true)
     private int                     id;
@@ -23,10 +23,10 @@ public class User {
     private ArrayList<ChatMessage> chatHistory;
 
     @Ignore
-    public User() {
+    public UserChat() {
     }
 
-    public User(int id, ArrayList<ChatMessage> chatHistory) {
+    public UserChat(int id, ArrayList<ChatMessage> chatHistory) {
         this.id = id;
         this.chatHistory = chatHistory;
     }

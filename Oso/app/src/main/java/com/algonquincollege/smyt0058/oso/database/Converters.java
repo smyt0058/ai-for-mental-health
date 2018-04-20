@@ -21,6 +21,7 @@ public class Converters {
     }
 
     @TypeConverter
+
     public static String fromArrayList(ArrayList<String> list) {
         Gson gson = new Gson();
         String json = gson.toJson(list);

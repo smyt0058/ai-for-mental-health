@@ -30,7 +30,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.algonquincollege.smyt0058.oso.database.User;
+import com.algonquincollege.smyt0058.oso.database.UserChat;
 import com.algonquincollege.smyt0058.oso.database.UserDAO;
 import com.algonquincollege.smyt0058.oso.models.ChatMessage;
 import com.algonquincollege.smyt0058.oso.util.api.BaseApiService;
@@ -94,7 +94,7 @@ public class ChatActivity extends AppCompatActivity {
 
         pawPoints = prefs.getInt(SharedPrefUtils.PAW_POINTS, 0);
 
-        List<User> users = userDao.getAllUsers();
+        List<UserChat> users = userDao.getAllUsers();
 
 
         lastQuestionDay = Calendar.DAY_OF_MONTH;
@@ -218,6 +218,8 @@ public class ChatActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
+
+
 
             }
         });

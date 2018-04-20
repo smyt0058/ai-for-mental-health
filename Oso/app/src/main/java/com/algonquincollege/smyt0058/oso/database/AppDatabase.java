@@ -8,7 +8,8 @@ import android.arch.persistence.room.TypeConverters;
  * Created by Jason on 2018-04-10.
  */
 
-@Database(entities = {User.class}, version = 1)
+
+@Database(entities = {UserChat.class}, version  = 1)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
