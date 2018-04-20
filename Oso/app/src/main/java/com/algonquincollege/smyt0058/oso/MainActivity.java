@@ -2,6 +2,7 @@ package com.algonquincollege.smyt0058.oso;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,7 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.algonquincollege.smyt0058.oso.database.User;
+import com.algonquincollege.smyt0058.oso.database.AppDatabase;
 import com.algonquincollege.smyt0058.oso.util.api.BaseApiService;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 import com.algonquincollege.smyt0058.oso.util.api.UtilsApi;
@@ -35,6 +36,7 @@ public class MainActivity extends Activity {
     private String                  emailValue;
     private EditText                password;
     private String                  passwordValue;
+    private AppDatabase             database;
     public static BaseApiService    mApiService;
 
     public ProgressDialog           loading;
@@ -42,6 +44,8 @@ public class MainActivity extends Activity {
     public Context                  mContext;
 
     SharedPrefUtils                 SharedPrefUtils;
+
+    private final String            DATABASE_NAME = "OSO_DATABASE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +59,8 @@ public class MainActivity extends Activity {
         password = (EditText) findViewById(R.id.passwordField);
 
         loginBtn = (Button) findViewById(R.id.loginBtn);
+
+        database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, DATABASE_NAME).build();
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,7 +124,7 @@ public class MainActivity extends Activity {
                                     //sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, true);
                                     SharedPrefUtils.saveIsLoggedIn(mContext, SharedPrefUtils.ISLOGGED, true);
 
-                                    userDBSetup();
+                                    //userDBSetup();
 
                                     startActivity(new Intent(mContext, ChatActivity.class)
                                             .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
@@ -162,24 +168,6 @@ public class MainActivity extends Activity {
                 });
     }
 
-    private void userDBSetup() {
-
-        User user = new User(0,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                "theme1",
-                true);
-
-    }
 
 
 

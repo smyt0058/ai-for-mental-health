@@ -30,6 +30,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.algonquincollege.smyt0058.oso.database.User;
+import com.algonquincollege.smyt0058.oso.database.UserDAO;
 import com.algonquincollege.smyt0058.oso.models.ChatMessage;
 import com.algonquincollege.smyt0058.oso.util.api.BaseApiService;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
@@ -42,6 +44,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import okhttp3.ResponseBody;
@@ -72,6 +75,8 @@ public class ChatActivity extends AppCompatActivity {
     public int                  pawPoints = 0;
     public boolean              isTimeForQuestion;
 
+    private UserDAO             userDao;
+
     private boolean             sendToServer = false;
     private boolean             journalReady = false;
     private final String        JOURNAL_ENTRY = "journalEntry";
@@ -89,7 +94,8 @@ public class ChatActivity extends AppCompatActivity {
 
         pawPoints = prefs.getInt(SharedPrefUtils.PAW_POINTS, 0);
 
-        //AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "production").allowMainThreadQueries().build();
+        List<User> users = userDao.getAllUsers();
+
 
         lastQuestionDay = Calendar.DAY_OF_MONTH;
 
@@ -215,6 +221,14 @@ public class ChatActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
 
 
 
