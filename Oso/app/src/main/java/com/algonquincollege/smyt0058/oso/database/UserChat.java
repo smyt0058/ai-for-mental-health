@@ -16,8 +16,8 @@ import java.util.ArrayList;
 @Entity
 public class UserChat {
 
-    @PrimaryKey(autoGenerate = true)
-    private int                     id;
+    @PrimaryKey
+    private int                     userID;
 
     @ColumnInfo
     private ArrayList<ChatMessage> chatHistory;
@@ -26,17 +26,17 @@ public class UserChat {
     public UserChat() {
     }
 
-    public UserChat(int id, ArrayList<ChatMessage> chatHistory) {
-        this.id = id;
+    public UserChat(int userID, ArrayList<ChatMessage> chatHistory) {
+        this.userID = userID;
         this.chatHistory = chatHistory;
     }
 
-    public int getId() {
-        return id;
+    public int getUserID() {
+        return userID;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserID(int id) {
+        this.userID = id;
     }
 
     public ArrayList<ChatMessage> getChatHistory() {

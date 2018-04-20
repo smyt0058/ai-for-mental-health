@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
 
-    private ArrayList<ChatMessage> messagesList;
+    public ArrayList<ChatMessage> messagesList;
 
     private Context mContext;
 
