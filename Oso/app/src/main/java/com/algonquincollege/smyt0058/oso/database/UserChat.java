@@ -31,11 +31,11 @@ public class UserChat {
         this.chatHistory = chatHistory;
     }
 
-    public int getId() {
+    public int getUserID() {
         return userID;
     }
 
-    public void setId(int id) {
+    public void setUserID(int id) {
         this.userID = id;
     }
 

@@ -1,10 +1,12 @@
 package com.algonquincollege.smyt0058.oso;
 
 import android.app.DialogFragment;
+import android.arch.persistence.room.Room;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -30,8 +32,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.algonquincollege.smyt0058.oso.database.AppDatabase;
+import com.algonquincollege.smyt0058.oso.database.Converters;
 import com.algonquincollege.smyt0058.oso.database.UserChat;
-import com.algonquincollege.smyt0058.oso.database.UserDAO;
 import com.algonquincollege.smyt0058.oso.models.ChatMessage;
 import com.algonquincollege.smyt0058.oso.util.api.BaseApiService;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
@@ -44,7 +47,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
 import okhttp3.ResponseBody;
@@ -70,15 +72,18 @@ public class ChatActivity extends AppCompatActivity {
     private int                 lastQuestionDay;
     private String              event = "questionTimeCheck";
     private static final String FEED_OSO_DIALOG_TAG = "Feed Oso Dialog";
+    private final String        DATABASE_NAME = "OSO_DATABASE";
 
     public int                  questionAskedMax = 0;
     public int                  pawPoints = 0;
     public boolean              isTimeForQuestion;
+    private AppDatabase         database;
 
-    private UserDAO             userDao;
+
 
     private boolean             sendToServer = false;
     private boolean             journalReady = false;
+    private boolean             dbCreated = false;
     private final String        JOURNAL_ENTRY = "journalEntry";
 
     ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
@@ -94,7 +99,27 @@ public class ChatActivity extends AppCompatActivity {
 
         pawPoints = prefs.getInt(SharedPrefUtils.PAW_POINTS, 0);
 
-        List<UserChat> users = userDao.getAllUsers();
+        database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, DATABASE_NAME).fallbackToDestructiveMigration().build();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                Cursor cursor = database.userDAO().getChatHistoryByID();
+
+                cursor.moveToFirst();
+                String test = cursor.getString(cursor.getColumnIndex("chatHistory"));
+
+                messageArrayList = Converters.fromString(test);
+                Log.i("messageArrayList", test);
+
+            }
+        }) .start();
+
+
+
+        //String test = cursor.getString(cursor.getColumnIndex("chatHistory"));
+
 
 
         lastQuestionDay = Calendar.DAY_OF_MONTH;
@@ -128,13 +153,13 @@ public class ChatActivity extends AppCompatActivity {
         //grabs adapter
         chatAdapter = new ChatAdapter(messageArrayList);
 
+//        Date currentTime = Calendar.getInstance().getTime();
+//        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
+//        ChatMessage onBoarding1 = new ChatMessage(getResources().getString(R.string.oso_onboarding_1), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
+//        chatAdapter.addMessage(onBoarding1);
+
         //sets adapter
         mMessageRecyclerview.setAdapter(chatAdapter);
-
-        Date currentTime = Calendar.getInstance().getTime();
-        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-        ChatMessage onBoarding1 = new ChatMessage(getResources().getString(R.string.oso_onboarding_1), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-        chatAdapter.addMessage(onBoarding1);
 
         //onBoarding();
 
@@ -177,6 +202,7 @@ public class ChatActivity extends AppCompatActivity {
                     scrollToBottom();
 
                     journalReady = true;
+
 
 
 
@@ -233,7 +259,6 @@ public class ChatActivity extends AppCompatActivity {
         super.onDestroy();
 
 
-
     }
 
     @Override
@@ -241,6 +266,17 @@ public class ChatActivity extends AppCompatActivity {
         super.onPause();
 
         SharedPrefUtils.putPawPointState(getApplicationContext(), pawPoints);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                UserChat userChat =new UserChat();
+                userChat.setUserID(1);
+                userChat.setChatHistory(chatAdapter.messagesList);
+                database.userDAO().updateUser(userChat);
+            }
+        }) .start();
+
 
 
     }
