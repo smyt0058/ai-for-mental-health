@@ -35,6 +35,7 @@ import android.widget.Toast;
 import com.algonquincollege.smyt0058.oso.database.AppDatabase;
 import com.algonquincollege.smyt0058.oso.database.Converters;
 import com.algonquincollege.smyt0058.oso.database.UserChat;
+import com.algonquincollege.smyt0058.oso.fragments.FeedOsoDialogFragment;
 import com.algonquincollege.smyt0058.oso.models.ChatMessage;
 import com.algonquincollege.smyt0058.oso.util.api.BaseApiService;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
@@ -70,21 +71,22 @@ public class ChatActivity extends AppCompatActivity {
     private BaseApiService      mApiService;
     private int                 sessionID = 1;
     private int                 lastQuestionDay;
-    private String              event = "questionTimeCheck";
-    private static final String FEED_OSO_DIALOG_TAG = "Feed Oso Dialog";
-    private final String        DATABASE_NAME = "OSO_DATABASE";
+
 
     public int                  questionAskedMax = 0;
     public int                  pawPoints = 0;
     public boolean              isTimeForQuestion;
     private AppDatabase         database;
 
+    private boolean             isQuestionnaire = false;
+    private boolean             isJournal = false;
+    private boolean             isFallBack = false;
 
-
-    private boolean             sendToServer = false;
-    private boolean             journalReady = false;
-    private boolean             dbCreated = false;
-    private final String        JOURNAL_ENTRY = "journalEntry";
+    private static final String FEED_OSO_DIALOG_TAG = "Feed Oso Dialog";
+    private final String        DATABASE_NAME = "OSO_DATABASE";
+    private final String        JOURNAL_ENTRY_EVENT = "journalEntry";
+    private final String        START_QUESTIONNAIRE_EVENT = "question";
+    private final String        REGULAR_CHAT_EVENT = "";
 
     ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
 
@@ -179,32 +181,17 @@ public class ChatActivity extends AppCompatActivity {
                     ChatMessage message = new ChatMessage(messageContent, ChatMessage.MSG_TYPE_SENT, currentTime);
                     chatAdapter.addMessage(message);
 
-//                    if (questionAskedMax <= 4) {
-//                        new android.os.Handler().postDelayed(
-//                                new Runnable() {
-//                                    public void run() {
-//                                        questionGet(sessionID, event);
-//                                    }
-//                                }, 1000);
-//                    }
-
 //                    scrollToBottom();
 
                     userMessage.getText().clear();
 
                     //pawPoints += pawPointToast(50);
 
-
                     msgPost(messageContent);
                     
                     //pawPoints = pawPointToast(25);
                     //gordyMessageSend(messageContent);
                     scrollToBottom();
-
-                    journalReady = true;
-
-
-
 
                     }
                     else {
@@ -351,7 +338,7 @@ public class ChatActivity extends AppCompatActivity {
 
         //Toast.makeText(ChatActivity.this, "msgPost called, passing : " + content, Toast.LENGTH_LONG).show();
 
-        Call<ResponseBody> call = mApiService.msgJournalPost(authkey, content, JOURNAL_ENTRY);
+        Call<ResponseBody> call = mApiService.msgJournalPost(authkey, content, JOURNAL_ENTRY_EVENT);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

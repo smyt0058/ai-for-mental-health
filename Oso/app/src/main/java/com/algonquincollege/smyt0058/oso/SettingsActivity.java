@@ -1,5 +1,6 @@
 package com.algonquincollege.smyt0058.oso;
 
+import android.app.DialogFragment;
 import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.content.Intent;
@@ -7,8 +8,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 import com.algonquincollege.smyt0058.oso.database.AppDatabase;
+import com.algonquincollege.smyt0058.oso.fragments.ChangePasswordDialog;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 
 /**
@@ -91,6 +94,11 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void changePasswordClick(View view) {
+
+        Toast.makeText(mContext, "Change Password button clicked", Toast.LENGTH_SHORT).show();
+
+        DialogFragment newFragment = new ChangePasswordDialog();
+        newFragment.show(getFragmentManager(),"change password dialog");
 
     }
 
