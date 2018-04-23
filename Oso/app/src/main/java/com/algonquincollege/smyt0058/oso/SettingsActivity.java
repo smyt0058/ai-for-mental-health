@@ -1,6 +1,8 @@
 package com.algonquincollege.smyt0058.oso;
 
+
 import android.app.DialogFragment;
+
 import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +13,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.algonquincollege.smyt0058.oso.database.AppDatabase;
+
 import com.algonquincollege.smyt0058.oso.fragments.ChangePasswordDialog;
+
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 
 /**

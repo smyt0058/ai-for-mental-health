@@ -35,7 +35,9 @@ import android.widget.Toast;
 import com.algonquincollege.smyt0058.oso.database.AppDatabase;
 import com.algonquincollege.smyt0058.oso.database.Converters;
 import com.algonquincollege.smyt0058.oso.database.UserChat;
+
 import com.algonquincollege.smyt0058.oso.fragments.FeedOsoDialogFragment;
+
 import com.algonquincollege.smyt0058.oso.models.ChatMessage;
 import com.algonquincollege.smyt0058.oso.util.api.BaseApiService;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
@@ -71,12 +73,12 @@ public class ChatActivity extends AppCompatActivity {
     private BaseApiService      mApiService;
     private int                 sessionID = 1;
     private int                 lastQuestionDay;
-
-
+  
     public int                  questionAskedMax = 0;
     public int                  pawPoints = 0;
     public boolean              isTimeForQuestion;
     private AppDatabase         database;
+
 
     private boolean             isQuestionnaire = false;
     private boolean             isJournal = false;
