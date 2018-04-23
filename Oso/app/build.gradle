@@ -36,9 +36,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.android.support:recyclerview-v7:27.+'
-    implementation 'com.google.firebase:firebase-core:11.8.0'
-    implementation 'com.google.android.gms:play-services:11.8.0'
-    implementation 'com.firebaseui:firebase-ui-database:2.3.0'
+    //implementation 'com.google.firebase:firebase-core:11.8.0'
+    implementation 'com.google.android.gms:play-services:12.0.1'
+    //implementation 'com.firebaseui:firebase-ui-database:2.3.0'
     implementation 'ai.api:sdk:2.0.7@aar'
     implementation 'ai.api:libai:1.6.11'
     implementation 'log4j:log4j:1.2.17'
@@ -50,6 +50,8 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     implementation "android.arch.lifecycle:extensions:1.1.1"
 
+    debugCompile 'com.amitshekhar.android:debug-db:1.0.1'
+
     implementation 'com.google.code.gson:gson:2.8.2'
 
     implementation "android.arch.paging:runtime:1.0.0-beta1"
@@ -57,6 +59,7 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:1.0.0"
     annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
 
+    compile project(path: ':onboarder')
 }
 
 apply plugin: 'com.google.gms.google-services'

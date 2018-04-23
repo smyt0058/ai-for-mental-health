@@ -1,5 +1,6 @@
 package com.algonquincollege.smyt0058.oso;
 
+import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.algonquincollege.smyt0058.oso.database.AppDatabase;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 
 /**
@@ -63,6 +65,20 @@ public class SettingsActivity extends AppCompatActivity {
                 false,
                 true,
                 "theme_1");
+
+        final AppDatabase database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "OSO_DATABASE").build();
+
+
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                database.userDAO().nukeTable();
+
+
+            }
+        }) .start();
 
         startActivity(new Intent(mContext, MainActivity.class)
                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));

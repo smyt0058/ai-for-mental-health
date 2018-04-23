@@ -2,6 +2,7 @@ package com.algonquincollege.smyt0058.oso;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,7 +14,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.algonquincollege.smyt0058.oso.database.User;
+import com.algonquincollege.smyt0058.oso.database.AppDatabase;
+import com.algonquincollege.smyt0058.oso.database.UserChat;
+import com.algonquincollege.smyt0058.oso.models.ChatMessage;
 import com.algonquincollege.smyt0058.oso.util.api.BaseApiService;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 import com.algonquincollege.smyt0058.oso.util.api.UtilsApi;
@@ -22,6 +25,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -35,13 +41,20 @@ public class MainActivity extends Activity {
     private String                  emailValue;
     private EditText                password;
     private String                  passwordValue;
+    private AppDatabase             database;
     public static BaseApiService    mApiService;
 
     public ProgressDialog           loading;
 
     public Context                  mContext;
 
+    public Boolean                  onBoardingFirst;
+
     SharedPrefUtils                 SharedPrefUtils;
+
+    private final String            DATABASE_NAME = "OSO_DATABASE";
+
+    private ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,10 +64,19 @@ public class MainActivity extends Activity {
         mContext = this;
         mApiService = UtilsApi.getAPIService();
 
+        onBoardingFirst = SharedPrefUtils.getIsFirstLoggedIn(mContext);
+
         email = (EditText) findViewById(R.id.emailField);
         password = (EditText) findViewById(R.id.passwordField);
 
         loginBtn = (Button) findViewById(R.id.loginBtn);
+
+        database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, DATABASE_NAME).fallbackToDestructiveMigration().build();
+
+//        Date currentTime = Calendar.getInstance().getTime();
+//        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
+//        ChatMessage onBoarding1 = new ChatMessage(getResources().getString(R.string.oso_onboarding_1), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
+//        messageArrayList.add(onBoarding1);
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,11 +140,33 @@ public class MainActivity extends Activity {
                                     //sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, true);
                                     SharedPrefUtils.saveIsLoggedIn(mContext, SharedPrefUtils.ISLOGGED, true);
 
-                                    userDBSetup();
+                                    Date currentTime = Calendar.getInstance().getTime();
+                                    //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
+                                    ChatMessage onBoarding1 = new ChatMessage(getResources().getString(R.string.oso_onboarding_1), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
+                                    messageArrayList.add(onBoarding1);
 
-                                    startActivity(new Intent(mContext, ChatActivity.class)
-                                            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
-                                    finish();
+                                    new Thread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            UserChat userChat =new UserChat();
+                                            userChat.setUserID(1);
+                                            userChat.setChatHistory(messageArrayList);
+                                            database.userDAO().insertUser(userChat);
+                                        }
+                                    }) .start();
+
+                                    //userDBSetup();
+
+                                    if(onBoardingFirst == false) {
+                                        SharedPrefUtils.saveIsFirstLoggedIn(mContext, SharedPrefUtils.ISFIRSTLOGGED, true);
+                                        startActivity(new Intent(mContext, OnBoardingActivity.class));
+                                        finish();
+                                    } else {
+
+                                        startActivity(new Intent(mContext, ChatActivity.class)
+                                                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+                                        finish();
+                                    }
                                 } else {
 
                                     AlertDialog.Builder builder;
@@ -162,24 +206,6 @@ public class MainActivity extends Activity {
                 });
     }
 
-    private void userDBSetup() {
-
-        User user = new User(0,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                "theme1",
-                true);
-
-    }
 
 
 
