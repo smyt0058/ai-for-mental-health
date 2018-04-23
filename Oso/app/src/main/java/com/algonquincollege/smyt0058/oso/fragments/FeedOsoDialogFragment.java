@@ -1,4 +1,4 @@
-package com.algonquincollege.smyt0058.oso;
+package com.algonquincollege.smyt0058.oso.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.algonquincollege.smyt0058.oso.fragments.OsoDonutFeedingFragment;
+import com.algonquincollege.smyt0058.oso.R;
 
 /**
  * Created by Jason on 2018-03-21.
