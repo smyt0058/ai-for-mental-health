@@ -33,6 +33,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_create_24px"
+        android:layout_below="@id/passwordSetting"
+        android:layout_toEndOf="@id/changePasswordText"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="40dp"
+        android:onClick="changePasswordClick"/>
+
     <TextView
         android:id="@+id/passwordSetting"
         android:layout_width="wrap_content"
@@ -143,12 +153,12 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/imageView5"
         android:layout_alignTop="@+id/notificationTV"
-        android:checked="false"
         android:thumbTint="#FF5878"
         android:trackTint="#FF5878"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:checked="false" />
+        tools:checked="false"
+        android:onClick="notificationSwitchClick"/>
 
     <ImageView
         android:id="@+id/imageView5"
