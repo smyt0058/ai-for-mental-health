@@ -189,7 +189,7 @@ public class ChatActivity extends AppCompatActivity {
 
                     //pawPoints += pawPointToast(50);
 
-                    msgPost(messageContent);
+                    msgEventPost(messageContent, REGULAR_CHAT_EVENT);
                     
                     //pawPoints = pawPointToast(25);
                     //gordyMessageSend(messageContent);
@@ -336,11 +336,13 @@ public class ChatActivity extends AppCompatActivity {
         });
     }
 
-    public void msgJournalPost(String content) {
+    public void msgEventPost(String content, String event) {
 
         //Toast.makeText(ChatActivity.this, "msgPost called, passing : " + content, Toast.LENGTH_LONG).show();
 
-        Call<ResponseBody> call = mApiService.msgJournalPost(authkey, content, JOURNAL_ENTRY_EVENT);
+        Call<ResponseBody> call = mApiService.msgEventPost(authkey, content, event);
+
+
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -369,7 +371,7 @@ public class ChatActivity extends AppCompatActivity {
 
                             scrollToBottom();
 
-                            pawPoints += pawPointToast(75);
+                            //pawPoints += pawPointToast(75);
 
 
 
@@ -394,7 +396,7 @@ public class ChatActivity extends AppCompatActivity {
             public void onFailure(Call<ResponseBody> call, Throwable t) {
 
                 Log.e( "tag", "Retrofit Error: " + t.getLocalizedMessage() );
-                Toast.makeText(ChatActivity.this, "Retrofit Error", Toast.LENGTH_LONG).show();
+                //Toast.makeText(ChatActivity.this, "Retrofit Error", Toast.LENGTH_LONG).show();
                 serverErrorOso();
 
             }
@@ -414,7 +416,6 @@ public class ChatActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
-        super.onStart();
         super.onStart();
 
     }
@@ -589,11 +590,6 @@ public class ChatActivity extends AppCompatActivity {
 
     }
 
-//    public boolean isTimeForQuestion() {
-//
-//
-//
-//    }
 
 }
 

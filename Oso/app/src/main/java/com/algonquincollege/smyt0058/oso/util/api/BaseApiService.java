@@ -20,8 +20,8 @@ public interface BaseApiService {
 
     @FormUrlEncoded
     @POST("api/chat/")
-    Call<ResponseBody> msgJournalPost(@Field("authkey") String authkey,
-                                      @Field("query") String query,
-                                      @Field("e") String event);
+    Call<ResponseBody> msgEventPost(@Field("authkey") String authkey,
+                                    @Field("query") String query,
+                                    @Field("e") String event);
 
 }
