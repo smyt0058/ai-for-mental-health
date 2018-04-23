@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.algonquincollege.smyt0058.oso.fragments.EyeWearStoreTab;
 import com.algonquincollege.smyt0058.oso.fragments.HatsStoreTab;
 import com.algonquincollege.smyt0058.oso.fragments.NeckWearStoreTab;
+import com.algonquincollege.smyt0058.oso.fragments.OopsNoPointsFragment;
 import com.algonquincollege.smyt0058.oso.fragments.ShirtsStoreTab;
 import com.algonquincollege.smyt0058.oso.fragments.WristWearStoreTab;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
