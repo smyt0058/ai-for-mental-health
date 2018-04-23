@@ -41,6 +41,8 @@ public class MainActivity extends Activity {
 
     public Context                  mContext;
 
+    public Boolean                  onBoardingFirst;
+
     SharedPrefUtils                 SharedPrefUtils;
 
     @Override
@@ -50,6 +52,8 @@ public class MainActivity extends Activity {
 
         mContext = this;
         mApiService = UtilsApi.getAPIService();
+
+        onBoardingFirst = SharedPrefUtils.getIsFirstLoggedIn(mContext);
 
         email = (EditText) findViewById(R.id.emailField);
         password = (EditText) findViewById(R.id.passwordField);
@@ -120,9 +124,16 @@ public class MainActivity extends Activity {
 
                                     userDBSetup();
 
-                                    startActivity(new Intent(mContext, ChatActivity.class)
-                                            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
-                                    finish();
+                                    if(onBoardingFirst == false) {
+                                        SharedPrefUtils.saveIsFirstLoggedIn(mContext, SharedPrefUtils.ISFIRSTLOGGED, true);
+                                        startActivity(new Intent(mContext, OnBoardingActivity.class));
+                                        finish();
+                                    } else {
+
+                                        startActivity(new Intent(mContext, ChatActivity.class)
+                                                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+                                        finish();
+                                    }
                                 } else {
 
                                     AlertDialog.Builder builder;
