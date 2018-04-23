@@ -24,6 +24,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".OnBoardingActivity">
+
+        </activity>
+
         <activity
             android:name=".ChatActivity"
             android:parentActivityName=".MainActivity"

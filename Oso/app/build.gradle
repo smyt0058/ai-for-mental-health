@@ -50,6 +50,8 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     implementation "android.arch.lifecycle:extensions:1.1.1"
 
+    debugCompile 'com.amitshekhar.android:debug-db:1.0.1'
+
     implementation 'com.google.code.gson:gson:2.8.2'
 
     implementation "android.arch.paging:runtime:1.0.0-beta1"
@@ -57,6 +59,7 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:1.0.0"
     annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
 
+    compile project(path: ':onboarder')
 }
 
 apply plugin: 'com.google.gms.google-services'

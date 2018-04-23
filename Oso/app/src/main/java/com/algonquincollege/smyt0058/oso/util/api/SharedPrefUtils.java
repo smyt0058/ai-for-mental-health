@@ -51,6 +51,7 @@ public class SharedPrefUtils {
     private static final String NAME = "NAME";
     private static final String EMAIL = "EMAIL";
     public static final String ISLOGGED = "ISLOGGED";
+    public static final String ISFIRSTLOGGED = "IS_FIRST_LOGGED";
 
     public static final String PAW_POINTS = "PAW_POINTS";
     public static final String SHIRT_WEAR_BOOL = "SHIRT_WEAR_BOOL";
@@ -205,6 +206,23 @@ public class SharedPrefUtils {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
         return prefs.getBoolean(ISLOGGED, false);
     }
+
+    public static void saveIsFirstLoggedIn(Context ctx, String key, boolean value){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+        try {
+            prefs.edit().putBoolean(key, value).apply();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Boolean getIsFirstLoggedIn(Context ctx){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+        return prefs.getBoolean(ISFIRSTLOGGED, false);
+    }
+
+
+
 
     private static String encryptString(Context context, String toEncrypt) {
         try {
