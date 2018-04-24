@@ -78,8 +78,6 @@
                 android:value=".ClosetActivity" />
         </activity>
 
-        <receiver android:name=".notifications.AlarmReceiver"></receiver>
-
         <receiver android:name=".notifications.BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -88,7 +86,8 @@
             </intent-filter>
         </receiver>
 
-
+        <receiver android:name=".notifications.AlarmReceiver"></receiver>
+        <receiver android:name=".notifications.NotificationAccepter"/>
     </application>
 
 </manifest>
