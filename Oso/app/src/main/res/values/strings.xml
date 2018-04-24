@@ -7,12 +7,12 @@
     <string name="wrist">Wrist</string>
     <string name="action_settings">Settings</string>
 
-    <string name="oso_onboarding_1">Good morning Christine! My name is Oso, it\'s beary nice to meet you :3</string>
-    <string name="oso_onboarding_2">I was created as part of an open source project to help bi-polar patients manage their symptoms</string>
-    <string name="oso_onboarding_3">I am designed to listen and hopefully one day, be your best friend :)</string>
-    <string name="oso_onboarding_4">Sometimes it can be diffcult to express how we\'re feeling and that\'s why I\'m here</string>
-    <string name="oso_onboarding_5">I will be asking you a set of questions every two weeks to assess you manic-depressive state</string>
-    <string name="oso_onboarding_6">It will take around 10 minutes. Are you ready?</string>
+    <string name="oso_onboarding_1">Hello my name is Oso :) How are you doing today?</string>
+    <!--<string name="oso_onboarding_2">I was created as part of an open source project to help bi-polar patients manage their symptoms</string>-->
+    <!--<string name="oso_onboarding_3">I am designed to listen and hopefully one day, be your best friend :)</string>-->
+    <!--<string name="oso_onboarding_4">Sometimes it can be diffcult to express how we\'re feeling and that\'s why I\'m here</string>-->
+    <!--<string name="oso_onboarding_5">I will be asking you a set of questions every two weeks to assess you manic-depressive state</string>-->
+    <!--<string name="oso_onboarding_6">It will take around 10 minutes. Are you ready?</string>-->
 
     <string name="preference_file_key">com.algonquincollege.smyt0058.oso.PREFERENCE_FILE_KEY</string>
 
