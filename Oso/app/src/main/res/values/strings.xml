@@ -20,8 +20,8 @@
     <string name="logoutBtn">logout</string>
 
     <string name="oso_text">oso</string>
-    <string name="name_preferences">name</string>
-    <string name="password_preferences">password</string>
+    <string name="name_preferences">Name</string>
+    <string name="password_preferences">Password</string>
     <string name="notifications_preferences">notifications</string>
     <string name="themes_preferences">themes</string>
     <string name="name_text">what would you like oso to address you by?</string>

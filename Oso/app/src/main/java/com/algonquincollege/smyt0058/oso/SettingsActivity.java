@@ -2,7 +2,6 @@ package com.algonquincollege.smyt0058.oso;
 
 
 import android.app.DialogFragment;
-
 import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.content.Intent;
@@ -10,12 +9,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.algonquincollege.smyt0058.oso.database.AppDatabase;
-
+import com.algonquincollege.smyt0058.oso.fragments.ChangeNameDialog;
 import com.algonquincollege.smyt0058.oso.fragments.ChangePasswordDialog;
-
+import com.algonquincollege.smyt0058.oso.fragments.TimePickerFragment;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 
 /**
@@ -28,9 +28,10 @@ public class SettingsActivity extends AppCompatActivity {
 
     private Context                 mContext;
 
-    private final String                  THEME_1 = "theme_1";
-    private final String                  THEME_2 = "theme_2";
-    private final String                  THEME_3 = "theme_3";
+    private EditText                editText;
+
+    private int                     questionHour;
+    private int                     questionMinute;
 
     private int                     pawPoints = 0;
 
@@ -48,8 +49,6 @@ public class SettingsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-
 
     }
 
@@ -70,8 +69,8 @@ public class SettingsActivity extends AppCompatActivity {
                 false,
                 false,
                 false,
-                true,
-                "theme_1");
+                13,
+                00);
 
         final AppDatabase database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "OSO_DATABASE").build();
 
@@ -93,8 +92,14 @@ public class SettingsActivity extends AppCompatActivity {
 
     }
 
-    public void notificationSwitchClick(View view) {
+    public void changeTimeBtnOnClick(View view) {
+        DialogFragment newFragment = new TimePickerFragment();
+        newFragment.show(getFragmentManager(), "timePicker");
+    }
 
+    public void changeNameOnClick(View view) {
+        DialogFragment newFragment = new ChangeNameDialog();
+        newFragment.show(getFragmentManager(),"change name dialog");
     }
 
     public void changePasswordClick(View view) {
@@ -105,24 +110,5 @@ public class SettingsActivity extends AppCompatActivity {
         newFragment.show(getFragmentManager(),"change password dialog");
 
     }
-
-    public void theme1Click(View view) {
-
-        SharedPrefUtils.putThemeState(getApplicationContext(), THEME_1);
-
-    }
-
-    public void theme2Click(View view) {
-
-        SharedPrefUtils.putThemeState(getApplicationContext(), THEME_2);
-
-    }
-
-    public void theme3Click(View view) {
-
-        SharedPrefUtils.putThemeState(getApplicationContext(), THEME_3);
-
-    }
-
 
 }

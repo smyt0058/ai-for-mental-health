@@ -14,7 +14,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="61dp"
-        android:text="Change Your Password"
+        android:text="Pick A Nickname"
+        android:textAlignment="center"
         android:textSize="28dp"
         app:layout_constraintBottom_toTopOf="@+id/nameChangeBtn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,73 +29,31 @@
         android:layout_alignStart="@+id/changePasswordTV"
         android:layout_below="@+id/changePasswordTV"
         android:layout_marginTop="25dp"
-        android:text="Old Password"
+        android:text="New Nickname"
         android:textColor="@color/theme1_colorAccent" />
 
     <EditText
-        android:id="@+id/nameChangeBtn"
+        android:id="@+id/nameET"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/oldPasswordTV"
         android:layout_centerHorizontal="true"
         android:background="@drawable/login_rounded_rectangle"
         android:ems="10"
-        android:hint="old password"
-        android:inputType="textPassword"
+        android:hint="nickname"
+        android:inputType="textCapSentences"
         android:padding="10dp" />
 
-    <TextView
-        android:id="@+id/newPasswordTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/nameChangeBtn"
-        android:layout_alignStart="@+id/changePasswordTV"
-        android:layout_marginTop="20dp"
-        android:text="New Password"
-        android:textColor="@color/theme1_colorAccent" />
 
-    <EditText
-        android:id="@+id/newPasswordET"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/newPasswordTV"
-        android:background="@drawable/login_rounded_rectangle"
-        android:ems="10"
-        android:hint="new password"
-        android:inputType="textPassword"
-        android:padding="10dp" />
-
-    <TextView
-        android:id="@+id/confirmPasswordTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/changePasswordTV"
-        android:layout_below="@id/newPasswordET"
-        android:layout_marginTop="20dp"
-        android:text="Confirm Password"
-        android:textColor="@color/theme1_colorAccent" />
-
-    <EditText
-        android:id="@+id/confirmPasswordET"
-        android:layout_width="298dp"
-        android:layout_height="41dp"
-        android:layout_below="@+id/confirmPasswordTV"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/login_rounded_rectangle"
-        android:ems="10"
-        android:hint="confirm new password"
-        android:inputType="textPassword"
-        android:padding="10dp" />
 
     <Button
-        android:id="@+id/donePassChange"
+        android:id="@+id/doneNameChange"
         android:layout_width="75dp"
         android:layout_height="27dp"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
-        android:layout_below="@id/confirmPasswordET"
+        android:layout_below="@id/nameET"
         android:layout_marginEnd="76dp"
         android:background="@drawable/loginbtn_rounded_rectangle"
         android:radius="20dp"
@@ -102,10 +61,10 @@
         android:textColor="@color/white" />
 
     <Button
-        android:id="@+id/cancel"
+        android:id="@+id/cancelNameChange"
         android:layout_width="75dp"
         android:layout_height="27dp"
-        android:layout_below="@+id/confirmPasswordET"
+        android:layout_below="@+id/nameET"
         android:layout_marginStart="76dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
