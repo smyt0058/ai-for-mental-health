@@ -24,4 +24,10 @@ public interface BaseApiService {
                                     @Field("query") String query,
                                     @Field("e") String event);
 
+    @FormUrlEncoded
+    @POST("api/password/change")
+    Call<ResponseBody> changePasswordPost(@Field("authkey") String authkey,
+                                          @Field("oldpassword") String oldpassword,
+                                          @Field("newpassword") String newpassword);
+
 }

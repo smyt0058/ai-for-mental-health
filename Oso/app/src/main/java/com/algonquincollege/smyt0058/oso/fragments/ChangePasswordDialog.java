@@ -3,6 +3,7 @@ package com.algonquincollege.smyt0058.oso.fragments;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.algonquincollege.smyt0058.oso.R;
+import com.algonquincollege.smyt0058.oso.util.api.BaseApiService;
+import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
+import com.algonquincollege.smyt0058.oso.util.api.UtilsApi;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by Jason on 2018-04-17.
@@ -21,15 +35,19 @@ import com.algonquincollege.smyt0058.oso.R;
 
 public class ChangePasswordDialog extends android.app.DialogFragment implements View.OnClickListener {
     
-    private EditText    oldPasswordET;
-    private EditText    newPasswordET;
-    private EditText    confirmPasswordET;
+    private EditText        oldPasswordET;
+    private EditText        newPasswordET;
+    private EditText        confirmPasswordET;
 
-    private Button      doneBtn;
-    private Button      cancelBtn;
+    private Button          doneBtn;
+    private Button          cancelBtn;
+
+    private BaseApiService  mApiService;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+        mApiService = UtilsApi.getAPIService();
         
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -37,7 +55,7 @@ public class ChangePasswordDialog extends android.app.DialogFragment implements 
         LayoutInflater inflater = (getActivity()).getLayoutInflater();
 
         View view = inflater.inflate(R.layout.oso_change_password_dialog,  null);
-        oldPasswordET = view.findViewById(R.id.oldPasswordET);
+        oldPasswordET = view.findViewById(R.id.nameChangeBtn);
         newPasswordET = view.findViewById(R.id.newPasswordET);
         confirmPasswordET = view.findViewById(R.id.confirmPasswordET);
 
@@ -61,7 +79,47 @@ public class ChangePasswordDialog extends android.app.DialogFragment implements 
                 confirmPasswordET.setError("Does not match new password");
                 confirmPasswordET.requestFocus();
             } else {
-                newPasswordToast();
+
+                Call<ResponseBody> call = mApiService.changePasswordPost(SharedPrefUtils.get(getContext(), "authkey"), oldPasswordET.getText().toString() ,confirmPasswordET.getText().toString());
+                call.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+                        if (response.isSuccessful()){
+
+                            try {
+                                JSONObject jsonRESULTS = new JSONObject(response.body().string());
+                                if (jsonRESULTS.getString("errorMessage").equals("success")){
+
+                                    newPasswordToast("Your password has been changed!");
+
+
+                                }
+                                else {
+                                    String error_message = jsonRESULTS.getString("errorMessage");
+                                    newPasswordToast("old password isn't a match, please input again");
+
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                        Log.e( "tag", "Retrofit Error: " + t.getLocalizedMessage() );
+                        Toast.makeText(getContext(), "Retrofit Error", Toast.LENGTH_LONG).show();
+
+                    }
+                });
+
                 this.dismiss();
             }
         } else if(view.equals(cancelBtn)) {
@@ -72,7 +130,7 @@ public class ChangePasswordDialog extends android.app.DialogFragment implements 
         }
     }
 
-    public void newPasswordToast() {
+    public void newPasswordToast(String message) {
 
         LayoutInflater inflater = (getActivity()).getLayoutInflater();
         View layout = inflater.inflate(R.layout.paw_point_toast_layout,
@@ -81,7 +139,7 @@ public class ChangePasswordDialog extends android.app.DialogFragment implements 
         ImageView image = (ImageView) layout.findViewById(R.id.image);
         image.setImageResource(R.drawable.ic_oso_face_icon);
         TextView text = (TextView) layout.findViewById(R.id.text);
-        text.setText("Your password has been changed!");
+        text.setText(message);
 
         Toast toast = new Toast(getContext());
         toast.setGravity(Gravity.BOTTOM, 0, 50);

@@ -67,6 +67,8 @@ public class SharedPrefUtils {
     public static final String HEADBOW_BUY_BOOL = "HEADBOW_BUY_BOOL";
     public static final String PINK_BOWTIE_BUY_BOOL = "PINK_BOWTIE_BUY_BOOL";
 
+    public static final String QUESTIONNAIRE_HOUR_OF_DAY = "QUESTIONNAIRE_HOUR_OF_DAY";
+    public static final String QUESTIONNAIRE_MINUTE_OF_DAY = "QUESTIONNAIRE_MINUTE_OF_DAY";
     public static final String NOTIFICATION_BOOL = "NOTIFICATION_BOOL";
     public static final String THEME = "THEME";
 
@@ -88,14 +90,9 @@ public class SharedPrefUtils {
 
 
 
-    public static void putThemeState(Context ctx, String theme){
+    public static void putSettingsState(Context ctx, int hour, int minute){
         SharedPreferences prefs = ctx.getSharedPreferences(ctx.getString(R.string.preference_file_key), ctx.MODE_PRIVATE);
-        prefs.edit().putString(THEME, theme).apply();
-    }
-
-    public static void putSettingsState(Context ctx, boolean isNotificationOn, String theme){
-        SharedPreferences prefs = ctx.getSharedPreferences(ctx.getString(R.string.preference_file_key), ctx.MODE_PRIVATE);
-        prefs.edit().putBoolean(NOTIFICATION_BOOL, isNotificationOn).putString(THEME, theme).apply();
+        prefs.edit().putInt(QUESTIONNAIRE_HOUR_OF_DAY, hour).putInt(QUESTIONNAIRE_MINUTE_OF_DAY, minute).apply();
     }
 
     public static void putMarketState(Context ctx, int pawPoints, boolean mp3BuyBool, boolean headbowBuyBool, boolean pinkBowtieBuyBool){
@@ -146,8 +143,8 @@ public class SharedPrefUtils {
                                       boolean mp3BuyBool,
                                       boolean headbowBuyBool,
                                       boolean pinkBowtieBuyBool,
-                                       boolean isNotificationOn,
-                                       String theme ){
+                                       int hour,
+                                       int minute ){
         SharedPreferences prefs = ctx.getSharedPreferences(ctx.getString(R.string.preference_file_key), ctx.MODE_PRIVATE);
         prefs.edit().putInt(PAW_POINTS, pawPoints)
                 .putBoolean(SHIRT_WEAR_BOOL, shirtWearBool)
@@ -161,8 +158,8 @@ public class SharedPrefUtils {
                 .putBoolean(MP3_BUY_BOOL, mp3BuyBool)
                 .putBoolean(HEADBOW_BUY_BOOL, headbowBuyBool)
                 .putBoolean(PINK_BOWTIE_BUY_BOOL, pinkBowtieBuyBool)
-                .putBoolean(NOTIFICATION_BOOL, isNotificationOn)
-                .putString(THEME, theme).apply();
+                .putInt(QUESTIONNAIRE_HOUR_OF_DAY, hour)
+                .putInt(QUESTIONNAIRE_MINUTE_OF_DAY, minute).apply();
     }
 
     public static void putHeadbowState(Context ctx, boolean isHeadbowPurchased) {
