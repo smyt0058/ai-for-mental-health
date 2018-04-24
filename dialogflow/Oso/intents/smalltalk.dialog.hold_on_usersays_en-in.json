@@ -1,0 +1,118 @@
+[
+  {
+    "id": "f5d82150-dc27-495d-a722-308df7741ba0",
+    "data": [
+      {
+        "text": "wait",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "5911f92d-bc16-4b36-876d-3f40f07be339",
+    "data": [
+      {
+        "text": "don",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": "\u0027t ",
+        "userDefined": false
+      },
+      {
+        "text": "rush",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "029c7230-f2d4-4dc1-a00e-de459ce00675",
+    "data": [
+      {
+        "text": "wait hold ",
+        "userDefined": false
+      },
+      {
+        "text": "on",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "15fb962b-3f0c-4cc2-9538-a0fde8277c48",
+    "data": [
+      {
+        "text": "wait please",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "039272f9-4f6f-44a9-8ed3-9fee1ed2800a",
+    "data": [
+      {
+        "text": "hold ",
+        "userDefined": false
+      },
+      {
+        "text": "on",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "1a10f34f-f048-45c3-989c-739cc7c58751",
+    "data": [
+      {
+        "text": "could you wait",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "ec430939-a4ba-4e37-9d16-3432815c8df7",
+    "data": [
+      {
+        "text": "wait a second",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a6a44017-2c7b-4e39-ac73-8ae813a18576",
+    "data": [
+      {
+        "text": "oh wait",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

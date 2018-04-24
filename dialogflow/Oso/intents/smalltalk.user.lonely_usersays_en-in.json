@@ -1,0 +1,113 @@
+[
+  {
+    "id": "70b1fd6d-6a9c-48dc-b897-34f47c770627",
+    "data": [
+      {
+        "text": "I ",
+        "userDefined": false
+      },
+      {
+        "text": "feel",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "lonely",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b67059b4-5551-49df-a118-e05df5ebb223",
+    "data": [
+      {
+        "text": "I\u0027m very ",
+        "userDefined": false
+      },
+      {
+        "text": "lonely",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d287eccf-ca61-486e-9f09-6a85641d8a5f",
+    "data": [
+      {
+        "text": "I\u0027m really ",
+        "userDefined": false
+      },
+      {
+        "text": "lonely",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "fa7cd8ea-ed15-4257-b303-2af53e427330",
+    "data": [
+      {
+        "text": "I am feeling ",
+        "userDefined": false
+      },
+      {
+        "text": "lonely",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "56c375ae-a8be-4534-bee2-dfc2862000e8",
+    "data": [
+      {
+        "text": "I am ",
+        "userDefined": false
+      },
+      {
+        "text": "lonely",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "16310c59-de8f-43b9-8318-e9f76b4dce45",
+    "data": [
+      {
+        "text": "I\u0027m so ",
+        "userDefined": false
+      },
+      {
+        "text": "lonely",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

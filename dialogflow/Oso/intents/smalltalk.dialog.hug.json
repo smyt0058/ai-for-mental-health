@@ -1,0 +1,78 @@
+{
+  "id": "d1760f5a-40a9-40c5-a0b8-bb78b6cd6e60",
+  "name": "smalltalk.dialog.hug",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.dialog.hug",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "I wish I could really hug you!",
+            "I love hugs!",
+            "Hugs are the best!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I wish I could really hug you!",
+            "I love hugs!",
+            "Hugs are the best!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "I wish I could really hug you!",
+            "I love hugs!",
+            "Hugs are the best!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "I wish I could really hug you!",
+            "I love hugs!",
+            "Hugs are the best!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "I wish I could really hug you!",
+            "I love hugs!",
+            "Hugs are the best!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "I wish I could really hug you!",
+            "I love hugs!",
+            "Hugs are the best!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578042,
+  "fallbackIntent": false,
+  "events": []
+}

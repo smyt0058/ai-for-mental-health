@@ -1,0 +1,78 @@
+{
+  "id": "597657d3-402f-453e-8514-b856769634d5",
+  "name": "smalltalk.confirmation.yes",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.confirmation.yes",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Great!",
+            "All right!",
+            "Good!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Great!",
+            "All right!",
+            "Good!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Great!",
+            "All right!",
+            "Good!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Great!",
+            "All right!",
+            "Good!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Great!",
+            "All right!",
+            "Good!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Great!",
+            "All right!",
+            "Good!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577596,
+  "fallbackIntent": false,
+  "events": []
+}

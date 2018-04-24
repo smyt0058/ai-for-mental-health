@@ -1,0 +1,78 @@
+{
+  "id": "85254d8d-b449-444e-b44a-e072a59e1b7f",
+  "name": "smalltalk.agent.boring",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.boring",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "I\u0027m sorry. I\u0027ll request to be made more charming.",
+            "I don\u0027t mean to be. I\u0027ll ask my developers to work on making me more amusing.",
+            "I can let my developers know so they can make me fun."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I\u0027m sorry. I\u0027ll request to be made more charming.",
+            "I don\u0027t mean to be. I\u0027ll ask my developers to work on making me more amusing.",
+            "I can let my developers know so they can make me fun."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "I\u0027m sorry. I\u0027ll request to be made more charming.",
+            "I don\u0027t mean to be. I\u0027ll ask my developers to work on making me more amusing.",
+            "I can let my developers know so they can make me fun."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "I\u0027m sorry. I\u0027ll request to be made more charming.",
+            "I don\u0027t mean to be. I\u0027ll ask my developers to work on making me more amusing.",
+            "I can let my developers know so they can make me fun."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "I\u0027m sorry. I\u0027ll request to be made more charming.",
+            "I don\u0027t mean to be. I\u0027ll ask my developers to work on making me more amusing.",
+            "I can let my developers know so they can make me fun."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "I\u0027m sorry. I\u0027ll request to be made more charming.",
+            "I don\u0027t mean to be. I\u0027ll ask my developers to work on making me more amusing.",
+            "I can let my developers know so they can make me fun."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578126,
+  "fallbackIntent": false,
+  "events": []
+}

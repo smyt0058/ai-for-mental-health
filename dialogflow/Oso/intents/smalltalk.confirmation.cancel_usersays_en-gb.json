@@ -1,0 +1,904 @@
+[
+  {
+    "id": "878f3b97-e4bf-4b7f-8169-709c3cdead1b",
+    "data": [
+      {
+        "text": "cancel that cancel that",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "59c8cde9-2b4d-4a22-be3c-53a9e1c0a348",
+    "data": [
+      {
+        "text": "no cancel this",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "42c059a1-48b2-4798-8893-dd8393bbedfb",
+    "data": [
+      {
+        "text": "forget that",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "8a97019c-18f0-47c8-ab01-eb5011e1472d",
+    "data": [
+      {
+        "text": "forget this",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "8e93c2eb-ac9f-4435-bc1d-994eedb9d8ef",
+    "data": [
+      {
+        "text": "forget about ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "3513d9a7-4366-4f58-947d-a9ba38ad3a2e",
+    "data": [
+      {
+        "text": "stop",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "50d6deed-4122-4cae-ab54-0734d1fc8268",
+    "data": [
+      {
+        "text": "cancel",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "07d2be96-d890-40f2-b284-e710143e2856",
+    "data": [
+      {
+        "text": "do",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " nothing",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "dc64840d-7351-42cf-9e17-534941fa5f05",
+    "data": [
+      {
+        "text": "cancel ",
+        "userDefined": false
+      },
+      {
+        "text": "all",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " this",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "4d5e79ef-8307-4893-9d58-8f37755f7f65",
+    "data": [
+      {
+        "text": "disregard",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b89c36d7-687d-4aaa-8deb-e6bbdb4fe72a",
+    "data": [
+      {
+        "text": "cancel now",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b57d7bb3-9002-4c29-ab99-112712ee9861",
+    "data": [
+      {
+        "text": "cancel that ",
+        "userDefined": false
+      },
+      {
+        "text": "one",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "7d97ac57-1c4b-4107-9fa5-7f7e95ac6fb4",
+    "data": [
+      {
+        "text": "can you cancel that",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "f22df941-e971-4201-a539-cf08a21bfcf1",
+    "data": [
+      {
+        "text": "skip ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "aca741a2-6086-4347-abf6-1564e27c5e9a",
+    "data": [
+      {
+        "text": "disregard that",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "51883e2c-b50b-4dae-843e-3d5e80d6e382",
+    "data": [
+      {
+        "text": "i would like to cancel",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a3598661-7184-418d-ac88-9cdbf2d924ca",
+    "data": [
+      {
+        "text": "cancel everything",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "5cb8f42a-b342-4b2d-82c4-c92555dcb223",
+    "data": [
+      {
+        "text": "abort",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "ef435a0a-26c3-4aad-ab45-8d42e4058794",
+    "data": [
+      {
+        "text": "no stop",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "e956f430-04ba-400a-9182-b1b5d520cba5",
+    "data": [
+      {
+        "text": "just forget about ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "8e312f90-0bf2-48cd-b3cc-d2d42e38e501",
+    "data": [
+      {
+        "text": "cancel this request",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a6b19626-4475-46e0-bd9a-c57b51f797dc",
+    "data": [
+      {
+        "text": "no just cancel",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "cd7e839b-b7ea-433b-9222-74af3f877060",
+    "data": [
+      {
+        "text": "cancel ",
+        "userDefined": false
+      },
+      {
+        "text": "all",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "84f73645-2c7a-469c-a06c-6163ff2ff8d9",
+    "data": [
+      {
+        "text": "nothing just forget ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "facd4458-a3a5-4a42-888b-2892fcb812bf",
+    "data": [
+      {
+        "text": "stop ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "ff27ab4e-93dd-4bd0-b5e1-2aff2a28284d",
+    "data": [
+      {
+        "text": "cancel ",
+        "userDefined": false
+      },
+      {
+        "text": "all",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " that",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "6ca6268e-6bbd-483b-8b04-71242bfae9a2",
+    "data": [
+      {
+        "text": "just cancel ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "4aeb22b3-7ca9-4322-9dc6-06bcd7bfa628",
+    "data": [
+      {
+        "text": "cancel ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "3b6f93e2-cffe-40cd-a2ae-47a8ae79999d",
+    "data": [
+      {
+        "text": "forget about that",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "0ca9ba9e-7b39-4458-904a-8a852d8be908",
+    "data": [
+      {
+        "text": "just forget",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "df07a6d8-2790-49f3-948c-218a31526bf8",
+    "data": [
+      {
+        "text": "forget ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "nevermind",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "63b8ccb3-b191-4340-b22e-7b4bca2ff045",
+    "data": [
+      {
+        "text": "I said cancel cancel",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "68aa0e4d-6442-403d-b3ac-f6c25b35d18b",
+    "data": [
+      {
+        "text": "sorry cancel",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "580850a9-7c98-48e5-9181-5c612bc23331",
+    "data": [
+      {
+        "text": "i want to cancel",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "4a947398-f868-45d7-b113-527db132d91a",
+    "data": [
+      {
+        "text": "annul",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c5611e89-2b0d-4d47-985c-fae2dca35d7b",
+    "data": [
+      {
+        "text": "no cancel everything",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "be78a082-6538-4ddf-b20e-7470049a045a",
+    "data": [
+      {
+        "text": "can you cancel ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "095bae8b-d812-4b5b-a3a2-67a8f01ea31a",
+    "data": [
+      {
+        "text": "skip skip skip",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "99e08971-f5de-4ab5-8e15-55748392095a",
+    "data": [
+      {
+        "text": "cancel ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " cancel ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "2227b6ea-e175-4d5e-bb66-5e22c8950b1e",
+    "data": [
+      {
+        "text": "no just cancel ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "556a3f59-f76e-48d0-8a1c-9d47df38e44e",
+    "data": [
+      {
+        "text": "i want to cancel ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "2c6bb956-502a-427c-b91b-e2f9e9ef0131",
+    "data": [
+      {
+        "text": "skip",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "99ed8cf1-362b-4c7f-94ff-04229b1c51fa",
+    "data": [
+      {
+        "text": "cancelled",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d3e14a82-3643-46f1-bb2e-4c68ed2442d6",
+    "data": [
+      {
+        "text": "cancel it",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "ac186e20-481b-46a9-84cf-f06bf336b930",
+    "data": [
+      {
+        "text": "discard",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "4be18ab2-b2ce-4b2c-9e19-0e415d8e4d22",
+    "data": [
+      {
+        "text": "just forget ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "2c93a257-a360-4cda-a895-056be8111c73",
+    "data": [
+      {
+        "text": "cancel the whole thing",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "89bfe888-d719-484a-bd4e-7abd0b1cc5bf",
+    "data": [
+      {
+        "text": "i said forget ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "f7d16eb0-a819-4a00-8b11-237134706788",
+    "data": [
+      {
+        "text": "dismiss",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a677ef5b-bb13-44d8-a4d5-3822e0182038",
+    "data": [
+      {
+        "text": "just stop ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "cb2be4a8-f782-454b-a3f1-3c009f86bb7f",
+    "data": [
+      {
+        "text": "cancel my request",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "40602514-2e5c-450b-80de-895e55438c0a",
+    "data": [
+      {
+        "text": "cancel request",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a9b948d9-4549-4312-ba2e-0ef75b062d68",
+    "data": [
+      {
+        "text": "but can you cancel it",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "4dc134fe-1211-469c-908c-bc35b68cbd02",
+    "data": [
+      {
+        "text": "now cancel",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "e00526c0-1fe8-4834-a084-6008d61cb840",
+    "data": [
+      {
+        "text": "i said cancel ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a48a0cb8-586f-4523-81c5-4da9af2e0a63",
+    "data": [
+      {
+        "text": "so cancel",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "4ec081d9-12a8-42b6-ae59-f3849606fbf7",
+    "data": [
+      {
+        "text": "don\u0027t",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " do that",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c27dfefd-c058-4355-83c0-cd3e799f7914",
+    "data": [
+      {
+        "text": "nevermind",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " forget about ",
+        "userDefined": false
+      },
+      {
+        "text": "it",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "e3d4d3c7-e473-49fd-96d2-e00cf54a532e",
+    "data": [
+      {
+        "text": "no cancel cancel",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "31a0c9f8-4118-490b-ad4b-d289cc00bdd0",
+    "data": [
+      {
+        "text": "forget",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "39105497-6352-4628-a090-84d95729df85",
+    "data": [
+      {
+        "text": "nothing cancel",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "91a5bd4c-9c3b-40a4-860b-70f9a777cc40",
+    "data": [
+      {
+        "text": "i said cancel",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a8d30565-f046-44ef-a012-164804ff5151",
+    "data": [
+      {
+        "text": "dismissed",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

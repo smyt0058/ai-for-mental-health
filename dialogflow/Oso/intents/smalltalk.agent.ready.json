@@ -1,0 +1,72 @@
+{
+  "id": "e864c1b5-8416-4f43-b660-8fab593ba728",
+  "name": "smalltalk.agent.ready",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.ready",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Always!",
+            "Sure! What can I do for you?"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Always!",
+            "Sure! What can I do for you?"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Always!",
+            "Sure! What can I do for you?"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Always!",
+            "Sure! What can I do for you?"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Always!",
+            "Sure! What can I do for you?"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Always!",
+            "Sure! What can I do for you?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577725,
+  "fallbackIntent": false,
+  "events": []
+}

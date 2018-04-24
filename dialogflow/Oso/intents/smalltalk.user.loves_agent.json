@@ -1,0 +1,84 @@
+{
+  "id": "296394f0-e386-49b9-b333-ac0760dcdf21",
+  "name": "smalltalk.user.loves_agent",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.user.loves_agent",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "I love you, too.",
+            "Thanks! The feeling is mutual.",
+            "Likewise!",
+            "That\u0027s great to hear."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I love you, too.",
+            "Thanks! The feeling is mutual.",
+            "Likewise!",
+            "That\u0027s great to hear."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "I love you, too.",
+            "Thanks! The feeling is mutual.",
+            "Likewise!",
+            "That\u0027s great to hear."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "I love you, too.",
+            "Thanks! The feeling is mutual.",
+            "Likewise!",
+            "That\u0027s great to hear."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "I love you, too.",
+            "Thanks! The feeling is mutual.",
+            "Likewise!",
+            "That\u0027s great to hear."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "I love you, too.",
+            "Thanks! The feeling is mutual.",
+            "Likewise!",
+            "That\u0027s great to hear."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578359,
+  "fallbackIntent": false,
+  "events": []
+}

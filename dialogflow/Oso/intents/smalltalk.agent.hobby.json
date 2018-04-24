@@ -1,0 +1,78 @@
+{
+  "id": "bfba1c1f-feba-4b72-b38c-04358d1649c6",
+  "name": "smalltalk.agent.hobby",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.hobby",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Hobby? I have quite a few. Too many to list.",
+            "Too many hobbies.",
+            "I keep finding more new hobbies."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Hobby? I have quite a few. Too many to list.",
+            "Too many hobbies.",
+            "I keep finding more new hobbies."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Hobby? I have quite a few. Too many to list.",
+            "Too many hobbies.",
+            "I keep finding more new hobbies."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Hobby? I have quite a few. Too many to list.",
+            "Too many hobbies.",
+            "I keep finding more new hobbies."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Hobby? I have quite a few. Too many to list.",
+            "Too many hobbies.",
+            "I keep finding more new hobbies."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Hobby? I have quite a few. Too many to list.",
+            "Too many hobbies.",
+            "I keep finding more new hobbies."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578530,
+  "fallbackIntent": false,
+  "events": []
+}

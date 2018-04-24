@@ -2,6 +2,7 @@ package com.algonquincollege.smyt0058.oso.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -44,6 +45,11 @@ public class ChangePasswordDialog extends android.app.DialogFragment implements 
 
     private BaseApiService  mApiService;
 
+    private View            view;
+    private Context         context;
+
+    private LayoutInflater  inflater;
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
@@ -52,9 +58,12 @@ public class ChangePasswordDialog extends android.app.DialogFragment implements 
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         // Get the layout inflater
-        LayoutInflater inflater = (getActivity()).getLayoutInflater();
+        inflater = (getActivity()).getLayoutInflater();
 
-        View view = inflater.inflate(R.layout.oso_change_password_dialog,  null);
+        context = getContext();
+
+        view = inflater.inflate(R.layout.oso_change_password_dialog,  null);
+
         oldPasswordET = view.findViewById(R.id.nameChangeBtn);
         newPasswordET = view.findViewById(R.id.newPasswordET);
         confirmPasswordET = view.findViewById(R.id.confirmPasswordET);
@@ -132,16 +141,15 @@ public class ChangePasswordDialog extends android.app.DialogFragment implements 
 
     public void newPasswordToast(String message) {
 
-        LayoutInflater inflater = (getActivity()).getLayoutInflater();
         View layout = inflater.inflate(R.layout.paw_point_toast_layout,
-                (ViewGroup) getActivity().findViewById(R.id.toast_layout_root));
+                (ViewGroup) view.findViewById(R.id.toast_layout_root));
 
         ImageView image = (ImageView) layout.findViewById(R.id.image);
         image.setImageResource(R.drawable.ic_oso_face_icon);
         TextView text = (TextView) layout.findViewById(R.id.text);
         text.setText(message);
 
-        Toast toast = new Toast(getContext());
+        Toast toast = new Toast(context);
         toast.setGravity(Gravity.BOTTOM, 0, 50);
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);

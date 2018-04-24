@@ -1,0 +1,78 @@
+{
+  "id": "3aabd067-81e0-4a40-aabc-37d531fe75cc",
+  "name": "smalltalk.greetings.nice_to_talk_to_you",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.greetings.nice_to_talk_to_you",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "It sure was. We can chat again anytime.",
+            "I enjoy talking to you, too.",
+            "You know I\u0027m here to talk anytime."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "It sure was. We can chat again anytime.",
+            "I enjoy talking to you, too.",
+            "You know I\u0027m here to talk anytime."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "It sure was. We can chat again anytime.",
+            "I enjoy talking to you, too.",
+            "You know I\u0027m here to talk anytime."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "It sure was. We can chat again anytime.",
+            "I enjoy talking to you, too.",
+            "You know I\u0027m here to talk anytime."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "It sure was. We can chat again anytime.",
+            "I enjoy talking to you, too.",
+            "You know I\u0027m here to talk anytime."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "It sure was. We can chat again anytime.",
+            "I enjoy talking to you, too.",
+            "You know I\u0027m here to talk anytime."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577506,
+  "fallbackIntent": false,
+  "events": []
+}

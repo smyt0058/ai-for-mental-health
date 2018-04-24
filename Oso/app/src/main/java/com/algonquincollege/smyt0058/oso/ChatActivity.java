@@ -90,6 +90,8 @@ public class ChatActivity extends AppCompatActivity {
     private final String        START_QUESTIONNAIRE_EVENT = "question";
     private final String        REGULAR_CHAT_EVENT = "";
 
+    int i = 0;
+
     ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
 
     private String authkey;
@@ -191,17 +193,21 @@ public class ChatActivity extends AppCompatActivity {
                     userMessage.getText().clear();
 
 
-                    if(!isQuestionnaire && isJournal == false && isFallBack == false) {
+                    if(!isQuestionnaire && !isJournal && !isFallBack) {
 
                         msgEventPost(messageContent, REGULAR_CHAT_EVENT);
                     }
 
-                    if(isQuestionnaire == true && isJournal == false && isFallBack == false) {
+                    if(isQuestionnaire && !isJournal && !isFallBack) {
                         msgEventPost(messageContent, "");
-                        pawPoints += pawPointToast(25);
+                        ++i;
+                        if(i >= 9) {
+                            pawPoints += pawPointToast(25);
+                        }
+
                     }
 
-                    if(isQuestionnaire == true && isJournal == true && isFallBack == false) {
+                    if(isQuestionnaire && isJournal && !isFallBack) {
                         msgEventPost(messageContent, JOURNAL_ENTRY_EVENT);
                     }
 

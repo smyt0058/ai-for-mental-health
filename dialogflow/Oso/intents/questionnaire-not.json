@@ -1,0 +1,37 @@
+{
+  "id": "bb1fa4ee-329f-4f89-a5bf-0f33d6119999",
+  "name": "questionnaire-not",
+  "auto": true,
+  "contexts": [
+    "questionnaire-event"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "questionnaire-event",
+          "parameters": {},
+          "lifespan": 0
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Okay, maybe tomorrow."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1521584421,
+  "fallbackIntent": false,
+  "events": []
+}

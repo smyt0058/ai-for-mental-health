@@ -1,0 +1,172 @@
+{
+  "id": "a2ffaf52-6016-4738-8cbc-414dcfca16a1",
+  "name": "questionnaire",
+  "auto": true,
+  "contexts": [
+    "questionnaire-event"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "questionnaire",
+          "parameters": {},
+          "lifespan": 5
+        },
+        {
+          "name": "questionnaire-event",
+          "parameters": {},
+          "lifespan": 0
+        }
+      ],
+      "parameters": [
+        {
+          "id": "47aef545-918a-4676-ae6c-1e5a270d0d86",
+          "required": true,
+          "dataType": "@how_often",
+          "name": "Q1",
+          "value": "$Q1",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Little interest or pleasure in doing things (How often this problem these two weeks?)"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "c93bbbe0-4a00-407c-b123-2edfe43c3bbd",
+          "required": true,
+          "dataType": "@how_often",
+          "name": "Q2",
+          "value": "$Q2",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Feeling down, depressed or hopeless (How often this problem these two weeks?)"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "d5a3c011-2280-465c-83b2-04a0f1dcd9a7",
+          "required": true,
+          "dataType": "@how_often",
+          "name": "Q3",
+          "value": "$Q3",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Trouble falling asleep, staying asleep, or sleeping too much (How often this problem these two weeks?)"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "cc109e26-c27b-464a-987b-a1e49622ff7f",
+          "required": true,
+          "dataType": "@how_often",
+          "name": "Q4",
+          "value": "$Q4",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Feeling tired or having little energy (How often this problem these two weeks?)"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "187e8d07-b746-43a6-9f8e-6ea263d52450",
+          "required": true,
+          "dataType": "@how_often",
+          "name": "Q5",
+          "value": "$Q5",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Poor appetite or overeating (How often this problem these two weeks?)"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "3e326d83-2579-4ae3-8d58-e93fea9a1735",
+          "required": true,
+          "dataType": "@how_often",
+          "name": "Q6",
+          "value": "$Q6",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Feeling bad about yourself - or that you\u0027re a failure or have let yourself or your family down (How often this problem these two weeks?)"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "a80d183d-95c7-4263-8bd5-94861a5b577c",
+          "required": true,
+          "dataType": "@how_often",
+          "name": "Q7",
+          "value": "$Q7",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Trouble concentrating on things, such as reading the newspaper or watching television (How often this problem these two weeks?)"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "0d53b8d9-77e6-4212-9761-0d6f3bf5a774",
+          "required": true,
+          "dataType": "@how_often",
+          "name": "Q8",
+          "value": "$Q8",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Moving or speaking so slowly that other people could have noticed.  Or, the opposite - been so fidgety or restless that you have been moving around a lot more than usual (How often this problem these two weeks?)"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "afc1811a-dd96-44de-8260-2d4f867fe27b",
+          "required": true,
+          "dataType": "@how_often",
+          "name": "Q9",
+          "value": "$Q9",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Thoughts that you would be better off dead or of hurting yourself in some way (How often this problem these two weeks?)"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Thanks for doing the questionnaire!",
+            "Phew, we\u0027re done that!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1521586767,
+  "fallbackIntent": false,
+  "events": []
+}

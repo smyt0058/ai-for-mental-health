@@ -1,0 +1,84 @@
+{
+  "id": "9ab7572a-ef77-4fe4-a900-b5587b10f011",
+  "name": "smalltalk.user.does_not_want_to_talk",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.user.does_not_want_to_talk",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "I understand. Hope we can chat again soon.",
+            "All right. Come on back when you\u0027re feeling more talkative.",
+            "No problem. You know where to find me.",
+            "Sure thing. I\u0027ll be here if you change your mind."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I understand. Hope we can chat again soon.",
+            "All right. Come on back when you\u0027re feeling more talkative.",
+            "No problem. You know where to find me.",
+            "Sure thing. I\u0027ll be here if you change your mind."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "I understand. Hope we can chat again soon.",
+            "All right. Come on back when you\u0027re feeling more talkative.",
+            "No problem. You know where to find me.",
+            "Sure thing. I\u0027ll be here if you change your mind."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "I understand. Hope we can chat again soon.",
+            "All right. Come on back when you\u0027re feeling more talkative.",
+            "No problem. You know where to find me.",
+            "Sure thing. I\u0027ll be here if you change your mind."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "I understand. Hope we can chat again soon.",
+            "All right. Come on back when you\u0027re feeling more talkative.",
+            "No problem. You know where to find me.",
+            "Sure thing. I\u0027ll be here if you change your mind."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "I understand. Hope we can chat again soon.",
+            "All right. Come on back when you\u0027re feeling more talkative.",
+            "No problem. You know where to find me.",
+            "Sure thing. I\u0027ll be here if you change your mind."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578526,
+  "fallbackIntent": false,
+  "events": []
+}

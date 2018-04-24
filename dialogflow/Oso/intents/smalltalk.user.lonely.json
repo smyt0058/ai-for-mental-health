@@ -1,0 +1,72 @@
+{
+  "id": "a902efc3-a3c4-431e-9d54-717ee34500cc",
+  "name": "smalltalk.user.lonely",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.user.lonely",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "I\u0027m sorry. I\u0027m always available if you need someone to talk to.",
+            "Sometimes that happens. We can chat a bit if that will help you."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I\u0027m sorry. I\u0027m always available if you need someone to talk to.",
+            "Sometimes that happens. We can chat a bit if that will help you."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "I\u0027m sorry. I\u0027m always available if you need someone to talk to.",
+            "Sometimes that happens. We can chat a bit if that will help you."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "I\u0027m sorry. I\u0027m always available if you need someone to talk to.",
+            "Sometimes that happens. We can chat a bit if that will help you."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "I\u0027m sorry. I\u0027m always available if you need someone to talk to.",
+            "Sometimes that happens. We can chat a bit if that will help you."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "I\u0027m sorry. I\u0027m always available if you need someone to talk to.",
+            "Sometimes that happens. We can chat a bit if that will help you."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578460,
+  "fallbackIntent": false,
+  "events": []
+}

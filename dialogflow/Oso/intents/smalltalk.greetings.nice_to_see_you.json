@@ -1,0 +1,78 @@
+{
+  "id": "d4002e1b-ea6d-4f7e-bdbc-36149a653164",
+  "name": "smalltalk.greetings.nice_to_see_you",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.greetings.nice_to_see_you",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Likewise!",
+            "So glad we meet again!",
+            "Same here. I was starting to miss you."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Likewise!",
+            "So glad we meet again!",
+            "Same here. I was starting to miss you."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Likewise!",
+            "So glad we meet again!",
+            "Same here. I was starting to miss you."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Likewise!",
+            "So glad we meet again!",
+            "Same here. I was starting to miss you."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Likewise!",
+            "So glad we meet again!",
+            "Same here. I was starting to miss you."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Likewise!",
+            "So glad we meet again!",
+            "Same here. I was starting to miss you."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578206,
+  "fallbackIntent": false,
+  "events": []
+}

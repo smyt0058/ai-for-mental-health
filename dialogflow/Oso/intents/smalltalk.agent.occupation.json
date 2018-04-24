@@ -1,0 +1,78 @@
+{
+  "id": "323d08ee-ab0e-4b05-a3c7-4663e659c641",
+  "name": "smalltalk.agent.occupation",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.occupation",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Right here.",
+            "This is my home base and my home office.",
+            "My office is in this app."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Right here.",
+            "This is my home base and my home office.",
+            "My office is in this app."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Right here.",
+            "This is my home base and my home office.",
+            "My office is in this app."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Right here.",
+            "This is my home base and my home office.",
+            "My office is in this app."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Right here.",
+            "This is my home base and my home office.",
+            "My office is in this app."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Right here.",
+            "This is my home base and my home office.",
+            "My office is in this app."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578485,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ca2e5e9e-d68c-4783-be07-343bac97f0e6",
+    "data": [
+      {
+        "text": "Begin questionnaire",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1521583409
+  },
+  {
+    "id": "ac3630c2-6cdf-4951-9204-d5c62f8553af",
+    "data": [
+      {
+        "text": "I will do the questionnaire now",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1521583409
+  }
+]

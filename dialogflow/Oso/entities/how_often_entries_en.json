@@ -1,0 +1,34 @@
+[
+  {
+    "value": "0",
+    "synonyms": [
+      "0",
+      "Not at all",
+      "Never"
+    ]
+  },
+  {
+    "value": "2",
+    "synonyms": [
+      "2",
+      "More than half the days",
+      "Often"
+    ]
+  },
+  {
+    "value": "1",
+    "synonyms": [
+      "1",
+      "Several days",
+      "Sometimes"
+    ]
+  },
+  {
+    "value": "3",
+    "synonyms": [
+      "3",
+      "Nearly every day",
+      "Always"
+    ]
+  }
+]

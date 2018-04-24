@@ -1,0 +1,78 @@
+{
+  "id": "77aaa5a3-534a-4219-903c-c73145d26507",
+  "name": "smalltalk.confirmation.cancel",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.confirmation.cancel",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "That\u0027s forgotten. What next?",
+            "Okay, cancelled. What next?",
+            "Cancelled! What would you like to do next?"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "That\u0027s forgotten. What next?",
+            "Okay, cancelled. What next?",
+            "Cancelled! What would you like to do next?"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "That\u0027s forgotten. What next?",
+            "Okay, cancelled. What next?",
+            "Cancelled! What would you like to do next?"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "That\u0027s forgotten. What next?",
+            "Okay, cancelled. What next?",
+            "Cancelled! What would you like to do next?"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "That\u0027s forgotten. What next?",
+            "Okay, cancelled. What next?",
+            "Cancelled! What would you like to do next?"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "That\u0027s forgotten. What next?",
+            "Okay, cancelled. What next?",
+            "Cancelled! What would you like to do next?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577721,
+  "fallbackIntent": false,
+  "events": []
+}
