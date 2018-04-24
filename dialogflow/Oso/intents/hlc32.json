@@ -1,0 +1,41 @@
+{
+  "id": "8a1b526f-57c6-42ad-876d-240938f26499",
+  "name": "hlc32",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "0bade92d-0ee3-41c4-a01f-be2e7841bf86",
+          "required": false,
+          "dataType": "",
+          "name": "q1",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I need less sleep"
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1521685481,
+  "fallbackIntent": false,
+  "events": []
+}

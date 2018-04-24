@@ -1,0 +1,36 @@
+{
+  "id": "3e14a1b5-6b08-49a4-8e3f-19c678355c8b",
+  "name": "phq6-fallback",
+  "auto": false,
+  "contexts": [
+    "phq6"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "phq6",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "this is question six"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1521581843,
+  "fallbackIntent": true,
+  "events": []
+}

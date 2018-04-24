@@ -1,0 +1,34 @@
+{
+  "id": "986a0c0b-c90b-41df-8804-e0367fd30689",
+  "name": "phq7",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "phq7",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Over the past 2 weeks how often have you had trouble concentrating on things, such as reading or watching television?"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1521580111,
+  "fallbackIntent": false,
+  "events": []
+}

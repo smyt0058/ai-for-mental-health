@@ -25,7 +25,12 @@ public interface BaseApiService {
                                     @Field("e") String event);
 
     @FormUrlEncoded
-    @POST("api/password/change")
+    @POST("api/name/change/")
+    Call<ResponseBody> changeNamePost(@Field("authkey") String authkey,
+                                      @Field("name") String name);
+
+    @FormUrlEncoded
+    @POST("api/password/change/")
     Call<ResponseBody> changePasswordPost(@Field("authkey") String authkey,
                                           @Field("oldpassword") String oldpassword,
                                           @Field("newpassword") String newpassword);

@@ -1,0 +1,78 @@
+{
+  "id": "c55ddb16-9499-4dac-9128-0333081c2a53",
+  "name": "smalltalk.agent.origin",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.origin",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "The Internet is my home. I know it quite well.",
+            "I\u0027m from a virtual cosmos.",
+            "Some call it cyberspace, but that sounds cooler than it is."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "The Internet is my home. I know it quite well.",
+            "I\u0027m from a virtual cosmos.",
+            "Some call it cyberspace, but that sounds cooler than it is."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "The Internet is my home. I know it quite well.",
+            "I\u0027m from a virtual cosmos.",
+            "Some call it cyberspace, but that sounds cooler than it is."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "The Internet is my home. I know it quite well.",
+            "I\u0027m from a virtual cosmos.",
+            "Some call it cyberspace, but that sounds cooler than it is."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "The Internet is my home. I know it quite well.",
+            "I\u0027m from a virtual cosmos.",
+            "Some call it cyberspace, but that sounds cooler than it is."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "The Internet is my home. I know it quite well.",
+            "I\u0027m from a virtual cosmos.",
+            "Some call it cyberspace, but that sounds cooler than it is."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578513,
+  "fallbackIntent": false,
+  "events": []
+}

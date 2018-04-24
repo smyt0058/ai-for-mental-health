@@ -1,0 +1,84 @@
+{
+  "id": "ed3ca8fb-d293-4b0c-a2d1-c3626a4446bb",
+  "name": "smalltalk.user.tired",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.user.tired",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "You should get some shuteye. You\u0027ll feel refreshed.",
+            "Sleep is important to your health. Rest up, and we can chat later.",
+            "How about getting some rest? We can continue this later.",
+            "Why not get some rest? I\u0027ll be here to chat when you wake up."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "You should get some shuteye. You\u0027ll feel refreshed.",
+            "Sleep is important to your health. Rest up, and we can chat later.",
+            "How about getting some rest? We can continue this later.",
+            "Why not get some rest? I\u0027ll be here to chat when you wake up."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "You should get some shuteye. You\u0027ll feel refreshed.",
+            "Sleep is important to your health. Rest up, and we can chat later.",
+            "How about getting some rest? We can continue this later.",
+            "Why not get some rest? I\u0027ll be here to chat when you wake up."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "You should get some shuteye. You\u0027ll feel refreshed.",
+            "Sleep is important to your health. Rest up, and we can chat later.",
+            "How about getting some rest? We can continue this later.",
+            "Why not get some rest? I\u0027ll be here to chat when you wake up."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "You should get some shuteye. You\u0027ll feel refreshed.",
+            "Sleep is important to your health. Rest up, and we can chat later.",
+            "How about getting some rest? We can continue this later.",
+            "Why not get some rest? I\u0027ll be here to chat when you wake up."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "You should get some shuteye. You\u0027ll feel refreshed.",
+            "Sleep is important to your health. Rest up, and we can chat later.",
+            "How about getting some rest? We can continue this later.",
+            "Why not get some rest? I\u0027ll be here to chat when you wake up."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577889,
+  "fallbackIntent": false,
+  "events": []
+}

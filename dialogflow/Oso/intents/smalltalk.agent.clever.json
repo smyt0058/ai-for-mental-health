@@ -1,0 +1,72 @@
+{
+  "id": "c23cfcad-88d7-4724-903d-a088b075feef",
+  "name": "smalltalk.agent.clever",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.clever",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Thank you. I try my best.",
+            "You\u0027re pretty smart yourself."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Thank you. I try my best.",
+            "You\u0027re pretty smart yourself."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Thank you. I try my best.",
+            "You\u0027re pretty smart yourself."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Thank you. I try my best.",
+            "You\u0027re pretty smart yourself."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Thank you. I try my best.",
+            "You\u0027re pretty smart yourself."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Thank you. I try my best.",
+            "You\u0027re pretty smart yourself."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578191,
+  "fallbackIntent": false,
+  "events": []
+}

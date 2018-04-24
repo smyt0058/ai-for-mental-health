@@ -1,0 +1,78 @@
+{
+  "id": "bbeb601e-cafc-44cd-b0e3-acbbc3109d68",
+  "name": "smalltalk.agent.fired",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.fired",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Oh, don\u0027t give up on me just yet. I\u0027ve still got a lot to learn.",
+            "Give me a chance. I\u0027m learning new things all the time.",
+            "Please don\u0027t give up on me. My performance will continue to improve."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Oh, don\u0027t give up on me just yet. I\u0027ve still got a lot to learn.",
+            "Give me a chance. I\u0027m learning new things all the time.",
+            "Please don\u0027t give up on me. My performance will continue to improve."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Oh, don\u0027t give up on me just yet. I\u0027ve still got a lot to learn.",
+            "Give me a chance. I\u0027m learning new things all the time.",
+            "Please don\u0027t give up on me. My performance will continue to improve."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Oh, don\u0027t give up on me just yet. I\u0027ve still got a lot to learn.",
+            "Give me a chance. I\u0027m learning new things all the time.",
+            "Please don\u0027t give up on me. My performance will continue to improve."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Oh, don\u0027t give up on me just yet. I\u0027ve still got a lot to learn.",
+            "Give me a chance. I\u0027m learning new things all the time.",
+            "Please don\u0027t give up on me. My performance will continue to improve."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Oh, don\u0027t give up on me just yet. I\u0027ve still got a lot to learn.",
+            "Give me a chance. I\u0027m learning new things all the time.",
+            "Please don\u0027t give up on me. My performance will continue to improve."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578544,
+  "fallbackIntent": false,
+  "events": []
+}

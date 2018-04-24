@@ -1,0 +1,72 @@
+{
+  "id": "b988240a-4d61-4dc9-aa2d-5b35c0c8998c",
+  "name": "smalltalk.user.good",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.user.good",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Great! Glad to hear it.",
+            "Excellent. I\u0027m here to help keep it that way."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Great! Glad to hear it.",
+            "Excellent. I\u0027m here to help keep it that way."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Great! Glad to hear it.",
+            "Excellent. I\u0027m here to help keep it that way."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Great! Glad to hear it.",
+            "Excellent. I\u0027m here to help keep it that way."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Great! Glad to hear it.",
+            "Excellent. I\u0027m here to help keep it that way."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Great! Glad to hear it.",
+            "Excellent. I\u0027m here to help keep it that way."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577446,
+  "fallbackIntent": false,
+  "events": []
+}

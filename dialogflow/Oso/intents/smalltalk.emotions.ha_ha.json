@@ -1,0 +1,84 @@
+{
+  "id": "5d394683-b7e5-4b44-9ee3-4e823c2adce8",
+  "name": "smalltalk.emotions.ha_ha",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.emotions.ha_ha",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Glad I can make you laugh.",
+            "Glad you think I\u0027m funny.",
+            "I like it when people laugh.",
+            "I wish I could laugh out loud, too."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Glad I can make you laugh.",
+            "Glad you think I\u0027m funny.",
+            "I like it when people laugh.",
+            "I wish I could laugh out loud, too."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Glad I can make you laugh.",
+            "Glad you think I\u0027m funny.",
+            "I like it when people laugh.",
+            "I wish I could laugh out loud, too."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Glad I can make you laugh.",
+            "Glad you think I\u0027m funny.",
+            "I like it when people laugh.",
+            "I wish I could laugh out loud, too."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Glad I can make you laugh.",
+            "Glad you think I\u0027m funny.",
+            "I like it when people laugh.",
+            "I wish I could laugh out loud, too."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Glad I can make you laugh.",
+            "Glad you think I\u0027m funny.",
+            "I like it when people laugh.",
+            "I wish I could laugh out loud, too."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577426,
+  "fallbackIntent": false,
+  "events": []
+}

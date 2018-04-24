@@ -1,0 +1,269 @@
+{
+  "id": "af7625e7-c41a-47b3-8931-c3d59e0e23dc",
+  "name": "hcl32",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "4a4fe92b-c090-4e91-8c52-61bf50267e2d",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q1",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I need less sleep"
+            }
+          ]
+        },
+        {
+          "id": "ad614975-a52d-4275-933e-6fa936d33e27",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q2",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I feel more energetic and more active"
+            }
+          ]
+        },
+        {
+          "id": "8670d238-c8a0-49e8-b18f-40b5646b6d89",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q3",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I am more self-confident"
+            }
+          ]
+        },
+        {
+          "id": "e0d6a6b2-cb57-4e28-88da-a4e37055f9ab",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q4",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I enjoy my work more"
+            }
+          ]
+        },
+        {
+          "id": "8e62320e-807f-4164-8cce-795548e8dd44",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q5",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I am more sociable (make more phone calls, go out more)"
+            }
+          ]
+        },
+        {
+          "id": "ec7e95ce-bf33-4867-b541-276bfdeafb7b",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q6",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I want to travel and/or do travel more"
+            }
+          ]
+        },
+        {
+          "id": "03a72ab9-3ce6-402c-a44d-5bd0213b35ab",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q7",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I tend to drive faster or take more risks when driving"
+            }
+          ]
+        },
+        {
+          "id": "12fec5cc-bb57-42ab-ace8-aa7b70b6600b",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q8",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I spend more money/too much money"
+            }
+          ]
+        },
+        {
+          "id": "f5da92da-14b4-4842-9265-a6b5cc11af57",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q9",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I take more risks in my daily life (in my work and/or other activities)"
+            }
+          ]
+        },
+        {
+          "id": "300e0262-ebe1-4336-8d45-d1410c369867",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q10",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I am physically more active (sport etc.)"
+            }
+          ]
+        },
+        {
+          "id": "d2efbca2-a3dd-49e3-8800-3365717b612d",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q11",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I plan more activities or projects"
+            }
+          ]
+        },
+        {
+          "id": "45b8d0a7-5cfb-47c0-bb31-0a7600b8e62a",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q12",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I have more ideas, I am more creative"
+            }
+          ]
+        },
+        {
+          "id": "9a07efd4-e1da-4de7-8b9e-91fde8a2ccc0",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q13",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I am less shy or inhibited"
+            }
+          ]
+        },
+        {
+          "id": "61800fae-5f74-4ecc-b24f-2d5c8d8caf60",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q14",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I wear more colourful and more extravagant clothes/make-up"
+            }
+          ]
+        },
+        {
+          "id": "f84c082a-db1c-48a5-b90c-ca070a037bdd",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q15",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I want to meet or actually do meet more people"
+            }
+          ]
+        },
+        {
+          "id": "0b9cd1ea-a86d-465e-baa8-f06bbb5798c2",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q16",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I am more interested in sex, and/or have increased sexual desire"
+            }
+          ]
+        },
+        {
+          "id": "74e7469a-c2ee-4007-9090-ab7e5551046f",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q17",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I am more flirtatious and/or am more sexually active"
+            }
+          ]
+        },
+        {
+          "id": "1d436857-5e91-4141-bf76-d5b320bcf22d",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q18",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I talk more"
+            }
+          ]
+        },
+        {
+          "id": "217fcf86-47f3-457a-9cd1-1ffc1d6a3337",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q19",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I think faster"
+            }
+          ]
+        },
+        {
+          "id": "b6ef2426-9c88-4400-8d2a-4475dd531eee",
+          "required": true,
+          "dataType": "@yesno",
+          "name": "q20",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I make more jokes or puns when I am talking"
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "That is the first 20 questions of the HCL-32"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1521686290,
+  "fallbackIntent": false,
+  "events": []
+}

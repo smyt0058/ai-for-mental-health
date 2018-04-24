@@ -1,0 +1,36 @@
+{
+  "id": "f66e74b2-27ac-4e97-89e8-76e7a9d2a138",
+  "name": "phq4-fallback",
+  "auto": false,
+  "contexts": [
+    "phq4"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "phq4",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "question four, yes?"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1521581707,
+  "fallbackIntent": true,
+  "events": []
+}

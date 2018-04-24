@@ -1,0 +1,78 @@
+{
+  "id": "682fc6bd-fda5-4a00-9ef6-2d0c7b0c3121",
+  "name": "smalltalk.user.will_be_back",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.user.will_be_back",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "I\u0027ll be waiting.",
+            "Okay. You know where to find me.",
+            "All right. I\u0027ll be here."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I\u0027ll be waiting.",
+            "Okay. You know where to find me.",
+            "All right. I\u0027ll be here."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "I\u0027ll be waiting.",
+            "Okay. You know where to find me.",
+            "All right. I\u0027ll be here."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "I\u0027ll be waiting.",
+            "Okay. You know where to find me.",
+            "All right. I\u0027ll be here."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "I\u0027ll be waiting.",
+            "Okay. You know where to find me.",
+            "All right. I\u0027ll be here."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "I\u0027ll be waiting.",
+            "Okay. You know where to find me.",
+            "All right. I\u0027ll be here."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578465,
+  "fallbackIntent": false,
+  "events": []
+}

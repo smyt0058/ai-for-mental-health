@@ -1,0 +1,44 @@
+{
+  "id": "7d673592-4045-4747-88ac-96f2ff83d752",
+  "name": "phq7-answer",
+  "auto": true,
+  "contexts": [
+    "phq7"
+  ],
+  "responses": [
+    {
+      "resetContexts": true,
+      "affectedContexts": [
+        {
+          "name": "phq7",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "d22a98f9-14e7-4266-940a-c533825189bc",
+          "dataType": "@how_often",
+          "name": "freq",
+          "value": "$freq",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "That was question 7"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1521580661,
+  "fallbackIntent": false,
+  "events": []
+}

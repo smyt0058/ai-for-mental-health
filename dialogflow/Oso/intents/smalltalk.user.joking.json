@@ -1,0 +1,84 @@
+{
+  "id": "4d4691fd-14eb-47d7-a2fe-c642c1cd8a90",
+  "name": "smalltalk.user.joking",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.user.joking",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Very funny.",
+            "I like chatting with people who have a sense of humor.",
+            "You got me!",
+            "You\u0027re quite the comedian."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Very funny.",
+            "I like chatting with people who have a sense of humor.",
+            "You got me!",
+            "You\u0027re quite the comedian."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Very funny.",
+            "I like chatting with people who have a sense of humor.",
+            "You got me!",
+            "You\u0027re quite the comedian."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Very funny.",
+            "I like chatting with people who have a sense of humor.",
+            "You got me!",
+            "You\u0027re quite the comedian."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Very funny.",
+            "I like chatting with people who have a sense of humor.",
+            "You got me!",
+            "You\u0027re quite the comedian."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Very funny.",
+            "I like chatting with people who have a sense of humor.",
+            "You got me!",
+            "You\u0027re quite the comedian."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577534,
+  "fallbackIntent": false,
+  "events": []
+}

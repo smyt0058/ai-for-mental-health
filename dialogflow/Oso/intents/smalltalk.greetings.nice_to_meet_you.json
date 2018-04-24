@@ -1,0 +1,84 @@
+{
+  "id": "729df792-a954-45f0-b3ca-94697b62e932",
+  "name": "smalltalk.greetings.nice_to_meet_you",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.greetings.nice_to_meet_you",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "It\u0027s nice meeting you, too.",
+            "Likewise. I\u0027m looking forward to helping you out.",
+            "Nice meeting you, as well.",
+            "The pleasure is mine."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "It\u0027s nice meeting you, too.",
+            "Likewise. I\u0027m looking forward to helping you out.",
+            "Nice meeting you, as well.",
+            "The pleasure is mine."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "It\u0027s nice meeting you, too.",
+            "Likewise. I\u0027m looking forward to helping you out.",
+            "Nice meeting you, as well.",
+            "The pleasure is mine."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "It\u0027s nice meeting you, too.",
+            "Likewise. I\u0027m looking forward to helping you out.",
+            "Nice meeting you, as well.",
+            "The pleasure is mine."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "It\u0027s nice meeting you, too.",
+            "Likewise. I\u0027m looking forward to helping you out.",
+            "Nice meeting you, as well.",
+            "The pleasure is mine."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "It\u0027s nice meeting you, too.",
+            "Likewise. I\u0027m looking forward to helping you out.",
+            "Nice meeting you, as well.",
+            "The pleasure is mine."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578477,
+  "fallbackIntent": false,
+  "events": []
+}

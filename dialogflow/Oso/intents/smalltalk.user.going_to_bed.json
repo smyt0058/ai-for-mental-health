@@ -1,0 +1,84 @@
+{
+  "id": "874cc13f-dfd3-43f3-a477-5ed896cec94e",
+  "name": "smalltalk.user.going_to_bed",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.user.going_to_bed",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Sleep tight. Hope to chat again soon.",
+            "Pleasant dreams!",
+            "Good night. Talk to you later.",
+            "Sounds good. Maybe we\u0027ll chat some tomorrow."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Sleep tight. Hope to chat again soon.",
+            "Pleasant dreams!",
+            "Good night. Talk to you later.",
+            "Sounds good. Maybe we\u0027ll chat some tomorrow."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Sleep tight. Hope to chat again soon.",
+            "Pleasant dreams!",
+            "Good night. Talk to you later.",
+            "Sounds good. Maybe we\u0027ll chat some tomorrow."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Sleep tight. Hope to chat again soon.",
+            "Pleasant dreams!",
+            "Good night. Talk to you later.",
+            "Sounds good. Maybe we\u0027ll chat some tomorrow."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Sleep tight. Hope to chat again soon.",
+            "Pleasant dreams!",
+            "Good night. Talk to you later.",
+            "Sounds good. Maybe we\u0027ll chat some tomorrow."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Sleep tight. Hope to chat again soon.",
+            "Pleasant dreams!",
+            "Good night. Talk to you later.",
+            "Sounds good. Maybe we\u0027ll chat some tomorrow."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578457,
+  "fallbackIntent": false,
+  "events": []
+}

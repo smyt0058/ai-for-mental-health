@@ -1,0 +1,90 @@
+{
+  "id": "6fcd9648-9a31-4ae7-bcb5-7c3029b91bf0",
+  "name": "smalltalk.agent.acquaintance",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.acquaintance",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "I\u0027m a virtual agent.",
+            "Think of me as a virtual agent.",
+            "Well, I\u0027m not a person, I\u0027m a virtual agent.",
+            "I\u0027m a virtual being, not a real person.",
+            "I\u0027m a conversational app."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I\u0027m a virtual agent.",
+            "Think of me as a virtual agent.",
+            "Well, I\u0027m not a person, I\u0027m a virtual agent.",
+            "I\u0027m a virtual being, not a real person.",
+            "I\u0027m a conversational app."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "I\u0027m a virtual agent.",
+            "Think of me as a virtual agent.",
+            "Well, I\u0027m not a person, I\u0027m a virtual agent.",
+            "I\u0027m a virtual being, not a real person.",
+            "I\u0027m a conversational app."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "I\u0027m a virtual agent.",
+            "Think of me as a virtual agent.",
+            "Well, I\u0027m not a person, I\u0027m a virtual agent.",
+            "I\u0027m a virtual being, not a real person.",
+            "I\u0027m a conversational app."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "I\u0027m a virtual agent.",
+            "Think of me as a virtual agent.",
+            "Well, I\u0027m not a person, I\u0027m a virtual agent.",
+            "I\u0027m a virtual being, not a real person.",
+            "I\u0027m a conversational app."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "I\u0027m a virtual agent.",
+            "Think of me as a virtual agent.",
+            "Well, I\u0027m not a person, I\u0027m a virtual agent.",
+            "I\u0027m a virtual being, not a real person.",
+            "I\u0027m a conversational app."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578354,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "3ed5e81e-0dc9-4c2d-a949-923dcc1e4c9f",
+  "name": "phq3-fallback",
+  "auto": false,
+  "contexts": [
+    "phq3"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "phq3",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "question three please"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1521581658,
+  "fallbackIntent": true,
+  "events": []
+}

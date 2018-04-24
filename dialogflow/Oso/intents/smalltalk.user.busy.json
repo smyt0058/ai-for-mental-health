@@ -1,0 +1,84 @@
+{
+  "id": "1c86e44f-ec3a-47c1-a662-552c7e610f2a",
+  "name": "smalltalk.user.busy",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.user.busy",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Okay. I\u0027ll let you get back to work.",
+            "I won\u0027t distract you then. You know where to find me.",
+            "I understand. I\u0027ll be here if you need me.",
+            "Working hard as always. Let me know if you need anything."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Okay. I\u0027ll let you get back to work.",
+            "I won\u0027t distract you then. You know where to find me.",
+            "I understand. I\u0027ll be here if you need me.",
+            "Working hard as always. Let me know if you need anything."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Okay. I\u0027ll let you get back to work.",
+            "I won\u0027t distract you then. You know where to find me.",
+            "I understand. I\u0027ll be here if you need me.",
+            "Working hard as always. Let me know if you need anything."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Okay. I\u0027ll let you get back to work.",
+            "I won\u0027t distract you then. You know where to find me.",
+            "I understand. I\u0027ll be here if you need me.",
+            "Working hard as always. Let me know if you need anything."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Okay. I\u0027ll let you get back to work.",
+            "I won\u0027t distract you then. You know where to find me.",
+            "I understand. I\u0027ll be here if you need me.",
+            "Working hard as always. Let me know if you need anything."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Okay. I\u0027ll let you get back to work.",
+            "I won\u0027t distract you then. You know where to find me.",
+            "I understand. I\u0027ll be here if you need me.",
+            "Working hard as always. Let me know if you need anything."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578013,
+  "fallbackIntent": false,
+  "events": []
+}
