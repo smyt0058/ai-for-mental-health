@@ -80,7 +80,7 @@ public class ChatActivity extends AppCompatActivity {
     private AppDatabase         database;
 
 
-    private boolean             isQuestionnaire = false;
+    private boolean             isQuestionnaire = true;
     private boolean             isJournal = false;
     private boolean             isFallBack = false;
 
@@ -167,7 +167,7 @@ public class ChatActivity extends AppCompatActivity {
 
         //onBoarding();
 
-
+        msgEventPost("", START_QUESTIONNAIRE_EVENT);
 
 
         addBtn.setOnClickListener(new View.OnClickListener() {
@@ -189,7 +189,21 @@ public class ChatActivity extends AppCompatActivity {
 
                     //pawPoints += pawPointToast(50);
 
-                    msgEventPost(messageContent, REGULAR_CHAT_EVENT);
+                    if(isQuestionnaire == false && isJournal == false && isFallBack == false) {
+
+                        msgEventPost(messageContent, REGULAR_CHAT_EVENT);
+                    }
+
+                    if(isQuestionnaire == true && isJournal == false && isFallBack == false) {
+                        msgEventPost(messageContent, START_QUESTIONNAIRE_EVENT);
+                    }
+
+                    if(isQuestionnaire == true && isJournal == true && isFallBack == false) {
+                        msgEventPost(messageContent, JOURNAL_ENTRY_EVENT);
+                    }
+
+
+                    //msgEventPost(messageContent, REGULAR_CHAT_EVENT);
                     
                     //pawPoints = pawPointToast(25);
                     //gordyMessageSend(messageContent);
