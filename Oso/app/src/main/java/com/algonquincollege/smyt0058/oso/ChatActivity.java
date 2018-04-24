@@ -35,9 +35,7 @@ import android.widget.Toast;
 import com.algonquincollege.smyt0058.oso.database.AppDatabase;
 import com.algonquincollege.smyt0058.oso.database.Converters;
 import com.algonquincollege.smyt0058.oso.database.UserChat;
-
 import com.algonquincollege.smyt0058.oso.fragments.FeedOsoDialogFragment;
-
 import com.algonquincollege.smyt0058.oso.models.ChatMessage;
 import com.algonquincollege.smyt0058.oso.util.api.BaseApiService;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
@@ -51,6 +49,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.regex.Pattern;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -61,7 +60,7 @@ import retrofit2.Response;
  * Created by Jason on 2018-03-19.
  */
 
-public class ChatActivity extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity{
 
     private static final int    REQ_CODE_SPEECH_INPUT = 100;
     private EditText            userMessage;
@@ -193,27 +192,32 @@ public class ChatActivity extends AppCompatActivity {
                     userMessage.getText().clear();
 
 
-                    if(!isQuestionnaire && !isJournal && !isFallBack) {
-
+                    if(!isQuestionnaire && !isJournal) {
                         msgEventPost(messageContent, REGULAR_CHAT_EVENT);
                     }
 
-                    if(isQuestionnaire && !isJournal && !isFallBack) {
-                        msgEventPost(messageContent, "");
-                        ++i;
-                        if(i >= 9) {
-                            pawPoints += pawPointToast(25);
+                    if(isQuestionnaire && !isJournal) {
+
+//                        Pattern validAnswerPattern = Pattern.compile("[1-4]");
+                        if(Pattern.matches("[1-4]", messageContent)){
+                            msgEventPost(messageContent, REGULAR_CHAT_EVENT);
+                        } else {
+                            Date t = Calendar.getInstance().getTime();
+
+                            ChatMessage m = new ChatMessage(getResources().getString(R.string.invalid_answer_fallback), ChatMessage.MSG_TYPE_RECEIVED, t);
+                            chatAdapter.addMessage(m);
                         }
+
 
                     }
 
-                    if(isQuestionnaire && isJournal && !isFallBack) {
+                    if(isQuestionnaire && isJournal) {
                         msgEventPost(messageContent, JOURNAL_ENTRY_EVENT);
                     }
 
 
                     //msgEventPost(messageContent, REGULAR_CHAT_EVENT);
-                    
+
                     //pawPoints = pawPointToast(25);
                     //gordyMessageSend(messageContent);
                     scrollToBottom();
@@ -303,62 +307,6 @@ public class ChatActivity extends AppCompatActivity {
 
     }
 
-    public void msgPost(String content) {
-
-        Call<ResponseBody> call = mApiService.msgPost(authkey, content);
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                if (response.isSuccessful()){
-
-                    try {
-                        JSONObject jsonRESULTS = new JSONObject(response.body().string());
-                        if (jsonRESULTS.getString("errorMessage").equals("success") && !jsonRESULTS.getString("message").equals("")){
-
-                            // If the login is successful then the name data in the response API
-                            // will be parsed to the next activity.
-                            Log.i("Object: ", jsonRESULTS.toString());
-                            String content = jsonRESULTS.getString("message");
-                            Log.i("content: ", content);
-
-                            Date currentTime = Calendar.getInstance().getTime();
-
-                            ChatMessage message = new ChatMessage(content, ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-
-                            chatAdapter.addMessage(message);
-
-                            scrollToBottom();
-
-
-
-                        }
-                        else {
-
-                            String error_message = jsonRESULTS.getString("errorMessage");
-                            serverErrorOso();
-
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } else {
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-
-                Log.e( "tag", "Retrofit Error: " + t.getLocalizedMessage() );
-                //Toast.makeText(ChatActivity.this, "Retrofit Error", Toast.LENGTH_LONG).show();
-                serverErrorOso();
-
-            }
-        });
-    }
-
     public void msgEventPost(String content, String event) {
 
         //Toast.makeText(ChatActivity.this, "msgPost called, passing : " + content, Toast.LENGTH_LONG).show();
@@ -384,6 +332,12 @@ public class ChatActivity extends AppCompatActivity {
                             Log.i("isJournal: ", String.valueOf(isJournal));
                             isFallBack = Boolean.parseBoolean(jsonRESULTS.getString("isFallBack"));
                             Log.i("isFallback: ", String.valueOf(isFallBack));
+
+//                            boolean isQuestionDone = Boolean.parseBoolean(jsonRESULTS.getString("isQuestionDone"));
+//
+//                            if(isQuestionDone) {
+//                                pawPoints += pawPointToast(25);
+//                            }
 
 
 
@@ -437,6 +391,8 @@ public class ChatActivity extends AppCompatActivity {
         });
     }
 
+
+
     public void scrollToBottom() {
 
         int newPosition = chatAdapter.getItemCount() - 1;
@@ -487,6 +443,8 @@ public class ChatActivity extends AppCompatActivity {
         }
 
     }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -623,7 +581,5 @@ public class ChatActivity extends AppCompatActivity {
         chatAdapter.addMessage(onBoarding1);
 
     }
-
-
 }
 

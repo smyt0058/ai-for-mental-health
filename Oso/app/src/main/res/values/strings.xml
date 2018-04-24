@@ -9,6 +9,7 @@
 
     <string name="oso_onboarding_1">Hello my name is Oso :) How are you doing today?</string>
     <string name="potential_answers">Accepted Answers:\n1 = not at all \n2 = several days \n3 = more than half the days \n4 = nearly every day </string>
+    <string name="invalid_answer_fallback">"oops! that wasn't what I was expecting\n try answering the question with a number between 1 and 4"</string>
     <!--<string name="oso_onboarding_3">I am designed to listen and hopefully one day, be your best friend :)</string>-->
     <!--<string name="oso_onboarding_4">Sometimes it can be diffcult to express how we\'re feeling and that\'s why I\'m here</string>-->
     <!--<string name="oso_onboarding_5">I will be asking you a set of questions every two weeks to assess you manic-depressive state</string>-->
