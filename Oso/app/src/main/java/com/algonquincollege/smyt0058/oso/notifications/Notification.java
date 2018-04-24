@@ -7,6 +7,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 
 import com.algonquincollege.smyt0058.oso.ChatActivity;
 import com.algonquincollege.smyt0058.oso.R;
@@ -15,12 +16,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * this is a static class to handle various intent functions
- *
  */
 public class Notification {
-    // purpose unknown, used when creating pending intents
-    static private final int requestCode = 0;
 
     // for notification that appears to user
     static private final int notificationId = 100;
@@ -31,24 +28,29 @@ public class Notification {
     static private final int hour = 12;
     static private final int minute = 0;
 
+    // purpose unknown, used when creating pending intents
+    static private final int requestCode = 0;
+
     /**
      *
      * @param context
      */
     static public void init(Context context) {
 
+        Log.i("NOTIFICATION", "init");
+
         long next = getNextTime();
 
-        // intent - when timer goes off broadcast to this receiver
-        Intent noteIntent = new Intent(
+        // intent - when alarm is activated, broadcast to this receiver
+        Intent i = new Intent(
                 context,
                 AlarmReceiver.class
         );
         // wrap that in a pending intent
-        PendingIntent notePendingIntent = PendingIntent.getBroadcast(
+        PendingIntent pi = PendingIntent.getBroadcast(
                 context,
                 requestCode,
-                noteIntent,
+                i,
                 PendingIntent.FLAG_UPDATE_CURRENT
         );
         // for the system service that manages alarms
@@ -56,7 +58,7 @@ public class Notification {
         noteAlarmManager.set(
                 AlarmManager.RTC,
                 next,
-                notePendingIntent
+                pi
         );
 
     }
@@ -65,7 +67,8 @@ public class Notification {
      *
      * @param context
      */
-    static public void createNotification(Context context) {
+    static public void create(Context context) {
+
         NotificationManager notificationManager;
         NotificationCompat.Builder builder;
 
@@ -78,8 +81,11 @@ public class Notification {
             notificationManager.createNotificationChannel(nc);
         }
 
-        /// this is the target of the notification the user will press on
-        Intent intentGoesHere = new Intent(context, ChatActivity.class);
+        /// this is the target of the notification the user could press on
+        Intent intentGoesHere = new Intent(
+                context,
+                NotificationAccepter.class
+        );
         intentGoesHere.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         PendingIntent pendi = PendingIntent.getActivity(
@@ -100,12 +106,17 @@ public class Notification {
         notificationManager.notify(notificationId, builder.build());
     }
 
+
+
+
     static private long getNextTime() {
         // calendar representation of now
         Calendar c = Calendar.getInstance();
         c.setTime(new Date());
         return c.getTimeInMillis() + 60 * 1000;
     }
+
+
     static private long getNextTime_daily() {
 
         // calendar representation of now
@@ -118,7 +129,7 @@ public class Notification {
         // (by a minute at least)
         c.set(Calendar.HOUR_OF_DAY, hour);
         c.set(Calendar.MINUTE, minute);
-        if (c.getTimeInMillis() < now + 60 * 1000) {
+        if (c.getTimeInMillis() < now + 5 * 1000) {
             c.setTimeInMillis(c.getTimeInMillis() + 24 * 60 * 60 * 1000);
         }
 

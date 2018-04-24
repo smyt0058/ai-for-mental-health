@@ -1,8 +1,6 @@
 package com.algonquincollege.smyt0058.oso;
 
 import android.app.Activity;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.arch.persistence.room.Room;
 import android.content.Context;
@@ -19,7 +17,6 @@ import android.widget.Toast;
 import com.algonquincollege.smyt0058.oso.database.AppDatabase;
 import com.algonquincollege.smyt0058.oso.database.UserChat;
 import com.algonquincollege.smyt0058.oso.models.ChatMessage;
-import com.algonquincollege.smyt0058.oso.notifications.AlarmReceiver;
 import com.algonquincollege.smyt0058.oso.util.api.BaseApiService;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 import com.algonquincollege.smyt0058.oso.util.api.UtilsApi;

@@ -1,8 +1,6 @@
 package com.algonquincollege.smyt0058.oso;
 
-import android.app.AlarmManager;
 import android.app.DialogFragment;
-import android.app.PendingIntent;
 import android.arch.persistence.room.Room;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -38,7 +36,6 @@ import com.algonquincollege.smyt0058.oso.database.AppDatabase;
 import com.algonquincollege.smyt0058.oso.database.Converters;
 import com.algonquincollege.smyt0058.oso.database.UserChat;
 import com.algonquincollege.smyt0058.oso.models.ChatMessage;
-import com.algonquincollege.smyt0058.oso.notifications.AlarmReceiver;
 import com.algonquincollege.smyt0058.oso.util.api.BaseApiService;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 import com.algonquincollege.smyt0058.oso.util.api.UtilsApi;
@@ -95,8 +92,12 @@ public class ChatActivity extends AppCompatActivity {
 
     private String authkey;
 
+    public static boolean isRunning = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        isRunning = true;
 
         super.onCreate(savedInstanceState);
 
@@ -264,7 +265,7 @@ public class ChatActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
 
-
+        isRunning = false;
     }
 
     @Override
