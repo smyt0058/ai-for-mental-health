@@ -31,4 +31,6 @@
     <string name="themes_text">pick a theme for the app</string>
     <string name="preferences">preferences</string>
     <string name="login_policy">By using Oso, you agree to our Terms and Privacy Policy</string>
+    <string name="notification_title">Oso</string>
+    <string name="notification_text">hey, I have some questions</string>
 </resources>

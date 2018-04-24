@@ -43,6 +43,8 @@ import com.algonquincollege.smyt0058.oso.util.api.BaseApiService;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 import com.algonquincollege.smyt0058.oso.util.api.UtilsApi;
 
+import com.algonquincollege.smyt0058.oso.notifications.Notification;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -254,9 +256,7 @@ public class ChatActivity extends AppCompatActivity {
         });
 
 
-        // TODO
-        // this is a test of notification piece added to build
-        createNotification();
+        Notification.init(getApplicationContext());
 
     }
 
@@ -611,61 +611,6 @@ public class ChatActivity extends AppCompatActivity {
 //
 //
 //    }
-
-
-    void createNotification() {
-        Context context = getApplicationContext();
-
-        Calendar c = Calendar.getInstance();
-        Date d = new Date();
-
-        c.setTime(d);
-
-        long milis = c.getTimeInMillis();
-        milis += 1000 * 5;
-        c.setTimeInMillis(milis);
-
-
-        Intent intent = new Intent(
-                context,
-                AlarmReceiver.class
-        );
-
-
-        // these values hardcoded
-        // TODO
-        String action = "Oso wants to chat";
-        intent.setAction(action);
-
-        // i am unsure, but action might be intended for a function name, and data is uri parameters???
-        //intent.setData(Uri.parse("id=1"));
-
-
-
-        // TODO
-        // these variables to be moved out of method
-        final int requestCodeUnknown = 100;
-        AlarmManager notificationAlarmManager;
-        PendingIntent notificationPendingIntent;
-
-
-        notificationPendingIntent = PendingIntent.getBroadcast(
-                context,
-                requestCodeUnknown,
-                intent,
-                PendingIntent.FLAG_UPDATE_CURRENT
-        );
-
-        notificationAlarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-
-        notificationAlarmManager.set(
-                AlarmManager.RTC,
-                c.getTimeInMillis(),
-                notificationPendingIntent
-        );
-
-
-    }
 
 }
 
