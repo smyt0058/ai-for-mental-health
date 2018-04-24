@@ -86,7 +86,7 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".notifications.AlarmReceiver"></receiver>
+        <receiver android:name=".notifications.AlarmReceiver"/>
         <receiver android:name=".notifications.NotificationAccepter"/>
     </application>
 
