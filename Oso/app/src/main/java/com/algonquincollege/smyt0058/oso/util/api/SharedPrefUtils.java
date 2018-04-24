@@ -88,6 +88,8 @@ public class SharedPrefUtils {
 
     }
 
+
+
     public static void putSettingsState(Context ctx, int hour, int minute){
         SharedPreferences prefs = ctx.getSharedPreferences(ctx.getString(R.string.preference_file_key), ctx.MODE_PRIVATE);
         prefs.edit().putInt(QUESTIONNAIRE_HOUR_OF_DAY, hour).putInt(QUESTIONNAIRE_MINUTE_OF_DAY, minute).apply();
