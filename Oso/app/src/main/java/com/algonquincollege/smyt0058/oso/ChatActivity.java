@@ -41,6 +41,8 @@ import com.algonquincollege.smyt0058.oso.util.api.BaseApiService;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 import com.algonquincollege.smyt0058.oso.util.api.UtilsApi;
 
+import com.algonquincollege.smyt0058.oso.notifications.Notification;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -95,8 +97,12 @@ public class ChatActivity extends AppCompatActivity{
 
     private String authkey;
 
+    public static boolean isRunning = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        isRunning = true;
 
         super.onCreate(savedInstanceState);
 
@@ -267,6 +273,7 @@ public class ChatActivity extends AppCompatActivity{
         });
 
 
+        Notification.init(getApplicationContext());
 
     }
 
@@ -274,7 +281,7 @@ public class ChatActivity extends AppCompatActivity{
     protected void onDestroy() {
         super.onDestroy();
 
-
+        isRunning = false;
     }
 
     @Override
