@@ -80,7 +80,7 @@ public class ChatActivity extends AppCompatActivity {
     private AppDatabase         database;
 
 
-    private boolean             isQuestionnaire = true;
+    private boolean             isQuestionnaire = false;
     private boolean             isJournal = false;
     private boolean             isFallBack = false;
 
@@ -167,7 +167,10 @@ public class ChatActivity extends AppCompatActivity {
 
         //onBoarding();
 
-        msgEventPost("", START_QUESTIONNAIRE_EVENT);
+        if(!isQuestionnaire) {
+            msgEventPost("", START_QUESTIONNAIRE_EVENT);
+        }
+
 
 
         addBtn.setOnClickListener(new View.OnClickListener() {
@@ -187,15 +190,15 @@ public class ChatActivity extends AppCompatActivity {
 
                     userMessage.getText().clear();
 
-                    //pawPoints += pawPointToast(50);
 
-                    if(isQuestionnaire == false && isJournal == false && isFallBack == false) {
+                    if(!isQuestionnaire && isJournal == false && isFallBack == false) {
 
                         msgEventPost(messageContent, REGULAR_CHAT_EVENT);
                     }
 
                     if(isQuestionnaire == true && isJournal == false && isFallBack == false) {
-                        msgEventPost(messageContent, START_QUESTIONNAIRE_EVENT);
+                        msgEventPost(messageContent, "");
+                        pawPoints += pawPointToast(25);
                     }
 
                     if(isQuestionnaire == true && isJournal == true && isFallBack == false) {
@@ -369,17 +372,28 @@ public class ChatActivity extends AppCompatActivity {
                             // will be parsed to the next activity.
                             Log.i("Object: ", jsonRESULTS.toString());
                             String content = jsonRESULTS.getString("message");
+                            isQuestionnaire = Boolean.parseBoolean(jsonRESULTS.getString("isQuestion"));
+                            Log.i("isQuestionnaire: ", String.valueOf(isQuestionnaire));
+                            isJournal = Boolean.parseBoolean(jsonRESULTS.getString("isJournal"));
+                            Log.i("isJournal: ", String.valueOf(isJournal));
+                            isFallBack = Boolean.parseBoolean(jsonRESULTS.getString("isFallBack"));
+                            Log.i("isFallback: ", String.valueOf(isFallBack));
+
+
+
                             Log.i("content: ", content);
 
+
+
                             Date currentTime = Calendar.getInstance().getTime();
-
                             ChatMessage message = new ChatMessage(content, ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-
-                            //Toast.makeText(ChatActivity.this, "Response: " + message.getMessageContent(), Toast.LENGTH_SHORT).show();
-
-
-
                             chatAdapter.addMessage(message);
+
+                            if(isQuestionnaire && !isJournal && !isFallBack) {
+                                Date time = Calendar.getInstance().getTime();
+                                ChatMessage potentialAnswerMessage = new ChatMessage(getResources().getString(R.string.potential_answers), ChatMessage.MSG_TYPE_RECEIVED, time);
+                                chatAdapter.addMessage(potentialAnswerMessage);
+                            }
 
                             //questionAskedMax += 1;
 
@@ -519,59 +533,59 @@ public class ChatActivity extends AppCompatActivity {
                     }
                 }, 1000);
 
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        Date currentTime = Calendar.getInstance().getTime();
-                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-                        ChatMessage onBoarding2 = new ChatMessage(getResources().getString(R.string.oso_onboarding_2), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-                        chatAdapter.addMessage(onBoarding2);
-                        scrollToBottom();
-                    }
-                }, 3000);
-
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        Date currentTime = Calendar.getInstance().getTime();
-                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-                        ChatMessage onBoarding3 = new ChatMessage(getResources().getString(R.string.oso_onboarding_3), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-                        chatAdapter.addMessage(onBoarding3);
-                        scrollToBottom();
-                    }
-                }, 5000);
-
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        Date currentTime = Calendar.getInstance().getTime();
-                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-                        ChatMessage onBoarding4 = new ChatMessage(getResources().getString(R.string.oso_onboarding_4), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-                        chatAdapter.addMessage(onBoarding4);
-                        scrollToBottom();
-                    }
-                }, 7000);
-
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        Date currentTime = Calendar.getInstance().getTime();
-                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-                        ChatMessage onBoarding4 = new ChatMessage(getResources().getString(R.string.oso_onboarding_5), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-                        chatAdapter.addMessage(onBoarding4);
-                        scrollToBottom();
-                    }
-                }, 8000);
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        Date currentTime = Calendar.getInstance().getTime();
-                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-                        ChatMessage onBoarding4 = new ChatMessage(getResources().getString(R.string.oso_onboarding_6), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-                        chatAdapter.addMessage(onBoarding4);
-                        scrollToBottom();
-                    }
-                }, 8000);
+//        new android.os.Handler().postDelayed(
+//                new Runnable() {
+//                    public void run() {
+//                        Date currentTime = Calendar.getInstance().getTime();
+//                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
+//                        ChatMessage onBoarding2 = new ChatMessage(getResources().getString(R.string.oso_onboarding_2), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
+//                        chatAdapter.addMessage(onBoarding2);
+//                        scrollToBottom();
+//                    }
+//                }, 3000);
+//
+//        new android.os.Handler().postDelayed(
+//                new Runnable() {
+//                    public void run() {
+//                        Date currentTime = Calendar.getInstance().getTime();
+//                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
+//                        ChatMessage onBoarding3 = new ChatMessage(getResources().getString(R.string.oso_onboarding_3), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
+//                        chatAdapter.addMessage(onBoarding3);
+//                        scrollToBottom();
+//                    }
+//                }, 5000);
+//
+//        new android.os.Handler().postDelayed(
+//                new Runnable() {
+//                    public void run() {
+//                        Date currentTime = Calendar.getInstance().getTime();
+//                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
+//                        ChatMessage onBoarding4 = new ChatMessage(getResources().getString(R.string.oso_onboarding_4), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
+//                        chatAdapter.addMessage(onBoarding4);
+//                        scrollToBottom();
+//                    }
+//                }, 7000);
+//
+//        new android.os.Handler().postDelayed(
+//                new Runnable() {
+//                    public void run() {
+//                        Date currentTime = Calendar.getInstance().getTime();
+//                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
+//                        ChatMessage onBoarding4 = new ChatMessage(getResources().getString(R.string.oso_onboarding_5), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
+//                        chatAdapter.addMessage(onBoarding4);
+//                        scrollToBottom();
+//                    }
+//                }, 8000);
+//        new android.os.Handler().postDelayed(
+//                new Runnable() {
+//                    public void run() {
+//                        Date currentTime = Calendar.getInstance().getTime();
+//                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
+//                        ChatMessage onBoarding4 = new ChatMessage(getResources().getString(R.string.oso_onboarding_6), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
+//                        chatAdapter.addMessage(onBoarding4);
+//                        scrollToBottom();
+//                    }
+//                }, 8000);
 
 
     }
