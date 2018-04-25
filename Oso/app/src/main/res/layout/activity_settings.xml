@@ -40,9 +40,11 @@
 
     <Button
         android:id="@+id/changeTimeBtn"
-        android:layout_width="116dp"
-        android:layout_height="27dp"
-        android:layout_alignEnd="@+id/nameChangeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:layout_alignEnd="@+id/oldPasswordET"
         android:layout_alignTop="@+id/questionTimeTV"
         android:background="@drawable/loginbtn_rounded_rectangle"
         android:onClick="changeTimeBtnOnClick"
@@ -91,7 +93,7 @@
         android:textSize="20dp" />
 
     <ImageView
-        android:id="@+id/nameChangeBtn"
+        android:id="@+id/oldPasswordET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
