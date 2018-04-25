@@ -64,7 +64,7 @@ public class ChangePasswordDialog extends android.app.DialogFragment implements 
 
         view = inflater.inflate(R.layout.oso_change_password_dialog,  null);
 
-        oldPasswordET = view.findViewById(R.id.nameChangeBtn);
+        oldPasswordET = view.findViewById(R.id.oldPasswordET);
         newPasswordET = view.findViewById(R.id.newPasswordET);
         confirmPasswordET = view.findViewById(R.id.confirmPasswordET);
 

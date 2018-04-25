@@ -7,26 +7,26 @@
     android:layout_height="match_parent"
     android:background="#EAFAFF">
 
-    <TextView
-        android:id="@+id/changePasswordTV"
-        android:layout_width="294dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="61dp"
-        android:text="Pick A Nickname"
-        android:textAlignment="center"
-        android:textSize="28dp"
-        app:layout_constraintBottom_toTopOf="@+id/nameChangeBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--<TextView-->
+        <!--android:id="@+id/changePasswordTV"-->
+        <!--android:layout_width="294dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="61dp"-->
+        <!--android:text="Pick A Nickname"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textSize="28dp"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/oldPasswordET"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
 
     <TextView
         android:id="@+id/oldPasswordTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/changePasswordTV"
+        android:layout_alignStart="@+id/nameET"
         android:layout_below="@+id/changePasswordTV"
         android:layout_marginTop="25dp"
         android:text="New Nickname"
@@ -37,6 +37,8 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/oldPasswordTV"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/login_rounded_rectangle"
         android:ems="10"
