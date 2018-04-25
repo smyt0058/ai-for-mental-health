@@ -64,38 +64,38 @@ import retrofit2.Response;
 
 public class ChatActivity extends AppCompatActivity{
 
-    private static final int    REQ_CODE_SPEECH_INPUT = 100;
-    private EditText            userMessage;
-    private RecyclerView        mMessageRecyclerview;
-    private RelativeLayout      addBtn;
-    private Boolean             flagFab = true;
-    private ChatAdapter         chatAdapter;
-    private Toolbar             toolbar;
-    private BaseApiService      mApiService;
-    private int                 sessionID = 1;
-    private int                 lastQuestionDay;
+    private static final int            REQ_CODE_SPEECH_INPUT = 100;
+    private EditText                    userMessage;
+    private static RecyclerView                mMessageRecyclerview;
+    private RelativeLayout              addBtn;
+    private Boolean                     flagFab = true;
+    private static ChatAdapter          chatAdapter;
+    private Toolbar                     toolbar;
+    private static BaseApiService       mApiService;
+    private int                         sessionID = 1;
+    private int                         lastQuestionDay;
   
-    public int                  questionAskedMax = 0;
-    public int                  pawPoints = 0;
-    public boolean              isTimeForQuestion;
-    private AppDatabase         database;
+    public int                          questionAskedMax = 0;
+    public int                          pawPoints = 0;
+    public boolean                      isTimeForQuestion;
+    private AppDatabase                 database;
+    private static Context              activityContext;
 
 
-    private boolean             isQuestionnaire = false;
-    private boolean             isJournal = false;
-    private boolean             isFallBack = false;
+    private static boolean              isQuestionnaire = false;
+    private static boolean              isJournal = false;
+    private static boolean              isFallBack = false;
 
     private static final String FEED_OSO_DIALOG_TAG = "Feed Oso Dialog";
     private final String        DATABASE_NAME = "OSO_DATABASE";
     private final String        JOURNAL_ENTRY_EVENT = "journalEntry";
     public static final String        START_QUESTIONNAIRE_EVENT = "question";
     private final String        REGULAR_CHAT_EVENT = "";
-
     int i = 0;
 
-    ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
+    ArrayList<ChatMessage> messageArrayList = new ArrayList<>();
 
-    private String authkey;
+    private static String authkey;
 
     public static boolean isRunning = false;
     private static ChatActivity instance;
@@ -111,6 +111,8 @@ public class ChatActivity extends AppCompatActivity{
         instance = this;
 
         super.onCreate(savedInstanceState);
+
+        activityContext = getApplicationContext();
 
         SharedPreferences prefs = SharedPrefUtils.getAppState(getApplicationContext());
 
@@ -132,14 +134,6 @@ public class ChatActivity extends AppCompatActivity{
 
             }
         }) .start();
-
-
-
-        //String test = cursor.getString(cursor.getColumnIndex("chatHistory"));
-
-
-
-        lastQuestionDay = Calendar.DAY_OF_MONTH;
 
         mApiService = UtilsApi.getAPIService();
 
@@ -344,7 +338,7 @@ public class ChatActivity extends AppCompatActivity{
         }
     }
 
-    public void msgEventPost(String content, String event) {
+    public static void msgEventPost(String content, final String event) {
 
         //Toast.makeText(ChatActivity.this, "msgPost called, passing : " + content, Toast.LENGTH_LONG).show();
 
@@ -380,32 +374,32 @@ public class ChatActivity extends AppCompatActivity{
 
                             Log.i("content: ", content);
 
+                            if(event.equals(JOURNAL_ENTRY_EVENT)) {
+                                Date time = Calendar.getInstance().getTime();
+                                ChatMessage potentialAnswerMessage = new ChatMessage(activityContext.getResources().getString(R.string.journal_thanks), ChatMessage.MSG_TYPE_RECEIVED, time);
+                                chatAdapter.addMessage(potentialAnswerMessage);
+                            }
+
 
 
                             Date currentTime = Calendar.getInstance().getTime();
                             ChatMessage message = new ChatMessage(content, ChatMessage.MSG_TYPE_RECEIVED, currentTime);
                             chatAdapter.addMessage(message);
 
-                            if(isQuestionnaire && !isJournal && !isFallBack) {
+                            if(isQuestionnaire && !isJournal) {
                                 Date time = Calendar.getInstance().getTime();
-                                ChatMessage potentialAnswerMessage = new ChatMessage(getResources().getString(R.string.potential_answers), ChatMessage.MSG_TYPE_RECEIVED, time);
+                                ChatMessage potentialAnswerMessage = new ChatMessage(activityContext.getResources().getString(R.string.potential_answers), ChatMessage.MSG_TYPE_RECEIVED, time);
                                 chatAdapter.addMessage(potentialAnswerMessage);
                             }
 
-                            //questionAskedMax += 1;
-
                             scrollToBottom();
-
-                            //pawPoints += pawPointToast(75);
-
-
 
                         }
                         else {
-                            // Jika login gagal
                             String error_message = jsonRESULTS.getString("errorMessage");
-                            Toast.makeText(ChatActivity.this, error_message, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activityContext, error_message, Toast.LENGTH_SHORT).show();
                             serverErrorOso();
+                            scrollToBottom();
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -430,7 +424,7 @@ public class ChatActivity extends AppCompatActivity{
 
 
 
-    public void scrollToBottom() {
+    public static void scrollToBottom() {
 
         int newPosition = chatAdapter.getItemCount() - 1;
 
@@ -612,7 +606,7 @@ public class ChatActivity extends AppCompatActivity{
 
     }
 
-    public void serverErrorOso() {
+    public static void serverErrorOso() {
         Date currentTime = Calendar.getInstance().getTime();
         ChatMessage onBoarding1 = new ChatMessage("This is embarassing... It looks like the server were I live is down right now. Feel free to try again later :) ", ChatMessage.MSG_TYPE_RECEIVED, currentTime);
         chatAdapter.addMessage(onBoarding1);
