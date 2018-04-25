@@ -25,6 +25,13 @@ if the chat activity is not running it creates a notification for the user.
 
     Notification.create()
 
+### class NotificationReceiver
+
+This is a broadcast receiver that sends an action to ChatActivity
+
+
+
+### logic
 
 the sequence of conditionals to go through when an alarm is received:
 
