@@ -37,11 +37,10 @@ import com.algonquincollege.smyt0058.oso.database.Converters;
 import com.algonquincollege.smyt0058.oso.database.UserChat;
 import com.algonquincollege.smyt0058.oso.fragments.FeedOsoDialogFragment;
 import com.algonquincollege.smyt0058.oso.models.ChatMessage;
+import com.algonquincollege.smyt0058.oso.notifications.Notification;
 import com.algonquincollege.smyt0058.oso.util.api.BaseApiService;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 import com.algonquincollege.smyt0058.oso.util.api.UtilsApi;
-
-import com.algonquincollege.smyt0058.oso.notifications.Notification;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -84,13 +83,13 @@ public class ChatActivity extends AppCompatActivity{
 
     private boolean              isQuestionnaire = false;
     private boolean              isJournal = false;
-    private boolean              isFallBack = false;
 
-    private final String         FEED_OSO_DIALOG_TAG = "Feed Oso Dialog";
-    private final String         DATABASE_NAME = "OSO_DATABASE";
-    private final String         JOURNAL_ENTRY_EVENT = "journalEntry";
-    private final String         START_QUESTIONNAIRE_EVENT = "question";
-    private final String         REGULAR_CHAT_EVENT = "";
+
+    private static final String FEED_OSO_DIALOG_TAG = "Feed Oso Dialog";
+    private final String        DATABASE_NAME = "OSO_DATABASE";
+    private final String        JOURNAL_ENTRY_EVENT = "journalEntry";
+    public static final String        START_QUESTIONNAIRE_EVENT = "question";
+    private final String        REGULAR_CHAT_EVENT = "";
 
     int i = 0;
 
@@ -99,11 +98,17 @@ public class ChatActivity extends AppCompatActivity{
     private static String authkey;
 
     public static boolean isRunning = false;
+    private static ChatActivity instance;
+
+    public static void staticGo() {
+        instance.msgEventPost("", ChatActivity.START_QUESTIONNAIRE_EVENT);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         isRunning = true;
+        instance = this;
 
         super.onCreate(savedInstanceState);
 
@@ -169,9 +174,9 @@ public class ChatActivity extends AppCompatActivity{
 
         //onBoarding();
 
-        if(!isQuestionnaire) {
-            msgEventPost("", START_QUESTIONNAIRE_EVENT);
-        }
+//        if(!isQuestionnaire) {
+//            msgEventPost("", START_QUESTIONNAIRE_EVENT);
+//        }
 
 
 
@@ -267,9 +272,24 @@ public class ChatActivity extends AppCompatActivity{
             }
         });
 
-
+        // ---
         Notification.init(getApplicationContext());
 
+        //
+        Intent i = getIntent();
+        try {
+            if (i != null) {
+                String a = i.getAction();
+                if ("ca.edumedia.INITIATE".equals(a)) {
+                    Log.i("NOTIFICATION", "msgEventPost in onCreate gets called");
+                    isQuestionnaire = false;
+                    isJournal = false;
+                    msgEventPost("", START_QUESTIONNAIRE_EVENT);
+                }
+            }
+        } catch (Exception e) {
+            Log.i("NOTIFICATION", "error in chat activity on-create");
+        }
     }
 
     @Override
@@ -309,6 +329,19 @@ public class ChatActivity extends AppCompatActivity{
 
         pawPoints = prefs.getInt(SharedPrefUtils.PAW_POINTS, 0);
 
+        //
+//        Intent i = getIntent();
+//        try {
+//            if (i != null) {
+//                String a = i.getAction();
+//                if ("ca.edumedia.INITIATE".equals(a)) {
+//                    Log.i("NOTIFICATION", "msgEventPost get's called");
+//                    msgEventPost("", START_QUESTIONNAIRE_EVENT);
+//                }
+//            }
+//        } catch (Exception e) {
+//            Log.i("NOTIFICATION", "error in chat activity on-resume");
+//        }
     }
 
     public void msgEventPost(String content, final String event) {
@@ -336,11 +369,11 @@ public class ChatActivity extends AppCompatActivity{
                             Log.i("isJournal: ", String.valueOf(isJournal));
                             Log.i("send event", event);
 
-//                            boolean isQuestionDone = Boolean.parseBoolean(jsonRESULTS.getString("isQuestionDone"));
-//
-//                            if(isQuestionDone) {
-//                                pawPoints += pawPointToast(25);
-//                            }
+                            boolean isQuestionDone = Boolean.parseBoolean(jsonRESULTS.getString("isQuestionDone"));
+
+                            if(isQuestionDone) {
+                                pawPoints += pawPointToast(25);
+                            }
 
 
 
