@@ -24,6 +24,7 @@ public class NeckWearClosetTab extends Fragment {
 
     private View view;
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class NeckWearClosetTab extends Fragment {
 
     }
 
+    //Sets current state every time the fragment comes back into view
     @Override
     public void onResume() {
         super.onResume();
@@ -46,6 +48,7 @@ public class NeckWearClosetTab extends Fragment {
 
     }
 
+    //Sets current tab state based off of data from shared preferences
     public void setState(View view) {
 
         SharedPreferences prefs = SharedPrefUtils.getAppState(getActivity());

@@ -39,6 +39,7 @@ public class NeckWearStoreTab extends Fragment {
         return view;
     }
 
+    //Sets current state every time the fragment comes back into view
     @Override
     public void onResume() {
         super.onResume();
@@ -47,6 +48,7 @@ public class NeckWearStoreTab extends Fragment {
 
     }
 
+    //Sets current tab state based off of data from shared preferences
     public void setState(View view) {
 
         SharedPreferences prefs = SharedPrefUtils.getAppState(getActivity());

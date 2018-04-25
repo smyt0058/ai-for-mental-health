@@ -51,11 +51,6 @@ public class ChangeNameDialog extends DialogFragment implements View.OnClickList
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         mApiService = UtilsApi.getAPIService();
 
-
-
-
-
-
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         // Get the layout inflater
         inflater = (getActivity()).getLayoutInflater();
@@ -82,6 +77,7 @@ public class ChangeNameDialog extends DialogFragment implements View.OnClickList
     @Override
     public void onClick(View view) {
 
+        //checks which button is clicked and runs appropriate method
         if(view.equals(doneBtn)){
             currentName = nameET.getText().toString();
             currentName = currentName.substring(0,1).toUpperCase() + currentName.substring(1).toLowerCase();
@@ -133,6 +129,7 @@ public class ChangeNameDialog extends DialogFragment implements View.OnClickList
 
     }
 
+    //generates custom toast message to user
     public void newNameToast(String message) {
 
         View layout = inflater.inflate(R.layout.paw_point_toast_layout,

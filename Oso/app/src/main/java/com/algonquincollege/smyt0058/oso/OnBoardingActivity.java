@@ -4,13 +4,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.codemybrainsout.onboarder.AhoyOnboarderActivity;
 import com.codemybrainsout.onboarder.AhoyOnboarderCard;
 
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * Created by Jason on 2018-03-22.
+ *
+ * OnBoardingActivity
+ * runs onboarding module
+ *
+ */
+
 
 public class OnBoardingActivity extends AhoyOnboarderActivity {
 

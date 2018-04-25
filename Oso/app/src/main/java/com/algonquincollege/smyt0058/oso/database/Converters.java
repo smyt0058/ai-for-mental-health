@@ -11,6 +11,10 @@ import java.util.ArrayList;
 
 /**
  * Created by Jason on 2018-04-17.
+ *
+ * Converters class
+ * used to convert ArrayList into primitive data type for database
+ *
  */
 
 public class Converters {

@@ -59,6 +59,7 @@ public class FeedOsoDialogFragment extends DialogFragment {
                     }
                 });
 
+        //Sets up click listeners for all food images
         mDonut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
