@@ -5,15 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 
 /**
- *
+ *  see README.md
  */
 public class BootReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-
-        // use static class to setup alarm
-
         Notification.init(context);
     }
 }

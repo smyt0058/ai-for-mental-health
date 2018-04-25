@@ -17,6 +17,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
+ * see README.md
  */
 public class Notification {
 
@@ -33,7 +34,7 @@ public class Notification {
     static private int requestCode = 0;
 
     /**
-     *
+     * "init" registers an alarm with the android OS
      * @param context
      */
     static public void init(Context context) {
@@ -44,19 +45,20 @@ public class Notification {
         SharedPreferences prefs = SharedPrefUtils.getAppState(context);
         long next = prefs.getLong(SharedPrefUtils.NEXT_QUESTIONNAIRE_DATE, 0);
         if (next == 0) {
-            next = getNextTime_daily(context);
+            next = getNextTime(context);
             SharedPrefUtils.putNextDateState(context, next);
         }
 
         // because user adjusting hour and day might have put next in past
+        // the if statement could be combined with the one above for
+        // what is about the same as getNextTime()
         Calendar c = Calendar.getInstance();
         c.setTime(new Date());
         long now = c.getTimeInMillis();
-
         if (next < now) {
-            SharedPrefUtils.putNextDateState(context, next + 24 * 60 * 60 * 1000);
+            next += 24 * 60 * 60 * 1000;
+            SharedPrefUtils.putNextDateState(context, next);
         }
-
 
         // intent - when alarm is activated, broadcast to this receiver
         Intent i = new Intent(
@@ -81,7 +83,7 @@ public class Notification {
     }
 
     /**
-     *
+     * "create" posts a notification to the user
      * @param context
      */
     static public void create(Context context) {
@@ -99,6 +101,7 @@ public class Notification {
         }
 
         Intent intentGoesHere = new Intent(context, NotificationReceiver.class);
+        // note: this action has been changed. should delete next line
         intentGoesHere.setAction("com.algonquincollege.smyt0058.oso.notif");
         PendingIntent pendi = PendingIntent.getBroadcast(
                 context,
@@ -118,22 +121,15 @@ public class Notification {
         notificationManager.notify(notificationId, builder.build());
     }
 
-
-
-
-    static private long getNextTime() {
-        // calendar representation of now
-        Calendar c = Calendar.getInstance();
-        c.setTime(new Date());
-        return c.getTimeInMillis() + 15 * 1000;
-    }
-
-
-    static private long getNextTime_daily(Context context) {
+    /**
+      * "getNextTime" gets the SharedPreferences hour of day, within the next 24 hour block
+      * @returns time in milliseconds
+      */
+    static private long getNextTime(Context context) {
 
         SharedPreferences prefs = SharedPrefUtils.getAppState(context);
-        hour = prefs.getInt(SharedPrefUtils.QUESTIONNAIRE_HOUR_OF_DAY, 03);
-        minute = prefs.getInt(SharedPrefUtils.QUESTIONNAIRE_MINUTE_OF_DAY, 04);
+        hour = prefs.getInt(SharedPrefUtils.QUESTIONNAIRE_HOUR_OF_DAY, 13);
+        minute = prefs.getInt(SharedPrefUtils.QUESTIONNAIRE_MINUTE_OF_DAY, 0);
 
         // calendar representation of now
         Calendar c = Calendar.getInstance();

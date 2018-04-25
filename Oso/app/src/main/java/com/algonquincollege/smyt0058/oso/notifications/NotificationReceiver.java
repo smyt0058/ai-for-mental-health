@@ -7,22 +7,21 @@ import android.util.Log;
 
 import com.algonquincollege.smyt0058.oso.ChatActivity;
 
+/**
+ * see README.md
+ */
 public class NotificationReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
         Log.i("NOTIFICATION", "on receive the notification press");
 
-        // start chat activity with action that will initiate questionnaire
-
         // check if chat activity is open
          if (ChatActivity.isRunning) {
+             // request questionnaire from survey because
+             // the intent action below would not be run in OnCreate
              ChatActivity.staticGo();
          }
-
-        // if it is ask it to initiate questionnaire and appear
-
-        //Log.i("NOTIFICATION", "chat is running");
 
         Intent intentGoesHere = new Intent(
                 context,
@@ -31,7 +30,7 @@ public class NotificationReceiver extends BroadcastReceiver {
         intentGoesHere.setAction("ca.edumedia.INITIATE");
         context.startActivity(intentGoesHere);
 
-        // gets the next time
+        // register the next time for a notification to appear
         Notification.init(context);
     }
 }
