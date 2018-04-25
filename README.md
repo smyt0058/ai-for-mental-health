@@ -17,7 +17,7 @@ Android Studio
 
 ### Installing & Deployment
 
-Please see the DDD-OSO file.  It will contain all the required steps to setup the development env.
+Please see the DDD-OSO.pdf file.  It will contain all the required steps to setup the development env.
 
 ## Built With
 
