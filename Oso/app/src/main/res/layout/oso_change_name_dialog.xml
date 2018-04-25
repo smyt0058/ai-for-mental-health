@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAFAFF">
+
+    <!--<TextView-->
+        <!--android:id="@+id/changePasswordTV"-->
+        <!--android:layout_width="294dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="61dp"-->
+        <!--android:text="Pick A Nickname"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textSize="28dp"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/oldPasswordET"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+    <TextView
+        android:id="@+id/oldPasswordTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/nameET"
+        android:layout_below="@+id/changePasswordTV"
+        android:layout_marginTop="25dp"
+        android:text="New Nickname"
+        android:textColor="@color/theme1_colorAccent" />
+
+    <EditText
+        android:id="@+id/nameET"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/oldPasswordTV"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/login_rounded_rectangle"
+        android:ems="10"
+        android:hint="nickname"
+        android:inputType="textCapSentences"
+        android:padding="10dp" />
+
+
+
+    <Button
+        android:id="@+id/doneNameChange"
+        android:layout_width="75dp"
+        android:layout_height="27dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_below="@id/nameET"
+        android:layout_marginEnd="76dp"
+        android:background="@drawable/loginbtn_rounded_rectangle"
+        android:radius="20dp"
+        android:text="Done"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/cancelNameChange"
+        android:layout_width="75dp"
+        android:layout_height="27dp"
+        android:layout_below="@+id/nameET"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/loginbtn_rounded_rectangle"
+        android:radius="20dp"
+        android:text="Cancel"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

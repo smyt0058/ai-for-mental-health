@@ -1,0 +1,37 @@
+{
+  "id": "ba688bee-8c04-4c2e-a7d3-de2436404277",
+  "name": "phq2-fallback",
+  "auto": false,
+  "contexts": [
+    "phq2"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "phq2",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "question two eh?"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1521576311,
+  "fallbackIntent": true,
+  "events": []
+}

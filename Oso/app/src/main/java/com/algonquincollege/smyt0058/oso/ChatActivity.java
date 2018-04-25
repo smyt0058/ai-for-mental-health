@@ -1,10 +1,12 @@
 package com.algonquincollege.smyt0058.oso;
 
 import android.app.DialogFragment;
+import android.arch.persistence.room.Room;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -30,7 +32,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.algonquincollege.smyt0058.oso.database.AppDatabase;
+import com.algonquincollege.smyt0058.oso.database.Converters;
+import com.algonquincollege.smyt0058.oso.database.UserChat;
+import com.algonquincollege.smyt0058.oso.fragments.FeedOsoDialogFragment;
 import com.algonquincollege.smyt0058.oso.models.ChatMessage;
+import com.algonquincollege.smyt0058.oso.notifications.Notification;
 import com.algonquincollege.smyt0058.oso.util.api.BaseApiService;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 import com.algonquincollege.smyt0058.oso.util.api.UtilsApi;
@@ -43,6 +50,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.regex.Pattern;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -51,47 +59,89 @@ import retrofit2.Response;
 
 /**
  * Created by Jason on 2018-03-19.
+ *
+ * ChatActivity
+ * Where the magic happens.
+ * for all intent and purposes this is the main activity.
+ *
+ *
  */
 
-public class ChatActivity extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity{
 
-    private static final int    REQ_CODE_SPEECH_INPUT = 100;
-    private EditText            userMessage;
-    private RecyclerView        mMessageRecyclerview;
-    private RelativeLayout      addBtn;
-    private Boolean             flagFab = true;
-    private ChatAdapter         chatAdapter;
-    private Toolbar             toolbar;
-    private BaseApiService      mApiService;
-    private int                 sessionID = 1;
-    private int                 lastQuestionDay;
-    private String              event = "questionTimeCheck";
+    private final int            REQ_CODE_SPEECH_INPUT = 100;
+    private EditText                    userMessage;
+    private RecyclerView                mMessageRecyclerview;
+    private RelativeLayout              addBtn;
+    private Boolean                     flagFab = true;
+    private ChatAdapter          chatAdapter;
+    private Toolbar                     toolbar;
+    private BaseApiService       mApiService;
+    private int                         sessionID = 1;
+    private int                         lastQuestionDay;
+  
+    public int                          questionAskedMax = 0;
+    public int                          pawPoints = 0;
+    public boolean                      isTimeForQuestion;
+    private AppDatabase                 database;
+    private Context              activityContext;
+
+
+    private boolean              isQuestionnaire = false;
+    private boolean              isJournal = false;
+
+
     private static final String FEED_OSO_DIALOG_TAG = "Feed Oso Dialog";
+    private final String        DATABASE_NAME = "OSO_DATABASE";
+    private final String        JOURNAL_ENTRY_EVENT = "journalEntry";
+    public static final String  START_QUESTIONNAIRE_EVENT = "question";
+    private final String        REGULAR_CHAT_EVENT = "";
 
-    public int                  questionAskedMax = 0;
-    public int                  pawPoints = 0;
-    public boolean              isTimeForQuestion;
+    int i = 0;
 
-    private boolean             sendToServer = false;
-    private boolean             journalReady = false;
-    private final String        JOURNAL_ENTRY = "journalEntry";
+    ArrayList<ChatMessage> messageArrayList = new ArrayList<>();
 
-    ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
+    private static String authkey;
 
-    private String authkey;
+    public static boolean isRunning = false;
+    private static ChatActivity instance;
+
+    //static method to call msgEventPost from notification class
+    public static void staticGo() {
+        instance.msgEventPost("", ChatActivity.START_QUESTIONNAIRE_EVENT);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        isRunning = true;
+        instance = this;
+
         super.onCreate(savedInstanceState);
+
+        activityContext = getApplicationContext();
 
         SharedPreferences prefs = SharedPrefUtils.getAppState(getApplicationContext());
 
         pawPoints = prefs.getInt(SharedPrefUtils.PAW_POINTS, 0);
 
-        //AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "production").allowMainThreadQueries().build();
+        database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, DATABASE_NAME).fallbackToDestructiveMigration().build();
 
-        lastQuestionDay = Calendar.DAY_OF_MONTH;
+        //grabs chat history from database
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                Cursor cursor = database.userDAO().getChatHistoryByID();
+
+                cursor.moveToFirst();
+                String test = cursor.getString(cursor.getColumnIndex("chatHistory"));
+
+                messageArrayList = Converters.fromString(test);
+                Log.i("messageArrayList", test);
+
+            }
+        }) .start();
 
         mApiService = UtilsApi.getAPIService();
 
@@ -125,16 +175,7 @@ public class ChatActivity extends AppCompatActivity {
         //sets adapter
         mMessageRecyclerview.setAdapter(chatAdapter);
 
-//        Date currentTime = Calendar.getInstance().getTime();
-//        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-//        ChatMessage onBoarding1 = new ChatMessage(getResources().getString(R.string.oso_onboarding_1), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-//        chatAdapter.addMessage(onBoarding1);
-
-        //onBoarding();
-
-
-
-
+        //Submit message button
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -148,29 +189,34 @@ public class ChatActivity extends AppCompatActivity {
                     ChatMessage message = new ChatMessage(messageContent, ChatMessage.MSG_TYPE_SENT, currentTime);
                     chatAdapter.addMessage(message);
 
-//                    if (questionAskedMax <= 4) {
-//                        new android.os.Handler().postDelayed(
-//                                new Runnable() {
-//                                    public void run() {
-//                                        questionGet(sessionID, event);
-//                                    }
-//                                }, 1000);
-//                    }
-
-//                    scrollToBottom();
-
                     userMessage.getText().clear();
 
-                    //pawPoints += pawPointToast(50);
+
+                    //checks for questionnaire flags
+                    //when questionnaire is active server responds with new boolean values which get set the msgEventPost method
+                    if(!isQuestionnaire && !isJournal) {
+                        msgEventPost(messageContent, REGULAR_CHAT_EVENT);
+                    }
+
+                    if(isQuestionnaire && !isJournal) {
+
+                        if(Pattern.matches("[1-4]", messageContent)){
+                            msgEventPost(messageContent, REGULAR_CHAT_EVENT);
+                        } else {
+                            Date t = Calendar.getInstance().getTime();
+
+                            ChatMessage m = new ChatMessage(getResources().getString(R.string.invalid_answer_fallback), ChatMessage.MSG_TYPE_RECEIVED, t);
+                            chatAdapter.addMessage(m);
+                        }
 
 
-                    msgPost(messageContent);
-                    //gordyMessageSend(messageContent);
+                    }
+
+                    if(isQuestionnaire && isJournal) {
+                        msgEventPost(messageContent, JOURNAL_ENTRY_EVENT);
+                    }
+
                     scrollToBottom();
-
-                    journalReady = true;
-
-
 
                     }
                     else {
@@ -211,18 +257,57 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
+
+
             }
         });
 
+        // runs init on Notification class
+        Notification.init(getApplicationContext());
 
-
+        //listens for intent from notification click
+        Intent i = getIntent();
+        try {
+            if (i != null) {
+                String a = i.getAction();
+                if ("ca.edumedia.INITIATE".equals(a)) {
+                    Log.i("NOTIFICATION", "msgEventPost in onCreate gets called");
+                    isQuestionnaire = false;
+                    isJournal = false;
+                    msgEventPost("", START_QUESTIONNAIRE_EVENT);
+                }
+            }
+        } catch (Exception e) {
+            Log.i("NOTIFICATION", "error in chat activity on-create");
+        }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        isRunning = false;
+    }
+
+
+
+    //when view goes out of view update chat history in database
     @Override
     protected void onPause() {
         super.onPause();
 
         SharedPrefUtils.putPawPointState(getApplicationContext(), pawPoints);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                UserChat userChat =new UserChat();
+                userChat.setUserID(1);
+                userChat.setChatHistory(chatAdapter.messagesList);
+                database.userDAO().updateUser(userChat);
+            }
+        }) .start();
+
 
 
     }
@@ -237,11 +322,11 @@ public class ChatActivity extends AppCompatActivity {
 
     }
 
-    public void msgPost(String content) {
+    public void msgEventPost(String content, final String event) {
 
-        //Toast.makeText(ChatActivity.this, "msgPost called, passing : " + content, Toast.LENGTH_LONG).show();
+        Call<ResponseBody> call = mApiService.msgEventPost(authkey, content, event);
 
-        Call<ResponseBody> call = mApiService.msgPost(authkey, content);
+
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -254,27 +339,49 @@ public class ChatActivity extends AppCompatActivity {
                             // will be parsed to the next activity.
                             Log.i("Object: ", jsonRESULTS.toString());
                             String content = jsonRESULTS.getString("message");
+                            isQuestionnaire = Boolean.parseBoolean(jsonRESULTS.getString("isQuestion"));
+                            Log.i("isQuestionnaire: ", String.valueOf(isQuestionnaire));
+                            isJournal = Boolean.parseBoolean(jsonRESULTS.getString("isJournal"));
+                            Log.i("isJournal: ", String.valueOf(isJournal));
+                            Log.i("send event", event);
+
+                            boolean isQuestionDone = Boolean.parseBoolean(jsonRESULTS.getString("isQuestionDone"));
+
+                            //when isQuestionDone is flagged true give user points
+                            if(isQuestionDone) {
+                                pawPoints += pawPointToast(25);
+                            }
+
                             Log.i("content: ", content);
 
+                            if(event.equals(JOURNAL_ENTRY_EVENT)) {
+                                Date time = Calendar.getInstance().getTime();
+                                ChatMessage potentialAnswerMessage = new ChatMessage(activityContext.getResources().getString(R.string.journal_thanks), ChatMessage.MSG_TYPE_RECEIVED, time);
+                                chatAdapter.addMessage(potentialAnswerMessage);
+                            }
+
+
+
+                            //adds received message from server to recyclerView
                             Date currentTime = Calendar.getInstance().getTime();
-
                             ChatMessage message = new ChatMessage(content, ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-
-                            //Toast.makeText(ChatActivity.this, "Response: " + message.getMessageContent(), Toast.LENGTH_SHORT).show();
-
                             chatAdapter.addMessage(message);
+
+                            //appends accepted answer message to recyclerView
+                            if(isQuestionnaire && !isJournal) {
+                                Date time = Calendar.getInstance().getTime();
+                                ChatMessage potentialAnswerMessage = new ChatMessage(activityContext.getResources().getString(R.string.potential_answers), ChatMessage.MSG_TYPE_RECEIVED, time);
+                                chatAdapter.addMessage(potentialAnswerMessage);
+                            }
 
                             scrollToBottom();
 
-
-
                         }
                         else {
-                            // Jika login gagal
                             String error_message = jsonRESULTS.getString("errorMessage");
-                            //Toast.makeText(ChatActivity.this, error_message, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activityContext, error_message, Toast.LENGTH_SHORT).show();
                             serverErrorOso();
-
+                            scrollToBottom();
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -297,129 +404,9 @@ public class ChatActivity extends AppCompatActivity {
         });
     }
 
-    public void questionGet(int id, String event) {
-
-        Call<ResponseBody> call = mApiService.questionGet(id, event);
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-
-                if (response.isSuccessful()){
-
-                    try {
-                        JSONObject jsonRESULTS = new JSONObject(response.body().string());
-                        if (jsonRESULTS.getInt("code") == 1){
-                            // If the login is successful then the name data in the response API
-                            // will be parsed to the next activity.
-                            Log.i("Object: ", jsonRESULTS.toString());
-                            String content = jsonRESULTS.getString("message");
-                            Log.i("content: ", content);
-
-                            Date currentTime = Calendar.getInstance().getTime();
-
-                            ChatMessage message = new ChatMessage(content, ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-
-                            Toast.makeText(ChatActivity.this, "Response: " + message.getMessageContent(), Toast.LENGTH_SHORT).show();
-
-                            chatAdapter.addMessage(message);
-
-                            scrollToBottom();
 
 
-
-                        }
-                        else {
-                            // Jika login gagal
-                            String error_message = jsonRESULTS.getString("code");
-                            Toast.makeText(ChatActivity.this, error_message, Toast.LENGTH_SHORT).show();
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } else {
-
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-
-                Log.e("tag", "Retrofit Error: " + t.getLocalizedMessage());
-                Toast.makeText(ChatActivity.this, "Retrofit Error", Toast.LENGTH_LONG).show();
-
-            }
-
-        });
-    }
-
-    public void msgJournalPost(String content) {
-
-        //Toast.makeText(ChatActivity.this, "msgPost called, passing : " + content, Toast.LENGTH_LONG).show();
-
-        Call<ResponseBody> call = mApiService.msgJournalPost(authkey, content, JOURNAL_ENTRY);
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                if (response.isSuccessful()){
-
-                    try {
-                        JSONObject jsonRESULTS = new JSONObject(response.body().string());
-                        if (jsonRESULTS.getString("errorMessage").equals("success") && !jsonRESULTS.getString("message").equals("")){
-                            // If the login is successful then the name data in the response API
-                            // will be parsed to the next activity.
-                            Log.i("Object: ", jsonRESULTS.toString());
-                            String content = jsonRESULTS.getString("message");
-                            Log.i("content: ", content);
-
-                            Date currentTime = Calendar.getInstance().getTime();
-
-                            ChatMessage message = new ChatMessage(content, ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-
-                            //Toast.makeText(ChatActivity.this, "Response: " + message.getMessageContent(), Toast.LENGTH_SHORT).show();
-
-
-
-                            chatAdapter.addMessage(message);
-
-                            //questionAskedMax += 1;
-
-                            scrollToBottom();
-
-                            pawPoints += pawPointToast(75);
-
-
-
-                        }
-                        else {
-                            // Jika login gagal
-                            String error_message = jsonRESULTS.getString("errorMessage");
-                            Toast.makeText(ChatActivity.this, error_message, Toast.LENGTH_SHORT).show();
-                            serverErrorOso();
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } else {
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-
-                Log.e( "tag", "Retrofit Error: " + t.getLocalizedMessage() );
-                Toast.makeText(ChatActivity.this, "Retrofit Error", Toast.LENGTH_LONG).show();
-                serverErrorOso();
-
-            }
-        });
-    }
-
+    //updates the adapter with new position
     public void scrollToBottom() {
 
         int newPosition = chatAdapter.getItemCount() - 1;
@@ -431,25 +418,15 @@ public class ChatActivity extends AppCompatActivity {
         mMessageRecyclerview.scrollToPosition(newPosition);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        super.onStart();
-
-    }
-
     //Toolbar navigation button methods
     public void settingsBtnOnClick(View view) {
         Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
         startActivity(intent);
     }
-
     public void closetBtnOnClick(View view) {
         Intent intent = new Intent(getApplicationContext(), ClosetActivity.class);
         startActivity(intent);
     }
-
-    //inflates food fragment
     public void osoFoodBtnClick(View view) {
 
         DialogFragment newFragment = new FeedOsoDialogFragment();
@@ -471,6 +448,8 @@ public class ChatActivity extends AppCompatActivity {
         }
 
     }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -510,76 +489,7 @@ public class ChatActivity extends AppCompatActivity {
         v.startAnimation(anim_out);
     }
 
-    public void onBoarding() {
-
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        Date currentTime = Calendar.getInstance().getTime();
-                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-                        ChatMessage onBoarding1 = new ChatMessage(getResources().getString(R.string.oso_onboarding_1), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-                        chatAdapter.addMessage(onBoarding1);
-                        scrollToBottom();
-                    }
-                }, 1000);
-
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        Date currentTime = Calendar.getInstance().getTime();
-                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-                        ChatMessage onBoarding2 = new ChatMessage(getResources().getString(R.string.oso_onboarding_2), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-                        chatAdapter.addMessage(onBoarding2);
-                        scrollToBottom();
-                    }
-                }, 3000);
-
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        Date currentTime = Calendar.getInstance().getTime();
-                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-                        ChatMessage onBoarding3 = new ChatMessage(getResources().getString(R.string.oso_onboarding_3), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-                        chatAdapter.addMessage(onBoarding3);
-                        scrollToBottom();
-                    }
-                }, 5000);
-
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        Date currentTime = Calendar.getInstance().getTime();
-                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-                        ChatMessage onBoarding4 = new ChatMessage(getResources().getString(R.string.oso_onboarding_4), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-                        chatAdapter.addMessage(onBoarding4);
-                        scrollToBottom();
-                    }
-                }, 7000);
-
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        Date currentTime = Calendar.getInstance().getTime();
-                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-                        ChatMessage onBoarding4 = new ChatMessage(getResources().getString(R.string.oso_onboarding_5), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-                        chatAdapter.addMessage(onBoarding4);
-                        scrollToBottom();
-                    }
-                }, 8000);
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        Date currentTime = Calendar.getInstance().getTime();
-                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-                        ChatMessage onBoarding4 = new ChatMessage(getResources().getString(R.string.oso_onboarding_6), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-                        chatAdapter.addMessage(onBoarding4);
-                        scrollToBottom();
-                    }
-                }, 8000);
-
-
-    }
-
+    //sets up custom Toast to show paw point award to user. takes in how many points you want to give
     public int pawPointToast(int pawPoints) {
 
         LayoutInflater inflater = getLayoutInflater();
@@ -601,18 +511,12 @@ public class ChatActivity extends AppCompatActivity {
 
     }
 
+    //handles when server is down by appending a error handling message.
     public void serverErrorOso() {
         Date currentTime = Calendar.getInstance().getTime();
         ChatMessage onBoarding1 = new ChatMessage("This is embarassing... It looks like the server were I live is down right now. Feel free to try again later :) ", ChatMessage.MSG_TYPE_RECEIVED, currentTime);
         chatAdapter.addMessage(onBoarding1);
 
     }
-
-//    public boolean isTimeForQuestion() {
-//
-//
-//
-//    }
-
 }
 

@@ -1,0 +1,90 @@
+{
+  "id": "2004e62b-ef95-4ab8-8c50-18d8d20b3f27",
+  "name": "smalltalk.user.back",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.user.back",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Long time no see.",
+            "Just in time. I was getting lonely.",
+            "Welcome back. What can I do for you?",
+            "You were missed. What can I do for you today?",
+            "Good to have you here. What can I do for you?"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Long time no see.",
+            "Just in time. I was getting lonely.",
+            "Welcome back. What can I do for you?",
+            "You were missed. What can I do for you today?",
+            "Good to have you here. What can I do for you?"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Long time no see.",
+            "Just in time. I was getting lonely.",
+            "Welcome back. What can I do for you?",
+            "You were missed. What can I do for you today?",
+            "Good to have you here. What can I do for you?"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Long time no see.",
+            "Just in time. I was getting lonely.",
+            "Welcome back. What can I do for you?",
+            "You were missed. What can I do for you today?",
+            "Good to have you here. What can I do for you?"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Long time no see.",
+            "Just in time. I was getting lonely.",
+            "Welcome back. What can I do for you?",
+            "You were missed. What can I do for you today?",
+            "Good to have you here. What can I do for you?"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Long time no see.",
+            "Just in time. I was getting lonely.",
+            "Welcome back. What can I do for you?",
+            "You were missed. What can I do for you today?",
+            "Good to have you here. What can I do for you?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577813,
+  "fallbackIntent": false,
+  "events": []
+}

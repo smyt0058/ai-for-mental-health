@@ -1,0 +1,36 @@
+{
+  "id": "15962633-b5fb-444c-9858-d66d76e514ed",
+  "name": "phq7-fallback",
+  "auto": false,
+  "contexts": [
+    "phq7"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "phq7",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "question seven"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1521581882,
+  "fallbackIntent": true,
+  "events": []
+}

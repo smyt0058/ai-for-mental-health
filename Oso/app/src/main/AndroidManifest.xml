@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -22,6 +24,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".OnBoardingActivity">
+
         </activity>
 
         <activity
@@ -71,6 +77,21 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ClosetActivity" />
         </activity>
+
+        <!--<activity android:name=".notifications.NotifPress" />-->
+
+        <receiver android:name=".notifications.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.TIME_SET" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".notifications.AlarmReceiver" />
+
+        <receiver android:name=".notifications.NotificationReceiver"/>
+
     </application>
 
 </manifest>

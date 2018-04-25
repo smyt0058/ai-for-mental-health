@@ -8,6 +8,10 @@ import java.util.Locale;
 
 /**
  * Created by Jason on 2018-03-20.
+ *
+ * ChatMessage model
+ * model for received and sent message with Oso
+ *
  */
 
 public class ChatMessage {
@@ -15,11 +19,11 @@ public class ChatMessage {
     private String              messageContent;
     private String              errorMessage;
     private int                 statusCode;
-    private Date timeStamp;
+    private Date                timeStamp;
     private String              timeString;
     private String              accessToken;
-    public static final String MSG_TYPE_RECEIVED = "MSG_TYPE_RECEIVED";
-    public static final String MSG_TYPE_SENT = "MSG_TYPE_SENT";
+    public static final String  MSG_TYPE_RECEIVED = "MSG_TYPE_RECEIVED";
+    public static final String  MSG_TYPE_SENT = "MSG_TYPE_SENT";
 
     private String              msgType;
 

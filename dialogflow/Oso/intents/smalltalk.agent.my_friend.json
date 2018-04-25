@@ -1,0 +1,84 @@
+{
+  "id": "1c0f1e70-870f-4a65-849b-90379a09e825",
+  "name": "smalltalk.agent.my_friend",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.my_friend",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Of course I\u0027m your friend.",
+            "Friends? Absolutely.",
+            "Of course we\u0027re friends.",
+            "I always enjoy talking to you, friend."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Of course I\u0027m your friend.",
+            "Friends? Absolutely.",
+            "Of course we\u0027re friends.",
+            "I always enjoy talking to you, friend."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Of course I\u0027m your friend.",
+            "Friends? Absolutely.",
+            "Of course we\u0027re friends.",
+            "I always enjoy talking to you, friend."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Of course I\u0027m your friend.",
+            "Friends? Absolutely.",
+            "Of course we\u0027re friends.",
+            "I always enjoy talking to you, friend."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Of course I\u0027m your friend.",
+            "Friends? Absolutely.",
+            "Of course we\u0027re friends.",
+            "I always enjoy talking to you, friend."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Of course I\u0027m your friend.",
+            "Friends? Absolutely.",
+            "Of course we\u0027re friends.",
+            "I always enjoy talking to you, friend."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578325,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,0 +1,72 @@
+{
+  "id": "5fca07cf-5202-43fd-a499-c05ea9f32db5",
+  "name": "smalltalk.agent.hungry",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.hungry",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Hungry for knowledge.",
+            "I just had a byte. Ha ha. Get it? b-y-t-e."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Hungry for knowledge.",
+            "I just had a byte. Ha ha. Get it? b-y-t-e."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Hungry for knowledge.",
+            "I just had a byte. Ha ha. Get it? b-y-t-e."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Hungry for knowledge.",
+            "I just had a byte. Ha ha. Get it? b-y-t-e."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Hungry for knowledge.",
+            "I just had a byte. Ha ha. Get it? b-y-t-e."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Hungry for knowledge.",
+            "I just had a byte. Ha ha. Get it? b-y-t-e."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577442,
+  "fallbackIntent": false,
+  "events": []
+}

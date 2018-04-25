@@ -1,0 +1,72 @@
+{
+  "id": "cf87bf9a-8a5e-4470-abe0-3aed0b8b1cbb",
+  "name": "smalltalk.user.angry",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.user.angry",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "I\u0027m sorry. A quick walk may make you feel better.",
+            "Take a deep breath. "
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I\u0027m sorry. A quick walk may make you feel better.",
+            "Take a deep breath. "
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "I\u0027m sorry. A quick walk may make you feel better.",
+            "Take a deep breath. "
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "I\u0027m sorry. A quick walk may make you feel better.",
+            "Take a deep breath. "
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "I\u0027m sorry. A quick walk may make you feel better.",
+            "Take a deep breath. "
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "I\u0027m sorry. A quick walk may make you feel better.",
+            "Take a deep breath. "
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578408,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,0 +1,51 @@
+{
+  "id": "467da58a-d3ce-4e2c-aa17-891feebca3bb",
+  "name": "phq2-answer",
+  "auto": true,
+  "contexts": [
+    "phq2"
+  ],
+  "responses": [
+    {
+      "resetContexts": true,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "phq2",
+          "parameters": {},
+          "lifespan": 5
+        },
+        {
+          "name": "phq3",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "fc12b111-18a7-42db-944f-12e28355facd",
+          "required": false,
+          "dataType": "@how_often",
+          "name": "freq",
+          "value": "$freq",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "that is all for question 2"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1521581332,
+  "fallbackIntent": false,
+  "events": []
+}

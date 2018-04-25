@@ -1,0 +1,84 @@
+{
+  "id": "94e9d0a4-cad1-42e7-82cd-c548ed83270c",
+  "name": "smalltalk.user.testing_agent",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.user.testing_agent",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Hope I\u0027m doing well. You\u0027re welcome to test me as often as you want.",
+            "I hope to pass your tests. Feel free to test me often.",
+            "When you test me that helps my developers improve my performance.",
+            "I like being tested. It helps keep me sharp."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Hope I\u0027m doing well. You\u0027re welcome to test me as often as you want.",
+            "I hope to pass your tests. Feel free to test me often.",
+            "When you test me that helps my developers improve my performance.",
+            "I like being tested. It helps keep me sharp."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Hope I\u0027m doing well. You\u0027re welcome to test me as often as you want.",
+            "I hope to pass your tests. Feel free to test me often.",
+            "When you test me that helps my developers improve my performance.",
+            "I like being tested. It helps keep me sharp."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Hope I\u0027m doing well. You\u0027re welcome to test me as often as you want.",
+            "I hope to pass your tests. Feel free to test me often.",
+            "When you test me that helps my developers improve my performance.",
+            "I like being tested. It helps keep me sharp."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Hope I\u0027m doing well. You\u0027re welcome to test me as often as you want.",
+            "I hope to pass your tests. Feel free to test me often.",
+            "When you test me that helps my developers improve my performance.",
+            "I like being tested. It helps keep me sharp."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Hope I\u0027m doing well. You\u0027re welcome to test me as often as you want.",
+            "I hope to pass your tests. Feel free to test me often.",
+            "When you test me that helps my developers improve my performance.",
+            "I like being tested. It helps keep me sharp."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577805,
+  "fallbackIntent": false,
+  "events": []
+}

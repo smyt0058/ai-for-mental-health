@@ -12,15 +12,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.algonquincollege.smyt0058.oso.closetTabFragments.EyeWearClosetTab;
-import com.algonquincollege.smyt0058.oso.closetTabFragments.HatsClosetTab;
-import com.algonquincollege.smyt0058.oso.closetTabFragments.NeckWearClosetTab;
-import com.algonquincollege.smyt0058.oso.closetTabFragments.ShirtsClosetTab;
-import com.algonquincollege.smyt0058.oso.closetTabFragments.WristWearClosetTab;
+import com.algonquincollege.smyt0058.oso.fragments.EyeWearClosetTab;
+import com.algonquincollege.smyt0058.oso.fragments.HatsClosetTab;
+import com.algonquincollege.smyt0058.oso.fragments.NeckWearClosetTab;
+import com.algonquincollege.smyt0058.oso.fragments.ShirtsClosetTab;
+import com.algonquincollege.smyt0058.oso.fragments.WristWearClosetTab;
 import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 
 /**
  * Created by Jason on 2018-03-22.
+ *
+ * ClosetActivity
+ * Oso's closet
+ * used to dress oso with purchased items
+ *
  */
 
 public class ClosetActivity extends AppCompatActivity {
@@ -77,23 +82,18 @@ public class ClosetActivity extends AppCompatActivity {
 
                 case 0:
                     tabLayout.getTabAt(i).setIcon(R.drawable.ic_tab_shirt_vector).select();
-                    //Toast.makeText(this, "I is " + i, Toast.LENGTH_SHORT).show();
                     break;
                 case 1:
                     tabLayout.getTabAt(i).setIcon(R.drawable.ic_tab_hat_vector);
-                    //Toast.makeText(this, "I is " + i, Toast.LENGTH_SHORT).show();
                     break;
                 case 2:
                     tabLayout.getTabAt(i).setIcon(R.drawable.ic_tab_monocle_vector);
-                    //Toast.makeText(this, "I is " + i, Toast.LENGTH_SHORT).show();
                     break;
                 case 3:
                     tabLayout.getTabAt(i).setIcon(R.drawable.ic_tab_bowtie_vector);
-                    //Toast.makeText(this, "I is " + i, Toast.LENGTH_SHORT).show();
                     break;
                 case 4:
                     tabLayout.getTabAt(i).setIcon(R.drawable.ic_tab_watch_vector);
-                    //Toast.makeText(this, "I is " + i, Toast.LENGTH_SHORT).show();
                     break;
             }
 
@@ -105,14 +105,12 @@ public class ClosetActivity extends AppCompatActivity {
                     public void onTabSelected(TabLayout.Tab tab) {
                         super.onTabSelected(tab);
                         tab.getIcon().setColorFilter(Color.parseColor("#FF4081"), PorterDuff.Mode.SRC_IN);
-                        //tab.getCustomView().setBackgroundColor(Color.parseColor("#FFFFFF"));
                     }
 
                     @Override
                     public void onTabUnselected(TabLayout.Tab tab) {
                         super.onTabUnselected(tab);
                         tab.getIcon().setColorFilter(Color.parseColor("#FFFFFF"), PorterDuff.Mode.SRC_IN);
-                        //tab.getCustomView().setBackgroundColor(Color.parseColor("#303F9F"));
                     }
 
                     @Override
@@ -123,11 +121,9 @@ public class ClosetActivity extends AppCompatActivity {
 
         );
 
+        //sets the state of the activity but checking which items have been bought and/or worn
         SharedPreferences prefs = SharedPrefUtils.getAppState(getApplicationContext());
 
-        //isMp3Purchased = prefs.getBoolean(SharedPrefUtils.MP3_BUY_BOOL, false);
-        //isHeadbowPurchased = prefs.getBoolean(SharedPrefUtils.HEADBOW_BUY_BOOL, false);
-        //isPinkBowtiePurchased = prefs.getBoolean(SharedPrefUtils.PINK_BOWTIE_BUY_BOOL, false);
         isOsoWearingShirt = prefs.getBoolean(SharedPrefUtils.SHIRT_WEAR_BOOL, false);
         isOsoWearingHat = prefs.getBoolean(SharedPrefUtils.HAT_WEAR_BOOL, false);
         isOsoWearingHeadbow = prefs.getBoolean(SharedPrefUtils.HEADBOW_WEAR_BOOL, false);
@@ -147,9 +143,6 @@ public class ClosetActivity extends AppCompatActivity {
 
         SharedPreferences prefs = SharedPrefUtils.getAppState(getApplicationContext());
 
-        //isMp3Purchased = prefs.getBoolean(SharedPrefUtils.MP3_BUY_BOOL, false);
-        //isHeadbowPurchased = prefs.getBoolean(SharedPrefUtils.HEADBOW_BUY_BOOL, false);
-        //isPinkBowtiePurchased = prefs.getBoolean(SharedPrefUtils.PINK_BOWTIE_BUY_BOOL, false);
         isOsoWearingShirt = prefs.getBoolean(SharedPrefUtils.SHIRT_WEAR_BOOL, false);
         isOsoWearingHat = prefs.getBoolean(SharedPrefUtils.HAT_WEAR_BOOL, false);
         isOsoWearingHeadbow = prefs.getBoolean(SharedPrefUtils.HEADBOW_WEAR_BOOL, false);
@@ -183,6 +176,8 @@ public class ClosetActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+//onclick methods for closet items
     public void tabClosetMonocleClick(View view) {
 
         if(findViewById(R.id.oso_closet_monocle).getVisibility() == View.INVISIBLE) {
@@ -397,25 +392,8 @@ public class ClosetActivity extends AppCompatActivity {
 
     }
 
-
-    //TODO move code that infers items that are created inside tab fragments into their respective fragments. See other TODOs
+    //sets current closet state
     public void setState() {
-
-//            if(isMp3Purchased){
-//                ImageView mp3 = findViewById(R.id.closet_mp3);
-//                mp3.setClickable(true);
-//                mp3.setVisibility(View.VISIBLE);
-//            }
-//            if(isHeadbowPurchased) {
-//                ImageView bow = findViewById(R.id.closet_headbow);
-//                bow.setClickable(true);
-//                bow.setVisibility(View.VISIBLE);
-//            }
-//            if(isPinkBowtiePurchased){
-//                ImageView pBowtie = findViewById(R.id.closet_pink_bowtie);
-//                pBowtie.setClickable(true);
-//                pBowtie.setVisibility(View.VISIBLE);
-//            }
 
             if(isOsoWearingShirt){
                 ImageView mImg = (ImageView) findViewById(R.id.oso_closet_body);

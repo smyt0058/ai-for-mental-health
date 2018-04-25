@@ -1,0 +1,28 @@
+{
+  "id": "e57594e1-810a-4724-b129-748af03f00bc",
+  "name": "Fallback",
+  "auto": false,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "You can say \"begin questionnaire\" for the full questionnaire of for one question at a time say \"phq1\" ... \"phq9\""
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1521586266,
+  "fallbackIntent": true,
+  "events": []
+}

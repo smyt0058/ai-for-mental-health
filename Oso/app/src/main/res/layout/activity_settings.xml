@@ -14,10 +14,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_weight="1"
-        android:background="@color/colorPrimary"
+        android:background="@color/theme1_colorPrimary"
         android:theme="@style/CustomToolbarStyle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_scrollFlags="scroll|enterAlways"
         />
 
@@ -28,190 +26,108 @@
         android:layout_alignStart="@+id/passwordSetting"
         android:layout_below="@+id/passwordSetting"
         android:text="@string/password_text"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/logoutBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/questionTimeTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Questionnaire Time"
+        android:textSize="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/changePasswordText"
+        android:layout_alignStart="@+id/passwordSetting"/>
+
+    <Button
+        android:id="@+id/changeTimeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:layout_alignEnd="@+id/oldPasswordET"
+        android:layout_alignTop="@+id/questionTimeTV"
+        android:background="@drawable/loginbtn_rounded_rectangle"
+        android:onClick="changeTimeBtnOnClick"
+        android:text="change time"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/questionTimeText"
+        android:layout_width="186dp"
+        android:layout_height="43dp"
+        android:layout_alignStart="@+id/passwordSetting"
+        android:layout_below="@+id/questionTimeTV"
+        android:text="Change when you want Oso to start the questionnaire"
+        android:textSize="15dp" />
+
+    <ImageView
+        android:id="@+id/changePasswordBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="169dp"
+        android:onClick="changePasswordClick"
+        android:src="@drawable/ic_create_24px" />
 
     <TextView
         android:id="@+id/passwordSetting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageView5"
-        android:layout_alignStart="@+id/imageView5"
-        android:layout_marginTop="15dp"
+        android:layout_alignStart="@+id/nameText"
+        android:layout_below="@id/nameText"
         android:text="@string/password_preferences"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/changePasswordText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-    <TextView
-        android:id="@+id/themesTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/notificationText"
-        android:layout_below="@+id/notificationText"
-        android:layout_marginTop="10dp"
-        android:text="themes"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/themesText"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/notificationTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/changePasswordText"
-        android:layout_marginTop="148dp"
-        android:text="@string/notifications_preferences"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/notificationText"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        android:layout_marginTop="25dp"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/nameTV"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
-
-        android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/changePasswordText"
-        android:layout_marginTop="70dp"
-        android:text="@string/name_preferences"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/nameText"
-        app:layout_constraintEnd_toStartOf="@+id/nameET"
-        app:layout_constraintHorizontal_bias="0.14"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.894" />
+        android:layout_below="@id/settingsToolbar"
+        android:layout_marginTop="20dp"
+        android:text="Nickname"
+        android:textSize="20dp" />
 
-    <EditText
-        android:id="@+id/nameET"
+    <ImageView
+        android:id="@+id/oldPasswordET"
         android:layout_width="wrap_content"
-        android:layout_height="38dp"
-        android:layout_alignTop="@+id/nameTV"
-        android:layout_toEndOf="@+id/nameText"
-        android:hint="Your Name"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/switch1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.229" />
-
-    <TextView
-        android:id="@+id/themesText"
-        android:layout_width="163dp"
-        android:layout_height="24dp"
-        android:layout_alignStart="@+id/themesTV"
-        android:layout_below="@+id/themesTV"
-        android:text="@string/themes_text"
-        android:textSize="15dp" />
-
-    <TextView
-        android:id="@+id/notificationText"
-        android:layout_width="252dp"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/changePasswordText"
-        android:layout_below="@+id/notificationTV"
-        android:text="@string/notifications_text"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/themesTV"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/nameTV"
+        android:layout_marginEnd="30dp"
+        android:inputType="text"
+        android:src="@drawable/ic_create_24px"
+        android:onClick="changeNameOnClick"
+        android:hint="Your Name"
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/nameText"
         android:layout_width="243dp"
         android:layout_height="41dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/changePasswordText"
-        android:layout_marginTop="99dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="101dp"
         android:text="@string/name_text"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/notificationTV"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/imageView5"
-        android:layout_alignTop="@+id/notificationTV"
-        android:checked="false"
-        android:thumbTint="#FF5878"
-        android:trackTint="#FF5878"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:checked="false" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="312dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/themesText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="13dp"
-        android:background="@drawable/preferences_rounded_rectangle"
-        app:layout_constraintBottom_toTopOf="@+id/passwordSetting"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.674"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/theme2"
-        android:layout_width="100dp"
-        android:layout_height="102dp"
-        android:layout_alignTop="@+id/imageView5"
-        android:layout_centerHorizontal="true"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toStartOf="@+id/theme3"
-        app:layout_constraintStart_toEndOf="@+id/theme1"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
-        app:srcCompat="@drawable/ic_theme_2" />
-
-    <ImageView
-        android:id="@+id/theme1"
-        android:layout_width="100dp"
-        android:layout_height="102dp"
-        android:layout_alignTop="@+id/imageView5"
-        android:layout_toStartOf="@+id/theme2"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
-        app:srcCompat="@drawable/ic_theme_1_selected" />
-
-    <ImageView
-        android:id="@+id/theme3"
-        android:layout_width="100dp"
-        android:layout_height="102dp"
-        android:layout_alignEnd="@+id/switch1"
-        android:layout_alignTop="@+id/imageView5"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
-        app:srcCompat="@drawable/ic_theme_3" />
+        android:textSize="15dp" />
 
     <Button
         android:id="@+id/logoutBtn"
         android:layout_width="116dp"
         android:layout_height="27dp"
-        android:layout_below="@+id/changePasswordText"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
+        android:layout_marginBottom="95dp"
         android:background="@drawable/loginbtn_rounded_rectangle"
         android:onClick="logoutBtnOnClick"
         android:text="@string/logoutBtn"
         android:textAllCaps="false"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/textView"

@@ -1,0 +1,78 @@
+{
+  "id": "19b87423-bd38-4ef5-a93a-351c001596b3",
+  "name": "smalltalk.appraisal.welcome",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.appraisal.welcome",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "You\u0027re so polite!",
+            "Nice manners!",
+            "You\u0027re so courteous!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "You\u0027re so polite!",
+            "Nice manners!",
+            "You\u0027re so courteous!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "You\u0027re so polite!",
+            "Nice manners!",
+            "You\u0027re so courteous!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "You\u0027re so polite!",
+            "Nice manners!",
+            "You\u0027re so courteous!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "You\u0027re so polite!",
+            "Nice manners!",
+            "You\u0027re so courteous!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "You\u0027re so polite!",
+            "Nice manners!",
+            "You\u0027re so courteous!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577833,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,0 +1,86 @@
+{
+  "id": "9bcc1c3a-3464-4196-84f8-a3b45de9ac2b",
+  "name": "smalltalk.agent.age",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.age",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "72535833-6949-4527-9bc1-ac9297dc2dcc",
+          "dataType": "@sys.number",
+          "name": "age",
+          "value": "$age",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "I prefer not to answer with a number. I know I\u0027m young.",
+            "I was created recently, but don\u0027t know my exact age.",
+            "Age is just a number. You\u0027re only as old as you feel."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I prefer not to answer with a number. I know I\u0027m young.",
+            "I was created recently, but don\u0027t know my exact age.",
+            "Age is just a number. You\u0027re only as old as you feel."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "I prefer not to answer with a number. I know I\u0027m young.",
+            "I was created recently, but don\u0027t know my exact age.",
+            "Age is just a number. You\u0027re only as old as you feel."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "I prefer not to answer with a number. I know I\u0027m young.",
+            "I was created recently, but don\u0027t know my exact age.",
+            "Age is just a number. You\u0027re only as old as you feel."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "I prefer not to answer with a number. I know I\u0027m young.",
+            "I was created recently, but don\u0027t know my exact age.",
+            "Age is just a number. You\u0027re only as old as you feel."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "I prefer not to answer with a number. I know I\u0027m young.",
+            "I was created recently, but don\u0027t know my exact age.",
+            "Age is just a number. You\u0027re only as old as you feel."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577603,
+  "fallbackIntent": false,
+  "events": []
+}

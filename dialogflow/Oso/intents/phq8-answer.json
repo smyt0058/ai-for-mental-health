@@ -1,0 +1,38 @@
+{
+  "id": "8ae5f0ee-ddd3-49ec-9837-f3b271b94e42",
+  "name": "phq8-answer",
+  "auto": true,
+  "contexts": [
+    "phq8"
+  ],
+  "responses": [
+    {
+      "resetContexts": true,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "9dcc4403-a0bb-4ebf-aea3-61bf5711f1d1",
+          "dataType": "@how_often",
+          "name": "freq",
+          "value": "$freq",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "That was question eight"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1521580705,
+  "fallbackIntent": false,
+  "events": []
+}

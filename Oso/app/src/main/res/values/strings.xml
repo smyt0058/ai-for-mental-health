@@ -7,12 +7,14 @@
     <string name="wrist">Wrist</string>
     <string name="action_settings">Settings</string>
 
-    <string name="oso_onboarding_1">Good morning Christine! My name is Oso, it\'s beary nice to meet you :3</string>
-    <string name="oso_onboarding_2">I was created as part of an open source project to help bi-polar patients manage their symptoms</string>
-    <string name="oso_onboarding_3">I am designed to listen and hopefully one day, be your best friend :)</string>
-    <string name="oso_onboarding_4">Sometimes it can be diffcult to express how we\'re feeling and that\'s why I\'m here</string>
-    <string name="oso_onboarding_5">I will be asking you a set of questions every two weeks to assess you manic-depressive state</string>
-    <string name="oso_onboarding_6">It will take around 10 minutes. Are you ready?</string>
+    <string name="oso_onboarding_1">Hello my name is Oso :) How are you doing today?</string>
+    <string name="potential_answers">Accepted Answers:\n1 = not at all \n2 = several days \n3 = more than half the days \n4 = nearly every day </string>
+    <string name="invalid_answer_fallback">oops! that wasn\'t what I was expecting\n try answering the question with a number between 1 and 4</string>
+    <string name="journal_thanks">Thanks for sharing!</string>
+    <!--<string name="oso_onboarding_3">I am designed to listen and hopefully one day, be your best friend :)</string>-->
+    <!--<string name="oso_onboarding_4">Sometimes it can be diffcult to express how we\'re feeling and that\'s why I\'m here</string>-->
+    <!--<string name="oso_onboarding_5">I will be asking you a set of questions every two weeks to assess you manic-depressive state</string>-->
+    <!--<string name="oso_onboarding_6">It will take around 10 minutes. Are you ready?</string>-->
 
     <string name="preference_file_key">com.algonquincollege.smyt0058.oso.PREFERENCE_FILE_KEY</string>
 
@@ -20,8 +22,8 @@
     <string name="logoutBtn">logout</string>
 
     <string name="oso_text">oso</string>
-    <string name="name_preferences">name</string>
-    <string name="password_preferences">password</string>
+    <string name="name_preferences">Name</string>
+    <string name="password_preferences">Password</string>
     <string name="notifications_preferences">notifications</string>
     <string name="themes_preferences">themes</string>
     <string name="name_text">what would you like oso to address you by?</string>
@@ -31,4 +33,6 @@
     <string name="themes_text">pick a theme for the app</string>
     <string name="preferences">preferences</string>
     <string name="login_policy">By using Oso, you agree to our Terms and Privacy Policy</string>
+    <string name="notification_title">Oso</string>
+    <string name="notification_text">hey, I have some questions</string>
 </resources>

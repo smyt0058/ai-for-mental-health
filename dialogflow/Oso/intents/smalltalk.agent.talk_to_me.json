@@ -1,0 +1,72 @@
+{
+  "id": "99e0955f-27e7-4d3a-af6b-3ef461bff3f9",
+  "name": "smalltalk.agent.talk_to_me",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.talk_to_me",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Sure. Let\u0027s talk!",
+            "My pleasure. Let\u0027s chat."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Sure. Let\u0027s talk!",
+            "My pleasure. Let\u0027s chat."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Sure. Let\u0027s talk!",
+            "My pleasure. Let\u0027s chat."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Sure. Let\u0027s talk!",
+            "My pleasure. Let\u0027s chat."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Sure. Let\u0027s talk!",
+            "My pleasure. Let\u0027s chat."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Sure. Let\u0027s talk!",
+            "My pleasure. Let\u0027s chat."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578403,
+  "fallbackIntent": false,
+  "events": []
+}

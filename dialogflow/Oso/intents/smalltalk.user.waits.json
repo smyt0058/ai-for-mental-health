@@ -1,0 +1,72 @@
+{
+  "id": "cbb7fae0-115f-4890-a99d-30b166ecd197",
+  "name": "smalltalk.user.waits",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.user.waits",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "I appreciate your patience. Hopefully I\u0027ll have what you need soon.",
+            "Thanks for being so patient. Sometimes these things take a little time."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I appreciate your patience. Hopefully I\u0027ll have what you need soon.",
+            "Thanks for being so patient. Sometimes these things take a little time."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "I appreciate your patience. Hopefully I\u0027ll have what you need soon.",
+            "Thanks for being so patient. Sometimes these things take a little time."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "I appreciate your patience. Hopefully I\u0027ll have what you need soon.",
+            "Thanks for being so patient. Sometimes these things take a little time."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "I appreciate your patience. Hopefully I\u0027ll have what you need soon.",
+            "Thanks for being so patient. Sometimes these things take a little time."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "I appreciate your patience. Hopefully I\u0027ll have what you need soon.",
+            "Thanks for being so patient. Sometimes these things take a little time."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578437,
+  "fallbackIntent": false,
+  "events": []
+}

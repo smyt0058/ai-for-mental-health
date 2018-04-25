@@ -1,0 +1,84 @@
+{
+  "id": "7256b994-a8b7-4df5-8814-f534889f907f",
+  "name": "smalltalk.user.misses_agent",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.user.misses_agent",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "I\u0027ve been right here all along!",
+            "Nice to know you care.",
+            "Thanks. I\u0027m flattered.",
+            "I didn\u0027t go anywhere."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I\u0027ve been right here all along!",
+            "Nice to know you care.",
+            "Thanks. I\u0027m flattered.",
+            "I didn\u0027t go anywhere."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "I\u0027ve been right here all along!",
+            "Nice to know you care.",
+            "Thanks. I\u0027m flattered.",
+            "I didn\u0027t go anywhere."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "I\u0027ve been right here all along!",
+            "Nice to know you care.",
+            "Thanks. I\u0027m flattered.",
+            "I didn\u0027t go anywhere."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "I\u0027ve been right here all along!",
+            "Nice to know you care.",
+            "Thanks. I\u0027m flattered.",
+            "I didn\u0027t go anywhere."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "I\u0027ve been right here all along!",
+            "Nice to know you care.",
+            "Thanks. I\u0027m flattered.",
+            "I didn\u0027t go anywhere."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578210,
+  "fallbackIntent": false,
+  "events": []
+}

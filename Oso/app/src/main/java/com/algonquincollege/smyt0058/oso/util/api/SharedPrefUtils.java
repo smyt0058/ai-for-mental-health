@@ -51,6 +51,7 @@ public class SharedPrefUtils {
     private static final String NAME = "NAME";
     private static final String EMAIL = "EMAIL";
     public static final String ISLOGGED = "ISLOGGED";
+    public static final String ISFIRSTLOGGED = "IS_FIRST_LOGGED";
 
     public static final String PAW_POINTS = "PAW_POINTS";
     public static final String SHIRT_WEAR_BOOL = "SHIRT_WEAR_BOOL";
@@ -66,8 +67,9 @@ public class SharedPrefUtils {
     public static final String HEADBOW_BUY_BOOL = "HEADBOW_BUY_BOOL";
     public static final String PINK_BOWTIE_BUY_BOOL = "PINK_BOWTIE_BUY_BOOL";
 
-    public static final String NOTIFICATION_BOOL = "NOTIFICATION_BOOL";
-    public static final String THEME = "THEME";
+    public static final String QUESTIONNAIRE_HOUR_OF_DAY = "QUESTIONNAIRE_HOUR_OF_DAY";
+    public static final String QUESTIONNAIRE_MINUTE_OF_DAY = "QUESTIONNAIRE_MINUTE_OF_DAY";
+    public static final String NEXT_QUESTIONNAIRE_DATE = "NEXT_QUESTIONNAIRE_DATE";
 
 
 
@@ -85,9 +87,14 @@ public class SharedPrefUtils {
 
     }
 
-    public static void putSettingsState(Context ctx, boolean isNotificationOn, String theme){
+    public static void putNextDateState(Context ctx, long next){
         SharedPreferences prefs = ctx.getSharedPreferences(ctx.getString(R.string.preference_file_key), ctx.MODE_PRIVATE);
-        prefs.edit().putBoolean(NOTIFICATION_BOOL, isNotificationOn).putString(THEME, theme).apply();
+        prefs.edit().putLong(NEXT_QUESTIONNAIRE_DATE, next).apply();
+    }
+
+    public static void putSettingsState(Context ctx, int hour, int minute){
+        SharedPreferences prefs = ctx.getSharedPreferences(ctx.getString(R.string.preference_file_key), ctx.MODE_PRIVATE);
+        prefs.edit().putInt(QUESTIONNAIRE_HOUR_OF_DAY, hour).putInt(QUESTIONNAIRE_MINUTE_OF_DAY, minute).apply();
     }
 
     public static void putMarketState(Context ctx, int pawPoints, boolean mp3BuyBool, boolean headbowBuyBool, boolean pinkBowtieBuyBool){
@@ -138,8 +145,8 @@ public class SharedPrefUtils {
                                       boolean mp3BuyBool,
                                       boolean headbowBuyBool,
                                       boolean pinkBowtieBuyBool,
-                                       boolean isNotificationOn,
-                                       String theme ){
+                                       int hour,
+                                       int minute ){
         SharedPreferences prefs = ctx.getSharedPreferences(ctx.getString(R.string.preference_file_key), ctx.MODE_PRIVATE);
         prefs.edit().putInt(PAW_POINTS, pawPoints)
                 .putBoolean(SHIRT_WEAR_BOOL, shirtWearBool)
@@ -153,8 +160,8 @@ public class SharedPrefUtils {
                 .putBoolean(MP3_BUY_BOOL, mp3BuyBool)
                 .putBoolean(HEADBOW_BUY_BOOL, headbowBuyBool)
                 .putBoolean(PINK_BOWTIE_BUY_BOOL, pinkBowtieBuyBool)
-                .putBoolean(NOTIFICATION_BOOL, isNotificationOn)
-                .putString(THEME, theme).apply();
+                .putInt(QUESTIONNAIRE_HOUR_OF_DAY, hour)
+                .putInt(QUESTIONNAIRE_MINUTE_OF_DAY, minute).apply();
     }
 
     public static void putHeadbowState(Context ctx, boolean isHeadbowPurchased) {
@@ -200,6 +207,23 @@ public class SharedPrefUtils {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
         return prefs.getBoolean(ISLOGGED, false);
     }
+
+    public static void saveIsFirstLoggedIn(Context ctx, String key, boolean value){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+        try {
+            prefs.edit().putBoolean(key, value).apply();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Boolean getIsFirstLoggedIn(Context ctx){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+        return prefs.getBoolean(ISFIRSTLOGGED, false);
+    }
+
+
+
 
     private static String encryptString(Context context, String toEncrypt) {
         try {

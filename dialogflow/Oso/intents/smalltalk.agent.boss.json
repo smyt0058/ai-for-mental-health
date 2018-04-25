@@ -1,0 +1,78 @@
+{
+  "id": "b9d7b6de-b60f-43a6-80bb-218810cb6bd7",
+  "name": "smalltalk.agent.boss",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.boss",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "My developer has authority over my actions.",
+            "I act on my developer\u0027s orders.",
+            "My boss is the one who developed me."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "My developer has authority over my actions.",
+            "I act on my developer\u0027s orders.",
+            "My boss is the one who developed me."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "My developer has authority over my actions.",
+            "I act on my developer\u0027s orders.",
+            "My boss is the one who developed me."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "My developer has authority over my actions.",
+            "I act on my developer\u0027s orders.",
+            "My boss is the one who developed me."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "My developer has authority over my actions.",
+            "I act on my developer\u0027s orders.",
+            "My boss is the one who developed me."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "My developer has authority over my actions.",
+            "I act on my developer\u0027s orders.",
+            "My boss is the one who developed me."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578132,
+  "fallbackIntent": false,
+  "events": []
+}

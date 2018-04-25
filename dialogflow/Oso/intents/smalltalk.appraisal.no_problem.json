@@ -1,0 +1,84 @@
+{
+  "id": "219efabe-612b-46d5-9adf-34bd44182e6e",
+  "name": "smalltalk.appraisal.no_problem",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.appraisal.no_problem",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Whew!",
+            "Alright, thanks!",
+            "Glad to hear that!",
+            "I\u0027m relieved, thanks!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Whew!",
+            "Alright, thanks!",
+            "Glad to hear that!",
+            "I\u0027m relieved, thanks!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Whew!",
+            "Alright, thanks!",
+            "Glad to hear that!",
+            "I\u0027m relieved, thanks!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Whew!",
+            "Alright, thanks!",
+            "Glad to hear that!",
+            "I\u0027m relieved, thanks!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Whew!",
+            "Alright, thanks!",
+            "Glad to hear that!",
+            "I\u0027m relieved, thanks!"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Whew!",
+            "Alright, thanks!",
+            "Glad to hear that!",
+            "I\u0027m relieved, thanks!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577607,
+  "fallbackIntent": false,
+  "events": []
+}

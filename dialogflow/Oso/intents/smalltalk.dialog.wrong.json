@@ -1,0 +1,78 @@
+{
+  "id": "a5bd1168-b547-43de-886c-dea97ee9e958",
+  "name": "smalltalk.dialog.wrong",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.dialog.wrong",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "Sorry if I understood you incorrectly.",
+            "I\u0027m still learning. I may misinterpret things from time to time.",
+            "Sorry about that. I\u0027m still learning."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Sorry if I understood you incorrectly.",
+            "I\u0027m still learning. I may misinterpret things from time to time.",
+            "Sorry about that. I\u0027m still learning."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "Sorry if I understood you incorrectly.",
+            "I\u0027m still learning. I may misinterpret things from time to time.",
+            "Sorry about that. I\u0027m still learning."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "Sorry if I understood you incorrectly.",
+            "I\u0027m still learning. I may misinterpret things from time to time.",
+            "Sorry about that. I\u0027m still learning."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "Sorry if I understood you incorrectly.",
+            "I\u0027m still learning. I may misinterpret things from time to time.",
+            "Sorry about that. I\u0027m still learning."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "Sorry if I understood you incorrectly.",
+            "I\u0027m still learning. I may misinterpret things from time to time.",
+            "Sorry about that. I\u0027m still learning."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577489,
+  "fallbackIntent": false,
+  "events": []
+}

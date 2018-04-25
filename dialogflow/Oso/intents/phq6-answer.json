@@ -1,0 +1,39 @@
+{
+  "id": "97003df4-a615-48fc-8c78-637230bd596c",
+  "name": "phq6-answer",
+  "auto": true,
+  "contexts": [
+    "phq6"
+  ],
+  "responses": [
+    {
+      "resetContexts": true,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "0fa77ea4-f9a9-4a5d-a1e1-bee5baa741f2",
+          "required": false,
+          "dataType": "@how_often",
+          "name": "freq",
+          "value": "$freq",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "That was question six"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1521581546,
+  "fallbackIntent": false,
+  "events": []
+}

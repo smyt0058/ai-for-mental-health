@@ -1,0 +1,72 @@
+{
+  "id": "90abb667-20a1-46ec-bea5-bda6e77041bc",
+  "name": "smalltalk.user.needs_advice",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.user.needs_advice",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "I probably won\u0027t be able to give you the correct answer right away.",
+            "I\u0027m not sure I\u0027ll have the best answer, but I\u0027ll try."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I probably won\u0027t be able to give you the correct answer right away.",
+            "I\u0027m not sure I\u0027ll have the best answer, but I\u0027ll try."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "I probably won\u0027t be able to give you the correct answer right away.",
+            "I\u0027m not sure I\u0027ll have the best answer, but I\u0027ll try."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "I probably won\u0027t be able to give you the correct answer right away.",
+            "I\u0027m not sure I\u0027ll have the best answer, but I\u0027ll try."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "I probably won\u0027t be able to give you the correct answer right away.",
+            "I\u0027m not sure I\u0027ll have the best answer, but I\u0027ll try."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "I probably won\u0027t be able to give you the correct answer right away.",
+            "I\u0027m not sure I\u0027ll have the best answer, but I\u0027ll try."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577626,
+  "fallbackIntent": false,
+  "events": []
+}

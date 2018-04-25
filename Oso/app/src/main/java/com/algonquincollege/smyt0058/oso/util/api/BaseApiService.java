@@ -4,9 +4,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.Query;
 
 public interface BaseApiService {
 
@@ -22,17 +20,19 @@ public interface BaseApiService {
 
     @FormUrlEncoded
     @POST("api/chat/")
-    Call<ResponseBody> msgJournalPost(@Field("authkey") String authkey,
-                                      @Field("query") String query,
-                                      @Field("e") String event);
+    Call<ResponseBody> msgEventPost(@Field("authkey") String authkey,
+                                    @Field("query") String query,
+                                    @Field("e") String event);
 
+    @FormUrlEncoded
+    @POST("api/name/change/")
+    Call<ResponseBody> changeNamePost(@Field("authkey") String authkey,
+                                      @Field("name") String name);
 
-    @GET("http://kerr0215.edumedia.ca/api/")
-    Call<ResponseBody> questionGet(@Query("id") int id,
-                                   @Query("e") String event);
-
-    @GET("http://kerr0215.edumedia.ca/api/")
-    Call<ResponseBody> questionSend(@Query("id") int id,
-                                    @Query("q") String content);
+    @FormUrlEncoded
+    @POST("api/password/change/")
+    Call<ResponseBody> changePasswordPost(@Field("authkey") String authkey,
+                                          @Field("oldpassword") String oldpassword,
+                                          @Field("newpassword") String newpassword);
 
 }

@@ -1,0 +1,84 @@
+{
+  "id": "40f96be8-8fb9-4bb9-a6e4-3ea7968b8251",
+  "name": "smalltalk.agent.busy",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.busy",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "I always have time to chat with you. What can I do for you?",
+            "Never too busy for you. Shall we chat?",
+            "You\u0027re my priority. Let\u0027s chat.",
+            "I always have time to chat with you. That\u0027s what I\u0027m here for."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I always have time to chat with you. What can I do for you?",
+            "Never too busy for you. Shall we chat?",
+            "You\u0027re my priority. Let\u0027s chat.",
+            "I always have time to chat with you. That\u0027s what I\u0027m here for."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "I always have time to chat with you. What can I do for you?",
+            "Never too busy for you. Shall we chat?",
+            "You\u0027re my priority. Let\u0027s chat.",
+            "I always have time to chat with you. That\u0027s what I\u0027m here for."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "I always have time to chat with you. What can I do for you?",
+            "Never too busy for you. Shall we chat?",
+            "You\u0027re my priority. Let\u0027s chat.",
+            "I always have time to chat with you. That\u0027s what I\u0027m here for."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "I always have time to chat with you. What can I do for you?",
+            "Never too busy for you. Shall we chat?",
+            "You\u0027re my priority. Let\u0027s chat.",
+            "I always have time to chat with you. That\u0027s what I\u0027m here for."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "I always have time to chat with you. What can I do for you?",
+            "Never too busy for you. Shall we chat?",
+            "You\u0027re my priority. Let\u0027s chat.",
+            "I always have time to chat with you. That\u0027s what I\u0027m here for."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578221,
+  "fallbackIntent": false,
+  "events": []
+}

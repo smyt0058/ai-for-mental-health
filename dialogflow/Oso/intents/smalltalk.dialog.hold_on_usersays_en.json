@@ -1,0 +1,118 @@
+[
+  {
+    "id": "9f3d8848-4926-4714-95be-42bb740c676d",
+    "data": [
+      {
+        "text": "wait please",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "50b71b7a-8f07-48a5-af8a-14d36d10f3f9",
+    "data": [
+      {
+        "text": "wait",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "08d73c03-0b4e-42b7-85a6-98bb0b272314",
+    "data": [
+      {
+        "text": "oh wait",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "8922af1c-0c89-4161-80a3-e84161dc72c6",
+    "data": [
+      {
+        "text": "don",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": "\u0027t ",
+        "userDefined": false
+      },
+      {
+        "text": "rush",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "e044bc9b-4cfa-4376-b81f-6797e0c62351",
+    "data": [
+      {
+        "text": "could you wait",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d4105d75-b7f2-4865-acef-95c8d4519257",
+    "data": [
+      {
+        "text": "wait hold ",
+        "userDefined": false
+      },
+      {
+        "text": "on",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b707d102-c430-4aab-971c-68d0b43c242a",
+    "data": [
+      {
+        "text": "wait a second",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "3711df56-3f12-4ac3-b90f-88b699811f0e",
+    "data": [
+      {
+        "text": "hold ",
+        "userDefined": false
+      },
+      {
+        "text": "on",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

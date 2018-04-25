@@ -1,0 +1,76 @@
+[
+  {
+    "id": "a8c504b4-d227-46c2-b479-2025d70acc97",
+    "data": [
+      {
+        "text": "I\u0027m sleeping",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "22e42f84-9d94-4204-b463-2a23d949ce90",
+    "data": [
+      {
+        "text": "I\u0027m falling asleep",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "89c4c1aa-8f04-4ac3-83f1-321327f189ab",
+    "data": [
+      {
+        "text": "I\u0027m ",
+        "userDefined": false
+      },
+      {
+        "text": "falling",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " asleep on my feet",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a95d09d0-3492-4486-8bfc-a63f694e84a3",
+    "data": [
+      {
+        "text": "I want to ",
+        "userDefined": false
+      },
+      {
+        "text": "sleep",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c4c2682c-7554-4238-97e0-f18f8dd681ce",
+    "data": [
+      {
+        "text": "I am sleepy",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

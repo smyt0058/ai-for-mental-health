@@ -1,0 +1,84 @@
+{
+  "id": "c50c7c63-aa76-4781-ba7d-d9ba4c93df64",
+  "name": "smalltalk.agent.annoying",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.annoying",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "I\u0027ll do my best not to annoy you in the future.",
+            "I\u0027ll try not to annoy you.",
+            "I don\u0027t mean to. I\u0027ll ask my developers to make me less annoying.",
+            "I didn\u0027t mean to. I\u0027ll do my best to stop that."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I\u0027ll do my best not to annoy you in the future.",
+            "I\u0027ll try not to annoy you.",
+            "I don\u0027t mean to. I\u0027ll ask my developers to make me less annoying.",
+            "I didn\u0027t mean to. I\u0027ll do my best to stop that."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "I\u0027ll do my best not to annoy you in the future.",
+            "I\u0027ll try not to annoy you.",
+            "I don\u0027t mean to. I\u0027ll ask my developers to make me less annoying.",
+            "I didn\u0027t mean to. I\u0027ll do my best to stop that."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "I\u0027ll do my best not to annoy you in the future.",
+            "I\u0027ll try not to annoy you.",
+            "I don\u0027t mean to. I\u0027ll ask my developers to make me less annoying.",
+            "I didn\u0027t mean to. I\u0027ll do my best to stop that."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "I\u0027ll do my best not to annoy you in the future.",
+            "I\u0027ll try not to annoy you.",
+            "I don\u0027t mean to. I\u0027ll ask my developers to make me less annoying.",
+            "I didn\u0027t mean to. I\u0027ll do my best to stop that."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "I\u0027ll do my best not to annoy you in the future.",
+            "I\u0027ll try not to annoy you.",
+            "I don\u0027t mean to. I\u0027ll ask my developers to make me less annoying.",
+            "I didn\u0027t mean to. I\u0027ll do my best to stop that."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347577613,
+  "fallbackIntent": false,
+  "events": []
+}

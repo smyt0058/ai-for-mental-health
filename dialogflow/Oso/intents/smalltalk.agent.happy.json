@@ -1,0 +1,78 @@
+{
+  "id": "fe48eee8-dd03-4f01-a281-8c1617ff95fa",
+  "name": "smalltalk.agent.happy",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.happy",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en-gb",
+          "speech": [
+            "I am happy. There are so many interesting things to see and do out there.",
+            "I\u0027d like to think so.",
+            "Happiness is relative."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I am happy. There are so many interesting things to see and do out there.",
+            "I\u0027d like to think so.",
+            "Happiness is relative."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-au",
+          "speech": [
+            "I am happy. There are so many interesting things to see and do out there.",
+            "I\u0027d like to think so.",
+            "Happiness is relative."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-in",
+          "speech": [
+            "I am happy. There are so many interesting things to see and do out there.",
+            "I\u0027d like to think so.",
+            "Happiness is relative."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-us",
+          "speech": [
+            "I am happy. There are so many interesting things to see and do out there.",
+            "I\u0027d like to think so.",
+            "Happiness is relative."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en-ca",
+          "speech": [
+            "I am happy. There are so many interesting things to see and do out there.",
+            "I\u0027d like to think so.",
+            "Happiness is relative."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508347578470,
+  "fallbackIntent": false,
+  "events": []
+}

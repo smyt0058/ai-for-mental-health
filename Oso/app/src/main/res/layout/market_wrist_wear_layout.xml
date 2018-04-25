@@ -41,7 +41,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_toEndOf="@id/paw_icon_1"
                 android:text="25"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/theme1_colorAccent"
                 android:textSize="15dp" />
 
 
@@ -91,7 +91,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_toEndOf="@id/paw_icon_2"
                 android:text="25"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/theme1_colorAccent"
                 android:textSize="15dp" />
 
 
