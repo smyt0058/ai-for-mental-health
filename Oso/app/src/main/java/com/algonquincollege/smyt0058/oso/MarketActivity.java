@@ -22,6 +22,11 @@ import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 
 /**
  * Created by Jason on 2018-03-22.
+ *
+ * MarketActivity
+ * Oso's market
+ * used to purchase items for Oso
+ *
  */
 
 public class MarketActivity extends AppCompatActivity {

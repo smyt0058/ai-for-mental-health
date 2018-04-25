@@ -59,6 +59,12 @@ import retrofit2.Response;
 
 /**
  * Created by Jason on 2018-03-19.
+ *
+ * ChatActivity
+ * Where the magic happens.
+ * for all intent and purposes this is the main activity.
+ *
+ *
  */
 
 public class ChatActivity extends AppCompatActivity{
@@ -88,7 +94,7 @@ public class ChatActivity extends AppCompatActivity{
     private static final String FEED_OSO_DIALOG_TAG = "Feed Oso Dialog";
     private final String        DATABASE_NAME = "OSO_DATABASE";
     private final String        JOURNAL_ENTRY_EVENT = "journalEntry";
-    public static final String        START_QUESTIONNAIRE_EVENT = "question";
+    public static final String  START_QUESTIONNAIRE_EVENT = "question";
     private final String        REGULAR_CHAT_EVENT = "";
 
     int i = 0;
@@ -100,6 +106,7 @@ public class ChatActivity extends AppCompatActivity{
     public static boolean isRunning = false;
     private static ChatActivity instance;
 
+    //static method to call msgEventPost from notification class
     public static void staticGo() {
         instance.msgEventPost("", ChatActivity.START_QUESTIONNAIRE_EVENT);
     }
@@ -120,6 +127,7 @@ public class ChatActivity extends AppCompatActivity{
 
         database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, DATABASE_NAME).fallbackToDestructiveMigration().build();
 
+        //grabs chat history from database
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -164,22 +172,10 @@ public class ChatActivity extends AppCompatActivity{
         //grabs adapter
         chatAdapter = new ChatAdapter(messageArrayList);
 
-//        Date currentTime = Calendar.getInstance().getTime();
-//        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-//        ChatMessage onBoarding1 = new ChatMessage(getResources().getString(R.string.oso_onboarding_1), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-//        chatAdapter.addMessage(onBoarding1);
-
         //sets adapter
         mMessageRecyclerview.setAdapter(chatAdapter);
 
-        //onBoarding();
-
-//        if(!isQuestionnaire) {
-//            msgEventPost("", START_QUESTIONNAIRE_EVENT);
-//        }
-
-
-
+        //Submit message button
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -193,18 +189,17 @@ public class ChatActivity extends AppCompatActivity{
                     ChatMessage message = new ChatMessage(messageContent, ChatMessage.MSG_TYPE_SENT, currentTime);
                     chatAdapter.addMessage(message);
 
-//                    scrollToBottom();
-
                     userMessage.getText().clear();
 
 
+                    //checks for questionnaire flags
+                    //when questionnaire is active server responds with new boolean values which get set the msgEventPost method
                     if(!isQuestionnaire && !isJournal) {
                         msgEventPost(messageContent, REGULAR_CHAT_EVENT);
                     }
 
                     if(isQuestionnaire && !isJournal) {
 
-//                        Pattern validAnswerPattern = Pattern.compile("[1-4]");
                         if(Pattern.matches("[1-4]", messageContent)){
                             msgEventPost(messageContent, REGULAR_CHAT_EVENT);
                         } else {
@@ -221,11 +216,6 @@ public class ChatActivity extends AppCompatActivity{
                         msgEventPost(messageContent, JOURNAL_ENTRY_EVENT);
                     }
 
-
-                    //msgEventPost(messageContent, REGULAR_CHAT_EVENT);
-
-                    //pawPoints = pawPointToast(25);
-                    //gordyMessageSend(messageContent);
                     scrollToBottom();
 
                     }
@@ -272,10 +262,10 @@ public class ChatActivity extends AppCompatActivity{
             }
         });
 
-        // ---
+        // runs init on Notification class
         Notification.init(getApplicationContext());
 
-        //
+        //listens for intent from notification click
         Intent i = getIntent();
         try {
             if (i != null) {
@@ -301,6 +291,7 @@ public class ChatActivity extends AppCompatActivity{
 
 
 
+    //when view goes out of view update chat history in database
     @Override
     protected void onPause() {
         super.onPause();
@@ -329,24 +320,9 @@ public class ChatActivity extends AppCompatActivity{
 
         pawPoints = prefs.getInt(SharedPrefUtils.PAW_POINTS, 0);
 
-        //
-//        Intent i = getIntent();
-//        try {
-//            if (i != null) {
-//                String a = i.getAction();
-//                if ("ca.edumedia.INITIATE".equals(a)) {
-//                    Log.i("NOTIFICATION", "msgEventPost get's called");
-//                    msgEventPost("", START_QUESTIONNAIRE_EVENT);
-//                }
-//            }
-//        } catch (Exception e) {
-//            Log.i("NOTIFICATION", "error in chat activity on-resume");
-//        }
     }
 
     public void msgEventPost(String content, final String event) {
-
-        //Toast.makeText(ChatActivity.this, "msgPost called, passing : " + content, Toast.LENGTH_LONG).show();
 
         Call<ResponseBody> call = mApiService.msgEventPost(authkey, content, event);
 
@@ -371,11 +347,10 @@ public class ChatActivity extends AppCompatActivity{
 
                             boolean isQuestionDone = Boolean.parseBoolean(jsonRESULTS.getString("isQuestionDone"));
 
+                            //when isQuestionDone is flagged true give user points
                             if(isQuestionDone) {
                                 pawPoints += pawPointToast(25);
                             }
-
-
 
                             Log.i("content: ", content);
 
@@ -387,10 +362,12 @@ public class ChatActivity extends AppCompatActivity{
 
 
 
+                            //adds received message from server to recyclerView
                             Date currentTime = Calendar.getInstance().getTime();
                             ChatMessage message = new ChatMessage(content, ChatMessage.MSG_TYPE_RECEIVED, currentTime);
                             chatAdapter.addMessage(message);
 
+                            //appends accepted answer message to recyclerView
                             if(isQuestionnaire && !isJournal) {
                                 Date time = Calendar.getInstance().getTime();
                                 ChatMessage potentialAnswerMessage = new ChatMessage(activityContext.getResources().getString(R.string.potential_answers), ChatMessage.MSG_TYPE_RECEIVED, time);
@@ -429,6 +406,7 @@ public class ChatActivity extends AppCompatActivity{
 
 
 
+    //updates the adapter with new position
     public void scrollToBottom() {
 
         int newPosition = chatAdapter.getItemCount() - 1;
@@ -440,24 +418,15 @@ public class ChatActivity extends AppCompatActivity{
         mMessageRecyclerview.scrollToPosition(newPosition);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-    }
-
     //Toolbar navigation button methods
     public void settingsBtnOnClick(View view) {
         Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
         startActivity(intent);
     }
-
     public void closetBtnOnClick(View view) {
         Intent intent = new Intent(getApplicationContext(), ClosetActivity.class);
         startActivity(intent);
     }
-
-    //inflates food fragment
     public void osoFoodBtnClick(View view) {
 
         DialogFragment newFragment = new FeedOsoDialogFragment();
@@ -520,76 +489,7 @@ public class ChatActivity extends AppCompatActivity{
         v.startAnimation(anim_out);
     }
 
-    public void onBoarding() {
-
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        Date currentTime = Calendar.getInstance().getTime();
-                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-                        ChatMessage onBoarding1 = new ChatMessage(getResources().getString(R.string.oso_onboarding_1), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-                        chatAdapter.addMessage(onBoarding1);
-                        scrollToBottom();
-                    }
-                }, 1000);
-
-//        new android.os.Handler().postDelayed(
-//                new Runnable() {
-//                    public void run() {
-//                        Date currentTime = Calendar.getInstance().getTime();
-//                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-//                        ChatMessage onBoarding2 = new ChatMessage(getResources().getString(R.string.oso_onboarding_2), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-//                        chatAdapter.addMessage(onBoarding2);
-//                        scrollToBottom();
-//                    }
-//                }, 3000);
-//
-//        new android.os.Handler().postDelayed(
-//                new Runnable() {
-//                    public void run() {
-//                        Date currentTime = Calendar.getInstance().getTime();
-//                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-//                        ChatMessage onBoarding3 = new ChatMessage(getResources().getString(R.string.oso_onboarding_3), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-//                        chatAdapter.addMessage(onBoarding3);
-//                        scrollToBottom();
-//                    }
-//                }, 5000);
-//
-//        new android.os.Handler().postDelayed(
-//                new Runnable() {
-//                    public void run() {
-//                        Date currentTime = Calendar.getInstance().getTime();
-//                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-//                        ChatMessage onBoarding4 = new ChatMessage(getResources().getString(R.string.oso_onboarding_4), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-//                        chatAdapter.addMessage(onBoarding4);
-//                        scrollToBottom();
-//                    }
-//                }, 7000);
-//
-//        new android.os.Handler().postDelayed(
-//                new Runnable() {
-//                    public void run() {
-//                        Date currentTime = Calendar.getInstance().getTime();
-//                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-//                        ChatMessage onBoarding4 = new ChatMessage(getResources().getString(R.string.oso_onboarding_5), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-//                        chatAdapter.addMessage(onBoarding4);
-//                        scrollToBottom();
-//                    }
-//                }, 8000);
-//        new android.os.Handler().postDelayed(
-//                new Runnable() {
-//                    public void run() {
-//                        Date currentTime = Calendar.getInstance().getTime();
-//                        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-//                        ChatMessage onBoarding4 = new ChatMessage(getResources().getString(R.string.oso_onboarding_6), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-//                        chatAdapter.addMessage(onBoarding4);
-//                        scrollToBottom();
-//                    }
-//                }, 8000);
-
-
-    }
-
+    //sets up custom Toast to show paw point award to user. takes in how many points you want to give
     public int pawPointToast(int pawPoints) {
 
         LayoutInflater inflater = getLayoutInflater();
@@ -611,6 +511,7 @@ public class ChatActivity extends AppCompatActivity{
 
     }
 
+    //handles when server is down by appending a error handling message.
     public void serverErrorOso() {
         Date currentTime = Calendar.getInstance().getTime();
         ChatMessage onBoarding1 = new ChatMessage("This is embarassing... It looks like the server were I live is down right now. Feel free to try again later :) ", ChatMessage.MSG_TYPE_RECEIVED, currentTime);

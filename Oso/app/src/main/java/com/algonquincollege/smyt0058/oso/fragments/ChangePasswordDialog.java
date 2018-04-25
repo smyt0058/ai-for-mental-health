@@ -83,6 +83,8 @@ public class ChangePasswordDialog extends android.app.DialogFragment implements 
 
     @Override
     public void onClick(View view) {
+
+        //checks which button has been clicked and runs appropriate function
         if(view.equals(doneBtn)){
             if(!newPasswordET.getText().toString().equals(confirmPasswordET.getText().toString()) ){
                 confirmPasswordET.setError("Does not match new password");
@@ -139,6 +141,7 @@ public class ChangePasswordDialog extends android.app.DialogFragment implements 
         }
     }
 
+    //generates custom toast message to user
     public void newPasswordToast(String message) {
 
         View layout = inflater.inflate(R.layout.paw_point_toast_layout,

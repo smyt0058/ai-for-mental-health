@@ -10,6 +10,10 @@ import android.database.Cursor;
 
 /**
  * Created by Jason on 2018-04-10.
+ *
+ * UserDAO
+ * Database interface
+ *
  */
 @Dao
 public interface UserDAO {

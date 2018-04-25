@@ -14,6 +14,10 @@ import java.util.ArrayList;
 
 /**
  * Created by Jason on 2018-03-24.
+ *
+ * ChatAdapter
+ * RecyclerView adapter for Oso Chat
+ *
  */
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
@@ -61,6 +65,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
         return new ChatViewHolder(view);
     }
 
+    //add message to recyclerview
     public void addMessage(ChatMessage theMessage) {
         messagesList.add(theMessage);
         notifyDataSetChanged();

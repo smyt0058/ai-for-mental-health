@@ -34,6 +34,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Created by Jason on 2018-03-22.
+ *
+ * MainActivity
+ * Where logging happens, once user logs in app boots to ChatActivity
+ *
+ */
+
 public class MainActivity extends Activity {
 
     private Button                  loginBtn;
@@ -72,20 +80,6 @@ public class MainActivity extends Activity {
         loginBtn = (Button) findViewById(R.id.loginBtn);
 
         database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, DATABASE_NAME).fallbackToDestructiveMigration().build();
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//
-//                database.userDAO().nukeTable();
-//
-//
-//            }
-//        }) .start();
-
-//        Date currentTime = Calendar.getInstance().getTime();
-//        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
-//        ChatMessage onBoarding1 = new ChatMessage(getResources().getString(R.string.oso_onboarding_1), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
-//        messageArrayList.add(onBoarding1);
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,15 +136,9 @@ public class MainActivity extends Activity {
 
                                     SharedPrefUtils.put(mContext, "authkey", authkey);
 
-                                    //Toast.makeText(mContext, SharedPrefUtils.get(mContext, "authkey"), Toast.LENGTH_SHORT).show();
-
-                                    //sharedPrefManager.saveSPString(SharedPrefManager.SP_NAMA, nama);
-                                    // Shared Pref ini berfungsi untuk menjadi trigger session login
-                                    //sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, true);
                                     SharedPrefUtils.saveIsLoggedIn(mContext, SharedPrefUtils.ISLOGGED, true);
 
                                     Date currentTime = Calendar.getInstance().getTime();
-                                    //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
                                     ChatMessage onBoarding1 = new ChatMessage(getResources().getString(R.string.oso_onboarding_1), ChatMessage.MSG_TYPE_RECEIVED, currentTime);
                                     messageArrayList.add(onBoarding1);
 
@@ -163,8 +151,6 @@ public class MainActivity extends Activity {
                                             database.userDAO().insertUser(userChat);
                                         }
                                     }) .start();
-
-                                    //userDBSetup();
 
                                     if(!onBoardingFirst) {
                                         SharedPrefUtils.saveIsFirstLoggedIn(mContext, SharedPrefUtils.ISFIRSTLOGGED, true);

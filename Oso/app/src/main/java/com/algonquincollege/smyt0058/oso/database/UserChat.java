@@ -11,6 +11,9 @@ import java.util.ArrayList;
 
 /**
  * Created by Jason on 2018-04-10.
+ *
+ * UserChat Database model
+ *
  */
 
 @Entity
