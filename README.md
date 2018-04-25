@@ -17,9 +17,7 @@ Android Studio
 
 ### Installing & Deployment
 
-A step by step series of examples that tell you have to get a development env running
-
-Please see the DDD-OSO file.  It will contain all the required steps.
+Please see the DDD-OSO file.  It will contain all the required steps to setup the development env.
 
 ## Built With
 
