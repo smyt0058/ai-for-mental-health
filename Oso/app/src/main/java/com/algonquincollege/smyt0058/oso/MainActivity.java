@@ -72,6 +72,15 @@ public class MainActivity extends Activity {
         loginBtn = (Button) findViewById(R.id.loginBtn);
 
         database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, DATABASE_NAME).fallbackToDestructiveMigration().build();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//
+//                database.userDAO().nukeTable();
+//
+//
+//            }
+//        }) .start();
 
 //        Date currentTime = Calendar.getInstance().getTime();
 //        //ArrayList<ChatMessage> messageArrayList = new ArrayList<ChatMessage>();
@@ -157,7 +166,7 @@ public class MainActivity extends Activity {
 
                                     //userDBSetup();
 
-                                    if(onBoardingFirst == false) {
+                                    if(!onBoardingFirst) {
                                         SharedPrefUtils.saveIsFirstLoggedIn(mContext, SharedPrefUtils.ISFIRSTLOGGED, true);
                                         startActivity(new Intent(mContext, OnBoardingActivity.class));
                                         finish();
