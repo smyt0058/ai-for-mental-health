@@ -11,9 +11,8 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-* [Java Development Kit 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-* [Android Studio](https://developer.android.com/studio/index.html)
-
+Java Development Kit 8
+Android Studio
 ```
 
 ### Installing
@@ -34,47 +33,29 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [CodeIgniter](https://codeigniter.com/) - The web framework used
+* [Android Studio](https://developer.android.com/studio/index.html) - Native Android Development Tool
+* [PHPStorm](https://www.jetbrains.com/phpstorm/) - PHP Development Tool
 
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Alexandre Gravelle** - *Project Lead*
+* **Christine Tamkican** - *Design Lead*
+* **Jason Smyth** - *Mobile Lead*
+* **Harsh Doshi** - *Web Lead*
+* **Gorden Kerr** - *Solutions Architecture*
+* **Ryan Radmore** - *Mobile Developer*
+* **Gregoire Rosier** - *Web Developer*
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
