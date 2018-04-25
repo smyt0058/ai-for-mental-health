@@ -29,7 +29,7 @@ public class Notification {
     static private final int minute = 0;
 
     // purpose unknown, used when creating pending intents
-    static private final int requestCode = 0;
+    static private int requestCode = 0;
 
     /**
      *
@@ -81,14 +81,9 @@ public class Notification {
             notificationManager.createNotificationChannel(nc);
         }
 
-        /// this is the target of the notification the user could press on
-        Intent intentGoesHere = new Intent(
-                context,
-                NotificationAccepter.class
-        );
-        intentGoesHere.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-        PendingIntent pendi = PendingIntent.getActivity(
+        Intent intentGoesHere = new Intent(context, NotificationReceiver.class);
+        intentGoesHere.setAction("com.algonquincollege.smyt0058.oso.notif");
+        PendingIntent pendi = PendingIntent.getBroadcast(
                 context,
                 requestCode,
                 intentGoesHere,
@@ -113,7 +108,7 @@ public class Notification {
         // calendar representation of now
         Calendar c = Calendar.getInstance();
         c.setTime(new Date());
-        return c.getTimeInMillis() + 60 * 1000;
+        return c.getTimeInMillis() + 15 * 1000;
     }
 
 
@@ -126,7 +121,7 @@ public class Notification {
 
         // set hour and minute.
         // adjust to tomorrow if that result is not in the future
-        // (by a minute at least)
+        // (by five seconds minute at least)
         c.set(Calendar.HOUR_OF_DAY, hour);
         c.set(Calendar.MINUTE, minute);
         if (c.getTimeInMillis() < now + 5 * 1000) {
