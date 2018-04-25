@@ -69,8 +69,7 @@ public class SharedPrefUtils {
 
     public static final String QUESTIONNAIRE_HOUR_OF_DAY = "QUESTIONNAIRE_HOUR_OF_DAY";
     public static final String QUESTIONNAIRE_MINUTE_OF_DAY = "QUESTIONNAIRE_MINUTE_OF_DAY";
-    public static final String NOTIFICATION_BOOL = "NOTIFICATION_BOOL";
-    public static final String THEME = "THEME";
+    public static final String NEXT_QUESTIONNAIRE_DATE = "NEXT_QUESTIONNAIRE_DATE";
 
 
 
@@ -88,7 +87,10 @@ public class SharedPrefUtils {
 
     }
 
-
+    public static void putNextDateState(Context ctx, long next){
+        SharedPreferences prefs = ctx.getSharedPreferences(ctx.getString(R.string.preference_file_key), ctx.MODE_PRIVATE);
+        prefs.edit().putLong(NEXT_QUESTIONNAIRE_DATE, next).apply();
+    }
 
     public static void putSettingsState(Context ctx, int hour, int minute){
         SharedPreferences prefs = ctx.getSharedPreferences(ctx.getString(R.string.preference_file_key), ctx.MODE_PRIVATE);

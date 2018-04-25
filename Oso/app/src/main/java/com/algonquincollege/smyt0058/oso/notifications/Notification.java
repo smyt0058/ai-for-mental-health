@@ -6,11 +6,12 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
-import com.algonquincollege.smyt0058.oso.ChatActivity;
 import com.algonquincollege.smyt0058.oso.R;
+import com.algonquincollege.smyt0058.oso.util.api.SharedPrefUtils;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -25,8 +26,8 @@ public class Notification {
     static final String channelName = "the-notification-channel";
 
     // time of day for alarm events
-    static private final int hour = 12;
-    static private final int minute = 0;
+    static private int hour;
+    static private int minute;
 
     // purpose unknown, used when creating pending intents
     static private int requestCode = 0;
@@ -39,7 +40,23 @@ public class Notification {
 
         Log.i("NOTIFICATION", "init");
 
-        long next = getNextTime();
+        // in case no alarm has ever been set
+        SharedPreferences prefs = SharedPrefUtils.getAppState(context);
+        long next = prefs.getLong(SharedPrefUtils.NEXT_QUESTIONNAIRE_DATE, 0);
+        if (next == 0) {
+            next = getNextTime_daily(context);
+            SharedPrefUtils.putNextDateState(context, next);
+        }
+
+        // because user adjusting hour and day might have put next in past
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date());
+        long now = c.getTimeInMillis();
+
+        if (next < now) {
+            SharedPrefUtils.putNextDateState(context, next + 24 * 60 * 60 * 1000);
+        }
+
 
         // intent - when alarm is activated, broadcast to this receiver
         Intent i = new Intent(
@@ -112,7 +129,11 @@ public class Notification {
     }
 
 
-    static private long getNextTime_daily() {
+    static private long getNextTime_daily(Context context) {
+
+        SharedPreferences prefs = SharedPrefUtils.getAppState(context);
+        hour = prefs.getInt(SharedPrefUtils.QUESTIONNAIRE_HOUR_OF_DAY, 03);
+        minute = prefs.getInt(SharedPrefUtils.QUESTIONNAIRE_MINUTE_OF_DAY, 04);
 
         // calendar representation of now
         Calendar c = Calendar.getInstance();
